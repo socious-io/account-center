@@ -1,8 +1,8 @@
 import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 
-import { AdaptorRes, getOrgsAdaptor, getUserProfileAdaptor, Meta, Org, User } from '..';
+import { AdaptorRes, getOrgsAdaptor, getUserProfileAdaptor, CurrentIdentity, Org, User } from '..';
 
-export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<Meta[]>> => {
+export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity[]>> => {
   try {
     const currentIdentityId = await nonPermanentStorage.get('identity');
 
