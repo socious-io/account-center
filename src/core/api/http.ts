@@ -15,9 +15,7 @@ export const http = axios.create({
 });
 
 export async function getAuthHeaders(): Promise<{ Authorization: string }> {
-  const token =
-    (await nonPermanentStorage.get('access_token')) ||
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIwYjA3YzFjLWIxNDItNGVlMy1hODdmLTEyMmFhOTlhNzY1OSIsImVtYWlsIjoibWFobW91ZGlzYW5hejU5QGdtYWlsLmNvbSIsInJlZnJlc2giOmZhbHNlLCJleHAiOjE3NDQzOTc0NTV9.bTYkkByW8n9DPBKSzy4Q8QLpEHfVwqt7N_tdT-Aff2k';
+  const token = (await nonPermanentStorage.get('access_token')) || '';
   const prefix = (await nonPermanentStorage.get('token_type')) || 'Bearer';
   return { Authorization: token && prefix ? `${prefix} ${token}` : '' };
 }

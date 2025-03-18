@@ -1,7 +1,7 @@
-import { Meta } from 'src/core/adaptors';
+import { CurrentIdentity } from 'src/core/adaptors';
 
 export interface AvatarLabelGroupProps {
-  account: Meta;
+  account: CurrentIdentity;
   customStyle?: string;
   handleClick?: () => void;
   avatarSize?: string;

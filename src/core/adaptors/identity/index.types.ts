@@ -1,6 +1,6 @@
 import { UserType } from 'src/core/api';
 
-export interface Meta {
+export interface CurrentIdentity {
   id: string;
   name: string;
   username: string;
