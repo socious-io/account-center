@@ -1,0 +1,29 @@
+{
+  "verification-kyb": {
+    "desc-title": "Verifica tu organización",
+    "desc-subtitle": "Verifica tu organización para emitir credenciales.",
+    "desc-step1-title": "Envía los detalles de tu organización",
+    "desc-step1-subtitle": "Envía un documento de registro de la empresa, como un certificado de empresa o equivalente, junto con el nombre de tu organización.",
+    "desc-step2-title": "Espera el procesamiento",
+    "desc-step2-subtitle": "Nuestro equipo de verificación tardará entre 1 y 3 días en procesar tu solicitud de verificación.",
+    "desc-step3-title": "Verificación completada",
+    "desc-step3-subtitle": "Recibirás un correo electrónico y una notificación cuando la verificación se complete con éxito, y entonces podrás emitir credenciales.",
+    "upload-title": "Envía los detalles de tu organización",
+    "upload-subtitle": "Por favor, sube tu documento de registro de la empresa, como un certificado o equivalente.",
+    "success-title": "Tus documentos han sido enviados",
+    "success-subtitle": "Nuestro equipo de verificación tardará entre 1 y 3 días en procesar tu solicitud de verificación. Recibirás un correo electrónico y una notificación cuando la verificación se complete con éxito, y entonces podrás emitir credenciales.",
+    "continue-button": "Continuar",
+    "cancel-button": "Cancelar"
+  },
+  "verification-kyc": {
+    "title": "Verifica tu identidad",
+    "subtitle": "Verifica tu identidad para acceder a todas las funciones de Socious.",
+    "hint-title": "Socious utiliza tecnología blockchain para hacer que las credenciales sean transparentes y rastreables.",
+    "hint-subtitle": "Nos hemos asociado con Atala Prism para que tu ID descentralizado pueda recibir credenciales verificables.",
+    "how-verify": "Cómo verificar tu identidad",
+    "how-verify-step1": "1. Completa el proceso de incorporación en la aplicación, lo que creará un ID descentralizado en Atala Prism.",
+    "how-verify-step2": "2. Verifica tu identidad con Veriff, nuestro socio de KYC.",
+    "download-wallet": "Descargar la aplicación Socious Wallet",
+    "open-wallet": "Abrir la aplicación Socious Wallet"
+  }
+}
