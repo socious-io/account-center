@@ -14,6 +14,7 @@ export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
       username: user.username ? `@${user.username}` : '',
       email: user.email,
       type: 'users' as UserType,
+      isVerified: !!user.identity_verified_at,
     };
     return { data: res, error: null };
   } catch (error) {

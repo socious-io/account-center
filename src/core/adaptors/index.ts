@@ -13,6 +13,8 @@ export * from './organizations/index.types';
 export * from './password/index.adaptors';
 export * from './password/index.types';
 
+export * from './verification/index.adaptors';
+
 export interface CustomError {
   response: { data: { error: string } };
 }
