@@ -1,0 +1,13 @@
+{
+  "layout-profile": "アカウントプロフィール",
+  "pagination-next": "次へ",
+  "pagination-previous": "前へ",
+  "pagination-page": "ページ",
+  "pagination-of": "の",
+  "file-uploader-click": "クリックしてアップロード",
+  "file-uploader-drag": "またはドラッグ＆ドロップ",
+  "file-uploader-or": "または",
+  "file-uploader-max": "最大",
+  "file-uploader-max-error": "{{name}} は最大サイズ {{max}}MB を超えています",
+  "file-uploader-limit-error": "最大 {{limit}} 個のファイルをアップロードできます。ファイル数を減らしてください。"
+}

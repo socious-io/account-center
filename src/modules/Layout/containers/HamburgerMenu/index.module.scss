@@ -1,0 +1,68 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+$menu-width: 19.5rem;
+
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    height: 100%;
+    width: $menu-width;
+    padding: 2rem 1rem;
+    background-color: $color-white;
+    border-right: 1px solid $color-grey-200;
+    @include flex(space-between, flex-start, column);
+    overflow-y: auto;
+
+    @media (max-width: $md) {
+        padding: 1.5rem 1rem;
+        width: 100%;
+        box-shadow: $shadow-xl;
+    }
+
+    &__top {
+        width: 100%;
+        @include flex(normal, stretch, column);
+        gap: 1.5rem;
+    }
+
+    &__bottom {
+        @include flex(flex-start, center);
+        gap: 0.75rem;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $color-grey-700;
+        cursor: pointer;
+    }
+
+    .header {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        color: $color-grey-900;
+
+        @media (max-width: $md) {
+            margin: -1.5rem -1rem 0 -1rem;
+            padding: 1rem;
+            border-bottom: 1px solid $color-grey-200;
+        }
+
+    }
+
+    .subheader {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: $color-grey-600;
+    }
+
+    .menu {
+        width: 100%;
+        @include flex(normal, normal, column);
+        gap: 0.25rem;
+    }
+}
