@@ -19,7 +19,8 @@
     "eslint:fix": "eslint --fix",
     "typecheck": "tsc",
     "typecheck:staged": "tsc-files",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "prepare": "husky"
   },
   "dependencies": {
     "@capacitor-community/apple-sign-in": "^7.0.0",
