@@ -1,16 +1,13 @@
-import { Navigate, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
-import Base from 'src/modules/Base';
+import { useSelector } from 'react-redux';
+import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
 import Layout from 'src/modules/Layout';
 import { FallBack } from 'src/pages/fallback';
+import { RootState } from 'src/store';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
   {
-    element: <Base isAuthRoute={false} />,
-    loader: async () => {
-      const authenticated = await isAuthenticated();
-      return authenticated;
-    },
+    element: <GlobalStatusGuard />,
     children: [
       {
         element: <Layout />,
@@ -19,9 +16,14 @@ export const blueprint: RouteObject[] = [
             path: 'profile',
             async lazy() {
               const { Profile } = await import('src/pages/profile');
-              return {
-                Component: Profile,
-              };
+              return { Component: Profile };
+            },
+          },
+          {
+            path: 'verify',
+            async lazy() {
+              const { Verify } = await import('src/pages/verify');
+              return { Component: Verify };
             },
           },
         ],
@@ -29,22 +31,25 @@ export const blueprint: RouteObject[] = [
     ],
     errorElement: <ErrorBoundary />,
   },
-  {
-    element: <Base isAuthRoute={true} />,
-    loader: async () => {
-      const authenticated = await isAuthenticated();
-      return authenticated;
-    },
-    children: [],
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: '*',
-    element: <div>Page not found :(</div>,
-  },
+  { path: '*', element: <div>Page not found :(</div> },
 ];
 
+function GlobalStatusGuard() {
+  const status = useSelector((state: RootState) => state.identity.status);
+
+  if (status === 'loading') return <div></div>;
+  if (status === 'failed') return <Navigate to="/intro" />;
+
+  return <Outlet />;
+}
+
 function DefaultRoute() {
+  const status = useSelector((state: RootState) => state.identity.status);
+
+  if (status === 'succeeded') return <Navigate to="/profile" />;
+  if (status === 'loading') return <div></div>;
+  if (status === 'failed') return <Navigate to="/intro" />;
+
   return <Navigate to="/profile" />;
 }
 
@@ -53,9 +58,5 @@ function ErrorBoundary() {
   if (error?.response?.status === 401) return <Navigate to="/sign-in" />;
   return <FallBack />;
 }
-
-const isAuthenticated = async () => {
-  return true;
-};
 
 export const routes = createBrowserRouter(blueprint);
