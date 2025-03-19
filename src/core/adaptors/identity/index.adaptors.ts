@@ -23,6 +23,8 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
       type: identity?.type || 'users',
       username: identity?.username || '',
       current: currentIdentityId ? identity.id === currentIdentityId : index === 0,
+      verified: identity.isVerified,
+      verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
     }));
     return { data, error: null };
   } catch {

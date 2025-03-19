@@ -1,0 +1,29 @@
+{
+  "verification-kyb": {
+    "desc-title": "조직을 인증하세요",
+    "desc-subtitle": "자격 증명을 발급하려면 조직을 인증해야 합니다.",
+    "desc-step1-title": "조직 정보를 제출하세요",
+    "desc-step1-subtitle": "회사 증명서 또는 이에 해당하는 문서를 조직명과 함께 제출하세요.",
+    "desc-step2-title": "처리 대기 중",
+    "desc-step2-subtitle": "당사의 검토팀이 귀하의 인증 요청을 처리하는 데 1~3일이 소요됩니다.",
+    "desc-step3-title": "인증 완료",
+    "desc-step3-subtitle": "인증이 완료되면 이메일 및 알림을 통해 알려드리며, 이후 자격 증명을 발급할 수 있습니다.",
+    "upload-title": "조직 정보를 제출하세요",
+    "upload-subtitle": "회사 등록 문서(예: 증명서 또는 이에 상응하는 문서)를 업로드해 주세요.",
+    "success-title": "문서가 제출되었습니다",
+    "success-subtitle": "당사의 검토팀이 인증 요청을 처리하는 데 1~3일이 소요됩니다. 인증이 완료되면 이메일 및 알림을 통해 알려드리며, 이후 자격 증명을 발급할 수 있습니다.",
+    "continue-button": "계속하기",
+    "cancel-button": "취소"
+  },
+  "verification-kyc": {
+    "title": "신원을 인증하세요",
+    "subtitle": "Socious의 모든 기능을 이용하려면 신원 인증이 필요합니다.",
+    "hint-title": "Socious는 블록체인 기술을 사용하여 자격 증명의 투명성과 추적성을 보장합니다.",
+    "hint-subtitle": "우리는 Atala Prism과 제휴하여 귀하의 탈중앙화 ID가 검증 가능한 자격 증명을 받을 수 있도록 지원합니다.",
+    "how-verify": "신원 인증 방법",
+    "how-verify-step1": "1. 앱 온보딩 과정을 완료하면 Atala Prism에서 탈중앙화 ID가 생성됩니다.",
+    "how-verify-step2": "2. KYC 파트너인 Veriff를 통해 신원을 인증하세요.",
+    "download-wallet": "Socious Wallet 앱 다운로드",
+    "open-wallet": "Socious Wallet 앱 열기"
+  }
+}

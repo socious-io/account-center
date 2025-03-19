@@ -17,6 +17,10 @@ export async function getOrgs(): Promise<OrganizationRes> {
   return (await get<OrganizationRes>('organizations')).data;
 }
 
+export async function getMineOrgs(): Promise<Organization[]> {
+  return (await get<Organization[]>('organizations/membered')).data;
+}
+
 export async function deleteOrg(id: string): Promise<Organization> {
   return (await del<Organization>(`organizations/${id}`)).data;
 }

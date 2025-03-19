@@ -1,0 +1,15 @@
+{
+  "layout-verification": {
+    "success-text": "귀하의 {{title}}이(가) 성공적으로 인증되었습니다",
+    "success-support-text": "이제 프로젝트에 투표하고 기부할 수 있습니다.",
+    "success-primary-btn": "닫기",
+    "pending-text": "인증 대기 중",
+    "pending-support-text": "제출하신 문서를 검토 중입니다. 완료되면 알려드리겠습니다.",
+    "not-verified-text": "{{title}}을(를) 인증하세요",
+    "not-verified-support-text": "우리 플랫폼에서 투표하고 기부하려면 {{title}}을(를) 인증해야 합니다.",
+    "not-verified-primary-btn": "지금 인증하기",
+    "not-verified-secondary-btn": "자세히 알아보기",
+    "title-organization": "기관",
+    "title-identity": "신원"
+  }
+}
