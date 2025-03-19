@@ -5,7 +5,7 @@ import { VerificationStatus } from '../verification/verification.types';
 export interface OrganizationReq {
   logo_id?: string;
   name: string;
-  username: string;
+  shortname: string;
   email: string;
 }
 

@@ -1,15 +1,15 @@
-import { getOrg, getOrgs, updateOrg, UserType } from 'src/core/api';
+import { getMineOrgs, getOrg, updateOrg, UserType } from 'src/core/api';
 
 import { AdaptorRes, OrgReq, Org, SuccessRes } from '..';
 
 export const getOrgsAdaptor = async (): Promise<AdaptorRes<Org[]>> => {
   try {
-    const { results = [] } = await getOrgs();
+    const results = await getMineOrgs();
     const data = results.map(result => ({
       id: result.id,
       logo: { url: result.logo?.url || '', id: result.logo_id },
       name: result.name,
-      username: result.username,
+      username: result?.shortname ? `@${result.shortname}` : '',
       email: result.email,
       isVerified: result.is_verified,
       verificationStatus: result.verification_status,
@@ -29,7 +29,7 @@ export const getOrgProfileAdaptor = async (orgId: string): Promise<AdaptorRes<Or
       id: orgId,
       logo: { url: org.logo?.url || '', id: org.logo_id || '' },
       name: org.name,
-      username: org.username,
+      username: org?.shortname || '',
       email: org.email,
       isVerified: org?.is_verified,
       verificationStatus: org.verification_status,
@@ -47,7 +47,7 @@ export const changeOrgProfileAdaptor = async (orgId: string, payload: OrgReq): P
     const newPayload = {
       logo_id: payload?.logoId || '',
       name: payload.name,
-      username: payload.username,
+      shortname: payload.username,
       email: payload.email,
     };
     await updateOrg(orgId, newPayload);
@@ -55,15 +55,5 @@ export const changeOrgProfileAdaptor = async (orgId: string, payload: OrgReq): P
   } catch (error) {
     console.error('Error in changing Organization Profile', error);
     return { data: null, error: 'Error in changing Organization Profile' };
-  }
-};
-
-export const getOrgIdAdaptor = async (): Promise<AdaptorRes<string>> => {
-  try {
-    const { results = [] } = await getOrgs();
-    return { data: results && results.length ? results[0]?.id || '' : '', error: null };
-  } catch (error) {
-    console.error('Error in getting Organization ID', error);
-    return { data: null, error: 'Error in getting Organization ID' };
   }
 };

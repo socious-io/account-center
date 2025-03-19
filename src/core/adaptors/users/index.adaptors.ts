@@ -11,7 +11,7 @@ export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
       avatar: { url: user.avatar?.url || '', id: user.avatar_id },
       firstName: user.first_name,
       lastName: user.last_name,
-      username: user.username,
+      username: user.username ? `@${user.username}` : '',
       email: user.email,
       type: 'users' as UserType,
     };
