@@ -45,7 +45,7 @@ export const AvatarDropDown: React.FC<AvatarDropDownProps> = ({
                 <div className="flex gap-2 px-4 py-[10px]" onClick={onCreateAccount}>
                   <Icon name="plus" fontSize={20} color={variables.color_grey_700} className="!p-0" />
                   <Typography variant="subtitle2" className="text-Brand-700">
-                    {selectedAccount.type === 'users' ? 'Create an organization' : 'Create a talent profile'}
+                    {selectedAccount?.type === 'users' ? 'Create an organization' : 'Create a talent profile'}
                   </Typography>
                 </div>
               </>
