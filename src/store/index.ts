@@ -2,11 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { identitySlice } from './reducers/identity.reducer';
 import { languageSlice } from './reducers/language.reducer';
-import { spinnerSlice } from './reducers/spinner.reducer';
+import { loadingSlice } from './reducers/loading.reducer';
 
 const store = configureStore({
   reducer: {
-    spinner: spinnerSlice.reducer,
+    loading: loadingSlice.reducer,
     language: languageSlice.reducer,
     identity: identitySlice.reducer,
   },

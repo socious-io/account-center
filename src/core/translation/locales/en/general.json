@@ -9,5 +9,7 @@
   "file-uploader-or": "or",
   "file-uploader-max": "max",
   "file-uploader-max-error": "{{name}} exceeds the maximum size of {{max}}MB",
-  "file-uploader-limit-error": "You can upload a maximum of {{limit}} files. Please select fewer files."
+  "file-uploader-limit-error": "You can upload a maximum of {{limit}} files. Please select fewer files.",
+  "copy-link": "Copy",
+  "multi-select-popular": "Popular"
 }
