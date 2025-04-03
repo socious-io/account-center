@@ -1,10 +1,11 @@
+import { translate } from 'src/core/helpers/utils';
 import FeaturedIcon from 'src/modules/General/components/FeaturedIcon';
 import Icon from 'src/modules/General/components/Icon';
 import Input from 'src/modules/General/components/Input';
 import Modal from 'src/modules/General/components/Modal';
 import variables from 'src/styles/constants/_exports.module.scss';
 
-import css from './index.module.scss';
+import styles from './index.module.scss';
 import { CopyLinkModalProps } from './index.types';
 import { useCopyLinkModal } from './useCopyLinkModal';
 
@@ -33,19 +34,19 @@ const CopyLinkModal: React.FC<CopyLinkModalProps> = ({
       mobileCentered
       headerDivider={false}
       inlineTitle={false}
-      contentClassName={css['content']}
+      contentClassName={styles['content']}
     >
       <Input
         id="copy-url"
         value={link}
         postfix={
-          <div className={copied ? css['copy--success'] : css['copy']} onClick={onCopyClick}>
+          <div className={copied ? styles['copy--success'] : styles['copy']} onClick={onCopyClick}>
             <Icon
               name={copied ? 'tick' : 'copy-01'}
               fontSize={20}
               color={copied ? variables.color_success_700 : variables.color_grey_700}
             />
-            {copyText}
+            {copyText || translate('copy-link')}
           </div>
         }
       />

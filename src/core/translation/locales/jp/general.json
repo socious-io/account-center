@@ -9,5 +9,7 @@
   "file-uploader-or": "または",
   "file-uploader-max": "最大",
   "file-uploader-max-error": "{{name}} は最大サイズ {{max}}MB を超えています",
-  "file-uploader-limit-error": "最大 {{limit}} 個のファイルをアップロードできます。ファイル数を減らしてください。"
+  "file-uploader-limit-error": "最大 {{limit}} 個のファイルをアップロードできます。ファイル数を減らしてください。",
+  "copy-link": "コピー",
+  "multi-select-popular": "人気"
 }

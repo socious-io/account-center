@@ -2,12 +2,12 @@ import { Pagination as MUIPagination, PaginationItem, PaginationProps } from '@m
 import { translate } from 'src/core/helpers/utils';
 import variables from 'src/styles/constants/_exports.module.scss';
 
-import css from './index.module.scss';
+import styles from './index.module.scss';
 import Icon from '../Icon';
 
 const Pagination: React.FC<PaginationProps> = props => {
   return (
-    <div className={css['container']}>
+    <div className={styles['container']}>
       <MUIPagination
         {...props}
         shape="rounded"
@@ -18,9 +18,9 @@ const Pagination: React.FC<PaginationProps> = props => {
                 {...item}
                 slots={{
                   previous: () => (
-                    <div className={css['button']}>
+                    <div className={styles['button']}>
                       <Icon name="arrow-left" fontSize={20} color={variables.color_grey_800} className="mr-2" />
-                      {translate('general-pagination.prev')}
+                      {translate('pagination-previous')}
                     </div>
                   ),
                 }}
@@ -31,7 +31,7 @@ const Pagination: React.FC<PaginationProps> = props => {
         }}
       />
 
-      <div className={css['numbers']}>
+      <div className={styles['numbers']}>
         <MUIPagination
           shape="rounded"
           renderItem={item => (
@@ -57,8 +57,8 @@ const Pagination: React.FC<PaginationProps> = props => {
                 {...item}
                 slots={{
                   next: () => (
-                    <div className={css['button']}>
-                      {translate('general-pagination.next')}
+                    <div className={styles['button']}>
+                      {translate('pagination-next')}
                       <Icon name="arrow-right" fontSize={20} color={variables.color_grey_800} className="ml-2" />
                     </div>
                   ),
