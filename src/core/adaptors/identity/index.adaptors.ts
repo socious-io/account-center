@@ -15,19 +15,44 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
 
     const data = identities.map((identity, index) => ({
       id: identity.id,
+      firstName: identity.type === 'users' ? (identity as User).firstName : null,
+      lastName: identity.type === 'users' ? (identity as User).lastName : null,
       name:
         identity.type === 'users'
           ? `${(identity as User).firstName} ${(identity as User).lastName}`
           : (identity as Org).name,
       img: identity.type === 'users' ? (identity as User).avatar?.url : (identity as Org).logo?.url,
-      type: identity?.type || 'users',
-      username: identity?.username || '',
+      imgId: identity.type === 'users' ? (identity as User).avatar?.id : (identity as Org).logo?.id,
+      type: identity.type || 'users',
+      username: identity.username || '',
+      email: identity.email,
       current: currentIdentityId ? identity.id === currentIdentityId : index === 0,
-      verified: identity.isVerified,
+      verified: identity.verified,
       verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
     }));
     return { data, error: null };
   } catch {
     return { data: null, error: 'Error is Identity API call' };
   }
+};
+
+export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org) => {
+  const currentIdentity = {
+    id: identity.id,
+    firstName: identity.type === 'users' ? (identity as User).firstName : null,
+    lastName: identity.type === 'users' ? (identity as User).lastName : null,
+    name:
+      identity.type === 'users'
+        ? `${(identity as User).firstName} ${(identity as User).lastName}`
+        : (identity as Org).name,
+    img: identity.type === 'users' ? (identity as User).avatar?.url : (identity as Org).logo?.url,
+    imgId: identity.type === 'users' ? (identity as User).avatar?.id : (identity as Org).logo?.id,
+    type: identity.type || 'users',
+    username: identity.username || '',
+    email: identity.email,
+    verified: identity.verified,
+    verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
+  };
+
+  return currentIdentity;
 };

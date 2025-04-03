@@ -11,6 +11,6 @@ export interface UserReq {
 export interface User extends UserReq {
   id: string;
   avatar: { url?: string; id?: string };
-  isVerified?: boolean;
+  verified?: boolean;
   type?: UserType;
 }

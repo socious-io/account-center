@@ -1,6 +1,6 @@
 import { getMineOrgs, getOrg, updateOrg, UserType } from 'src/core/api';
 
-import { AdaptorRes, OrgReq, Org, SuccessRes } from '..';
+import { AdaptorRes, OrgReq, Org } from '..';
 
 export const getOrgsAdaptor = async (): Promise<AdaptorRes<Org[]>> => {
   try {
@@ -9,9 +9,9 @@ export const getOrgsAdaptor = async (): Promise<AdaptorRes<Org[]>> => {
       id: result.id,
       logo: { url: result.logo?.url || '', id: result.logo_id },
       name: result.name,
-      username: result?.shortname ? `@${result.shortname}` : '',
+      username: result.shortname,
       email: result.email,
-      isVerified: result.verified,
+      verified: result.verified,
       verificationStatus: result.status,
       type: 'organizations' as UserType,
     }));
@@ -29,9 +29,9 @@ export const getOrgProfileAdaptor = async (orgId: string): Promise<AdaptorRes<Or
       id: orgId,
       logo: { url: org.logo?.url || '', id: org.logo_id || '' },
       name: org.name,
-      username: org?.shortname || '',
+      username: org.shortname,
       email: org.email,
-      isVerified: org.verified,
+      verified: org.verified,
       verificationStatus: org.status,
       type: 'organizations' as UserType,
     };
@@ -42,7 +42,7 @@ export const getOrgProfileAdaptor = async (orgId: string): Promise<AdaptorRes<Or
   }
 };
 
-export const changeOrgProfileAdaptor = async (orgId: string, payload: OrgReq): Promise<AdaptorRes<SuccessRes>> => {
+export const changeOrgProfileAdaptor = async (orgId: string, payload: OrgReq): Promise<AdaptorRes<Org>> => {
   try {
     const newPayload = {
       logo_id: payload?.logoId || '',
@@ -50,8 +50,18 @@ export const changeOrgProfileAdaptor = async (orgId: string, payload: OrgReq): P
       shortname: payload.username,
       email: payload.email,
     };
-    await updateOrg(orgId, newPayload);
-    return { data: { message: 'succeed' }, error: null };
+    const org = await updateOrg(orgId, newPayload);
+    const res = {
+      id: orgId,
+      logo: { url: org.logo?.url || '', id: org.logo_id || '' },
+      name: org.name,
+      username: org.shortname,
+      email: org.email,
+      verified: org.verified,
+      verificationStatus: org.status,
+      type: 'organizations' as UserType,
+    };
+    return { data: res, error: null };
   } catch (error) {
     console.error('Error in changing Organization Profile', error);
     return { data: null, error: 'Error in changing Organization Profile' };

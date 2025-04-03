@@ -4,8 +4,12 @@ export interface CurrentIdentity {
   id: string;
   name: string;
   username: string;
-  img?: string;
   type: UserType;
+  firstName?: string | null;
+  lastName?: string | null;
+  img?: string;
+  imgId?: string;
+  email?: string;
   current?: boolean;
   verified?: boolean;
   verificationStatus?: VerificationStatus | null;

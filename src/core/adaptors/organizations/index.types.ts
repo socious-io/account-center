@@ -10,7 +10,7 @@ export interface OrgReq {
 export interface Org extends OrgReq {
   id: string;
   logo: { url?: string; id?: string };
-  isVerified?: boolean;
+  verified?: boolean;
   verificationStatus: VerificationStatus | null;
   type?: UserType;
 }
