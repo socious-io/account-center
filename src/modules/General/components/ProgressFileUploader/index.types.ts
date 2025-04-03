@@ -20,9 +20,3 @@ export interface ProgressFileUploaderProps {
   showSubtitle?: boolean;
   customStyle?: string;
 }
-
-export interface fileInfo {
-  name: string;
-  type: string;
-  size: string;
-}
