@@ -13,8 +13,8 @@ export interface Organization extends OrganizationReq {
   id: string;
   logo?: Media;
   logo_id?: string;
-  is_verified: boolean;
-  verification_status: VerificationStatus | null;
+  verified: boolean;
+  status: VerificationStatus | null;
   created_at: Date;
   updated_at: Date;
 }

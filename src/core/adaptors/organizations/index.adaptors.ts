@@ -11,8 +11,8 @@ export const getOrgsAdaptor = async (): Promise<AdaptorRes<Org[]>> => {
       name: result.name,
       username: result?.shortname ? `@${result.shortname}` : '',
       email: result.email,
-      isVerified: result.is_verified,
-      verificationStatus: result.verification_status,
+      isVerified: result.verified,
+      verificationStatus: result.status,
       type: 'organizations' as UserType,
     }));
     return { data, error: null };
@@ -31,8 +31,8 @@ export const getOrgProfileAdaptor = async (orgId: string): Promise<AdaptorRes<Or
       name: org.name,
       username: org?.shortname || '',
       email: org.email,
-      isVerified: org?.is_verified,
-      verificationStatus: org.verification_status,
+      isVerified: org.verified,
+      verificationStatus: org.status,
       type: 'organizations' as UserType,
     };
     return { data: res, error: null };
