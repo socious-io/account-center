@@ -10,6 +10,14 @@
         padding: 2rem 1rem;
     }
 
+    .back {
+        display: none;
+        @media (max-width: $md) {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
     .header {
         @include flex(space-between, normal, column);
         gap: 0.25rem;
