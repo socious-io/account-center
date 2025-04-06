@@ -1,0 +1,16 @@
+{
+  "profile-title": "Account profile",
+  "profile-subtitle": "Your account information is used in emails and for display within Socious ecosystem.",
+  "profile-fields": {
+    "first-name": "First name",
+    "last-name": "Last name",
+    "organization-name": "Organization name",
+    "username": "Username",
+    "email": "Email address",
+    "save-btn": "Save Changes",
+    "required-error": "This field is required",
+    "valid-email-error": "This field must be a valid Email",
+    "success-message": "Profile updated successfully!",
+    "error-message": "Profile update failed. Please try again."
+  }
+}
