@@ -1,0 +1,14 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(normal, normal, column);
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+    max-width: 35rem;
+
+    @media (max-width: $md) {
+        margin-top: 0;
+        max-width: 100%;
+    }
+}
