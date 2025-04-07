@@ -51,30 +51,3 @@
         }
     }
 }
-
-.snackbar {
-    align-items: center;
-
-    &--success {
-        background-color: $color-primary-100;
-    }
-
-    &--error {
-        background-color: $color-error-100;
-    }
-
-    &__content {
-        @include flex(normal, center, row);
-        gap: 0.5rem;
-        padding: 0 0.5rem;
-        font-weight: 500;
-
-        &--success {
-            color: $color-primary-700;
-        }
-
-        &--error {
-            color: $color-error-700;
-        }
-    }
-}
