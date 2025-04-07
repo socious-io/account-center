@@ -4,22 +4,23 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { changePasswordAdaptor, PasswordReq } from 'src/core/adaptors';
 import { passwordPattern } from 'src/core/helpers/regexs';
+import { translate } from 'src/core/helpers/utils';
 import * as yup from 'yup';
 
 const schema = yup
   .object()
   .shape({
-    currentPass: yup.string().required('Current password is required'),
+    currentPass: yup.string().required(translate('password-fields.current-error')),
     newPass: yup
       .string()
-      .required('Password is required')
-      .notOneOf([yup.ref('currentPass'), null], 'Your password cannot be the same as the current password')
-      .min(8, 'Minimum 8 characters')
-      .matches(passwordPattern, 'Password complexity is week'),
+      .required(translate('password-fields.create-error'))
+      .notOneOf([yup.ref('currentPass'), null], translate('password-fields.create-same-current-error'))
+      .min(8, translate('password-fields.create-min-character-error'))
+      .matches(passwordPattern, translate('password-fields.create-complexity-error')),
     confirmPass: yup
       .string()
-      .required('Confirm password is required')
-      .oneOf([yup.ref('newPass')], 'Passwords must match'),
+      .required(translate('password-fields.confirm-error'))
+      .oneOf([yup.ref('newPass')], translate('password-fields.confirm-match-error')),
   })
   .required();
 
@@ -43,9 +44,8 @@ export const useManagePassword = () => {
   const onSubmit = async (formData: PasswordReq) => {
     setLoading(true);
     const { error, data } = await changePasswordAdaptor(formData);
-    if (error)
-      setOpenSnackbar({ open: true, type: 'error', message: 'Failed to change your password. Please try again' });
-    if (data) setOpenSnackbar({ open: true, type: 'success', message: 'Your password was changed successfully!' });
+    if (error) setOpenSnackbar({ open: true, type: 'error', message: translate('password-fields.error-message') });
+    if (data) setOpenSnackbar({ open: true, type: 'success', message: translate('password-fields.success-message') });
     setLoading(false);
   };
 

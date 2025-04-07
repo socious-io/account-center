@@ -22,8 +22,8 @@ const ManagePassword = () => {
           id="currentPass"
           name="currentPass"
           type="password"
-          label="Your current password"
-          placeholder="Your current password"
+          label={translate('password-fields.current')}
+          placeholder={translate('password-fields.current-placeholder')}
           errors={errors['currentPass']?.message ? [errors['currentPass'].message.toString()] : undefined}
         />
         <Input
@@ -32,12 +32,12 @@ const ManagePassword = () => {
           name="newPass"
           autoComplete="new-password"
           type="password"
-          label="Create password"
-          placeholder="New password"
+          label={translate('password-fields.create')}
+          placeholder={translate('password-fields.create-placeholder')}
           hints={[
             {
               hide: false,
-              hint: 'Your password must be at least 8 characters with lowercase, uppercase, and a special character.',
+              hint: translate('password-fields.create-hint'),
             },
           ]}
           errors={errors['newPass']?.message ? [errors['newPass'].message.toString()] : undefined}
@@ -47,13 +47,13 @@ const ManagePassword = () => {
           id="confirmPass"
           name="confirmPass"
           type="password"
-          label="Confirm password"
-          placeholder="Confirm password"
+          label={translate('password-fields.confirm')}
+          placeholder={translate('password-fields.confirm')}
           errors={errors['confirmPass']?.message ? [errors['confirmPass'].message.toString()] : undefined}
         />
         <Button color="primary" type="submit" customStyle="self-end" disabled={loading}>
           {loading && <CircularProgress size="16px" sx={{ color: variables.color_white }} />}
-          Save password
+          {translate('password-fields.save-btn')}
         </Button>
       </form>
       <CustomSnackbar
