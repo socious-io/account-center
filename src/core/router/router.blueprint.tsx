@@ -20,6 +20,13 @@ export const blueprint: RouteObject[] = [
             },
           },
           {
+            path: 'password',
+            async lazy() {
+              const { Password } = await import('src/pages/password');
+              return { Component: Password };
+            },
+          },
+          {
             path: 'verify',
             async lazy() {
               const { Verify } = await import('src/pages/verify');

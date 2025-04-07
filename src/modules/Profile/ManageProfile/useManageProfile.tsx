@@ -53,8 +53,9 @@ export const useManageProfile = () => {
   const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [uploadError, setUploadError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [openSnackbar, setOpenSnackbar] = useState<{ type: 'error' | 'success' | ''; message: string }>({
-    type: '',
+  const [openSnackbar, setOpenSnackbar] = useState<{ open: boolean; type: 'error' | 'success'; message: string }>({
+    open: false,
+    type: 'success',
     message: '',
   });
   const schema = getSchema(type);
@@ -105,8 +106,7 @@ export const useManageProfile = () => {
             logoId: attachments[0]?.id || '',
           });
     if (error) {
-      setOpenSnackbar({ type: 'error', message: translate('profile-fields.error-message') });
-      return;
+      setOpenSnackbar({ open: true, type: 'error', message: translate('profile-fields.error-message') });
     }
     if (data) {
       const filteredIdentities = identities.map(identity => {
@@ -114,7 +114,7 @@ export const useManageProfile = () => {
         return identity.id === currentIdentity.id ? { ...mappedCurrentIdentity, current: true } : identity;
       });
       dispatch(setIdentityList(filteredIdentities));
-      setOpenSnackbar({ type: 'success', message: translate('profile-fields.success-message') });
+      setOpenSnackbar({ open: true, type: 'success', message: translate('profile-fields.success-message') });
     }
     setLoading(false);
   };

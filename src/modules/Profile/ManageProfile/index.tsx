@@ -90,17 +90,17 @@ const ManageProfile = () => {
         </Button>
       </form>
       <CustomSnackbar
-        open={!!openSnackbar.type}
-        onClose={() => setOpenSnackbar({ type: '', message: '' })}
+        open={openSnackbar.open}
+        onClose={() => setOpenSnackbar({ ...openSnackbar, open: false })}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        containerClassName={`${styles['snackbar']} ${openSnackbar.type === 'error' ? styles['snackbar--error'] : styles['snackbar--success']}`}
-        contentClassName={`${styles['snackbar__content']} ${openSnackbar.type === 'error' ? styles['snackbar__content--error'] : styles['snackbar__content--success']}`}
+        theme={openSnackbar.type}
         autoHideDuration={5000}
       >
         <>
           <Icon
             name={openSnackbar.type === 'error' ? 'alert-circle' : 'tick'}
-            color={openSnackbar.type === 'error' ? variables.color_error_700 : variables.color_primary_700}
+            fontSize={18}
+            color={variables[`color_${openSnackbar.type}_700`]}
           />
           {openSnackbar.message}
         </>
