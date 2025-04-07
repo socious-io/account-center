@@ -1,0 +1,16 @@
+{
+  "profile-title": "Perfil de cuenta",
+  "profile-subtitle": "La información de tu cuenta se utiliza en correos electrónicos y para mostrarla dentro del ecosistema de Socious.",
+  "profile-fields": {
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "organization-name": "Nombre de la organización",
+    "username": "Nombre de usuario",
+    "email": "Dirección de correo electrónico",
+    "save-btn": "Guardar cambios",
+    "required-error": "Este campo es obligatorio",
+    "valid-email-error": "Este campo debe ser un correo electrónico válido",
+    "success-message": "¡Perfil actualizado con éxito!",
+    "error-message": "No se pudo actualizar el perfil. Por favor, inténtalo de nuevo."
+  }
+}

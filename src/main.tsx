@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <title>Socious ID - Account Center</title>
     </Helmet>
     <ErrorBoundary fallback={<FallBack />} onError={logError}>
-      <App />ّ
+      <App />
     </ErrorBoundary>
   </>,
 );
