@@ -1,4 +1,4 @@
-import { UserType, VerificationStatus } from 'src/core/api';
+import { UserType, OrgVerificationStatus } from 'src/core/api';
 
 export interface CurrentIdentity {
   id: string;
@@ -12,5 +12,5 @@ export interface CurrentIdentity {
   email?: string;
   current?: boolean;
   verified?: boolean;
-  verificationStatus?: VerificationStatus | null;
+  verificationStatus?: OrgVerificationStatus | null;
 }

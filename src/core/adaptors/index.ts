@@ -14,6 +14,7 @@ export * from './password/index.adaptors';
 export * from './password/index.types';
 
 export * from './verification/index.adaptors';
+export * from './verification/index.types';
 
 export interface CustomError {
   response: { data: { error: string } };

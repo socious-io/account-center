@@ -10,9 +10,13 @@ export async function getKYB(id: string): Promise<KYBRes> {
 }
 
 export async function requestKYC(): Promise<KYCRes> {
-  return (await post<KYCRes>('/kyc', {})).data;
+  return (await post<KYCRes>('verifications', {})).data;
 }
 
 export async function getKYC(): Promise<KYCRes> {
-  return (await get<KYCRes>('kyc', {})).data;
+  return (await get<KYCRes>('verifications')).data;
+}
+
+export async function getConnection(id: string): Promise<KYCRes> {
+  return (await get<KYCRes>(`/verifications/${id}/connect`)).data;
 }

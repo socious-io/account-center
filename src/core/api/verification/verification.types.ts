@@ -1,6 +1,9 @@
 import { Media } from '../media/media.types';
+import { User } from '../users/users.types';
 
-export type VerificationStatus = 'NOT_ACTIVE' | 'PENDING' | 'ACTIVE';
+export type OrgVerificationStatus = 'NOT_ACTIVE' | 'PENDING' | 'ACTIVE';
+
+export type UserVerificationStatus = 'CREATED' | 'REQUESTED' | 'VERIFIED' | 'FAILED';
 
 export interface KYBReq {
   documents: string[];
@@ -10,7 +13,7 @@ export interface KYBRes {
   id: string;
   user_id: string;
   organization_id: string;
-  status: VerificationStatus;
+  status: OrgVerificationStatus;
   documents: Media[];
   created_at: Date;
   updated_at: Date;
@@ -18,12 +21,15 @@ export interface KYBRes {
 
 export interface KYCRes {
   id: string;
-  status: string;
-  identity_id: string;
-  connection_id: string;
+  name: string;
+  description: string;
+  user_id: string;
+  user: User;
   connection_url: string;
-  short_url: string;
-  present_id: string;
+  connection_id: string;
+  status: UserVerificationStatus;
   created_at: Date;
   updated_at: Date;
+  verified_at?: Date;
+  connection_at?: Date;
 }
