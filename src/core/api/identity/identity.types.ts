@@ -1,5 +1,5 @@
 import { MediaRes } from '../media/media.types';
-import { VerificationStatus } from '../verification/verification.types';
+import { OrgVerificationStatus } from '../verification/verification.types';
 
 export type UserType = 'users' | 'organizations';
 
@@ -16,7 +16,7 @@ export interface OrgMeta {
   country: string;
   city: string;
   wallet_address?: string;
-  status: VerificationStatus;
+  status: OrgVerificationStatus;
   verified: boolean;
   verified_impact: boolean;
   created_at: Date;
@@ -34,7 +34,6 @@ export interface UserMeta {
   avatar_id: string;
   country: string;
   city: string;
-  status: VerificationStatus;
   identity_verified_at: Date | null;
   created_at: Date;
   updated_at: Date;

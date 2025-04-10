@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { CurrentIdentity, uploadMediaWithProgressAdaptor, verifyOrganization } from 'src/core/adaptors';
+import { CurrentIdentity, uploadMediaWithProgressAdaptor, verifyOrganizationAdaptor } from 'src/core/adaptors';
 import { RootState } from 'src/store';
 
 import { FileState } from './index.types';
@@ -64,7 +64,7 @@ export const useUploadModal = (handleOpenSuccessModal: () => void) => {
     setError('');
     setLoading(true);
     const fileIds = fileStates.map(file => file.id).filter(Boolean);
-    const { error } = await verifyOrganization(organizationId, fileIds);
+    const { error } = await verifyOrganizationAdaptor(organizationId, fileIds);
     if (error) setError(error);
     else handleOpenSuccessModal();
     setLoading(false);
