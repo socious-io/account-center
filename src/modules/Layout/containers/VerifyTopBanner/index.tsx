@@ -6,7 +6,7 @@ import { useVerifyTopBanner } from './useVerifyTopBanner';
 const VerifyTopBanner = () => {
   const {
     data: { type, verified, hideVerifyBanner, pendingOrgVerification },
-    operations: { onDismiss, onVerifyIdentity, getConnectUrl },
+    operations: { onDismiss, navigateToVerify },
   } = useVerifyTopBanner();
   const title =
     type === 'users'
@@ -43,7 +43,7 @@ const VerifyTopBanner = () => {
           }}
           primaryButton={{
             children: translate('layout-verification.not-verified-primary-btn'),
-            onClick: () => (type === 'users' ? getConnectUrl() : onVerifyIdentity()),
+            onClick: navigateToVerify,
           }}
         />
       </>

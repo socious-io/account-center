@@ -9,13 +9,13 @@ import { useHamburgerMenu } from './useHamburgerMenu';
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuIsOpened = false, onCloseMenu }) => {
   const {
-    data: { translate, type, selectedItem },
+    data: { translate, currentIdentityType, selectedItem },
     operations: { handleNavigate, onLogout },
   } = useHamburgerMenu();
 
   const menuItems = [
     { id: 'profile', iconName: 'user-circle', title: 'Account profile', path: '/profile' },
-    ...(type === 'users'
+    ...(currentIdentityType === 'users'
       ? [
           { id: 'password', iconName: 'passcode', title: 'Password', path: '/password' },
           { id: 'verification', iconName: 'shield-tick', title: 'Verification', path: '/verification' },
