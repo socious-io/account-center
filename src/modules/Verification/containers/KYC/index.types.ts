@@ -1,5 +1,6 @@
+import { KYCStatus } from 'src/core/adaptors';
+
 export interface KYCProps {
-  open: boolean;
-  handleClose: () => void;
   connectUrl: string;
+  status: KYCStatus;
 }
