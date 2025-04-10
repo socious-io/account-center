@@ -2,58 +2,55 @@ import { QRCodeSVG } from 'qrcode.react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'src/core/helpers/utils';
+import AlertMessage from 'src/modules/General/components/AlertMessage';
+import { AlertMessageProps } from 'src/modules/General/components/AlertMessage/index.types';
 import Button from 'src/modules/General/components/Button';
-import FeaturedIcon from 'src/modules/General/components/FeaturedIcon';
-import Modal from 'src/modules/General/components/Modal';
 
+import styles from './index.module.scss';
 import { KYCProps } from './index.types';
 
-const KYC: React.FC<KYCProps> = ({ open, handleClose, connectUrl }) => {
-  const footerJsx = (
-    <div className="w-full block md:hidden p-6">
-      <Button
-        variant="contained"
-        color="primary"
-        fullWidth
-        onClick={() => {
-          const newTab = window.open(connectUrl, '_blank');
-          newTab?.focus();
-        }}
-      >
-        {translate('verification-kyc.open-wallet')}
-      </Button>
-    </div>
-  );
+const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
+  const alertMessageProps = {
+    succeed: {
+      theme: 'success' as AlertMessageProps['theme'],
+      iconName: 'check-circle',
+      title: translate('verification-kyc.banner-success-title'),
+      subtitle: translate('verification-kyc.banner-success-subtitle'),
+    },
+    failed: {
+      theme: 'error' as AlertMessageProps['theme'],
+      iconName: 'alert-circle',
+      title: translate('verification-kyc.banner-error-title'),
+      subtitle: translate('verification-kyc.banner-error-subtitle'),
+      children: (
+        <Link to="/verification" className="link !text-Error-700">
+          {translate('verification-kyc.banner-error-btn')}
+        </Link>
+      ),
+    },
+  };
   return (
-    <Modal
-      open={open}
-      handleClose={handleClose}
-      icon={<FeaturedIcon type="modern" iconName="shield-tick" size="lg" theme="gray" />}
-      title={translate('verification-kyc.title')}
-      subTitle={translate('verification-kyc.subtitle')}
-      footer={footerJsx}
-      mobileFullHeight
-      customStyle="!w-[512px]"
-      contentClassName="h-full flex flex-col gap-5 px-4 py-5 md:p-6"
-    >
-      <>
-        <div className="flex flex-col gap-1 p-4 rounded-xl border border-solid border-Gray-light-mode-300 bg-Gray-light-mode-25 text-sm font-normal leading-5 text-Gray-light-mode-600">
-          <span className="font-semibold">{translate('verification-kyc.hint-title')}</span>
-          {translate('verification-kyc.hint-subtitle')}
-        </div>
-        <span className="text-base font-semibold leading-6 text-Gray-light-mode-900">
-          {translate('verification-kyc.how-verify')}
-        </span>
-        <div className="flex flex-col text-sm font-normal leading-5 text-Gray-light-mode-600">
-          <span>{translate('verification-kyc.how-verify-step1')}</span>
-          <span>{translate('verification-kyc.how-verify-step2')}</span>
-        </div>
-        <div className="hidden md:flex items-center justify-center p-4 rounded-default bg-Gray-light-mode-50">
-          <QRCodeSVG value={connectUrl} size={200} />
-        </div>
-        <div className="flex flex-col md:items-center gap-4 text-sm leading-5 text-Gray-light-mode-600">
-          {translate('verification-kyc.download-wallet')}
-          <div className="flex items-center gap-4">
+    <div className={styles['container']}>
+      {status ? (
+        <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
+      ) : (
+        <>
+          <AlertMessage
+            theme="gray"
+            iconName="alert-circle"
+            title={translate('verification-kyc.why-verify-title')}
+            subtitle={translate('verification-kyc.why-verify-subtitle')}
+            containerClassName="!items-start"
+          >
+            <Link to="" className="link mt-3">
+              {translate('verification-kyc.learn-more')}
+            </Link>
+          </AlertMessage>
+          <div className={styles['verify']}>
+            {translate('verification-kyc.how-verify')}
+            <span className={styles['verify__subtitle']}>{translate('verification-kyc.download-wallet')}</span>
+          </div>
+          <div className={styles['verify__download']}>
             <Link to="https://wallet.socious.io/ios" target="_blank">
               <img src="/images/app-store.svg" alt="App Store" width="100%" height="100%" className="cursor-pointer" />
             </Link>
@@ -67,9 +64,27 @@ const KYC: React.FC<KYCProps> = ({ open, handleClose, connectUrl }) => {
               />
             </Link>
           </div>
-        </div>
-      </>
-    </Modal>
+          <ol className={styles['verify__steps']}>
+            <li>{translate('verification-kyc.how-verify-step1')}</li>
+            <li>{translate('verification-kyc.how-verify-step2')}</li>
+          </ol>
+          <div className={styles['verify__qrcode']}>
+            <QRCodeSVG value={connectUrl} size={200} />
+          </div>
+          <Button
+            variant="contained"
+            color="primary"
+            customStyle="self-end"
+            onClick={() => {
+              const newTab = window.open(connectUrl, '_blank');
+              newTab?.focus();
+            }}
+          >
+            {translate('verification-kyc.open-wallet')}
+          </Button>
+        </>
+      )}
+    </div>
   );
 };
 

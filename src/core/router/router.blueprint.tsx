@@ -4,6 +4,8 @@ import Layout from 'src/modules/Layout';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
+import { checkVerificationAdaptor } from '../adaptors';
+
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
   {
@@ -27,11 +29,29 @@ export const blueprint: RouteObject[] = [
             },
           },
           {
-            path: 'verify',
-            async lazy() {
-              const { Verify } = await import('src/pages/verify');
-              return { Component: Verify };
-            },
+            path: 'verification',
+            children: [
+              {
+                path: '',
+                loader: async () => {
+                  const { data } = await checkVerificationAdaptor();
+                  return { verifyId: data?.id || '' };
+                },
+                async lazy() {
+                  const { Verification } = await import('src/pages/verification/user');
+                  return {
+                    Component: Verification,
+                  };
+                },
+              },
+              {
+                path: 'connect/:id',
+                async lazy() {
+                  const { Connect } = await import('src/pages/verification/user/connect');
+                  return { Component: Connect };
+                },
+              },
+            ],
           },
         ],
       },
