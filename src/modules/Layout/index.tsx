@@ -5,7 +5,7 @@ import { RootState } from 'src/store';
 import { hideMenu } from 'src/store/reducers/menu.reducer';
 
 import HamburgerMenu from './containers/HamburgerMenu';
-import VerifyTopBanner from './containers/VerifyTopBanner';
+// import VerifyTopBanner from './containers/VerifyTopBanner';
 import styles from './index.module.scss';
 
 const Layout = () => {
@@ -22,7 +22,7 @@ const Layout = () => {
     <div className={styles['container']}>
       <HamburgerMenu animatable menuIsOpened={menuIsOpened} onCloseMenu={handleCloseMenu} />
       <div className={styles['content']}>
-        <VerifyTopBanner />
+        {/* <VerifyTopBanner /> */}
         <Outlet />
       </div>
     </div>
