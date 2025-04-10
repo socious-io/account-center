@@ -16,14 +16,20 @@
     "cancel-button": "キャンセル"
   },
   "verification-kyc": {
-    "title": "本人確認を行う",
-    "subtitle": "すべての Socious 機能にアクセスするために、本人確認を行ってください。",
-    "hint-title": "Socious はブロックチェーン技術を使用して、資格情報を透明かつ追跡可能にします。",
-    "hint-subtitle": "Atala Prism と提携しており、分散型 ID で検証可能な資格情報を受け取ることができます。",
+    "title": "本人確認",
+    "subtitle": "なりすましを防ぎ、インパクトの申請、経験の認証、インパクトプロジェクトへの投票などの機能を利用するために、アカウントを確認してください。",
+    "why-verify-title": "なぜ本人確認が必要ですか？",
+    "why-verify-subtitle": "このステップは、詐欺行為を防ぎ、プラットフォームの健全性とセキュリティを維持するために不可欠です。",
+    "learn-more": "本人確認について詳しく見る",
     "how-verify": "本人確認の方法",
-    "how-verify-step1": "1. アプリのオンボーディングプロセスを完了し、Atala Prism 上で分散型 ID を作成します。",
-    "how-verify-step2": "2. KYC パートナーである Veriff を使用して本人確認を行います。",
-    "download-wallet": "Socious Wallet アプリをダウンロード",
-    "open-wallet": "Socious Wallet アプリを開く"
+    "how-verify-step1": "アプリのオンボーディングプロセスを完了すると、Atala Prism 上に分散型IDが作成されます。",
+    "how-verify-step2": "KYCパートナーであるVeriffで本人確認を行います。",
+    "download-wallet": "Sociousウォレットアプリをダウンロード",
+    "open-wallet": "Sociousウォレットアプリを開く",
+    "banner-success-title": "認証に成功しました",
+    "banner-success-subtitle": "おめでとうございます！アカウントが認証されました。",
+    "banner-error-title": "認証エラー",
+    "banner-error-subtitle": "認証プロセス中にエラーが発生しました。",
+    "banner-error-btn": "もう一度お試しください"
   }
 }

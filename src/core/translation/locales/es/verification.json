@@ -16,14 +16,20 @@
     "cancel-button": "Cancelar"
   },
   "verification-kyc": {
-    "title": "Verifica tu identidad",
-    "subtitle": "Verifica tu identidad para acceder a todas las funciones de Socious.",
-    "hint-title": "Socious utiliza tecnología blockchain para hacer que las credenciales sean transparentes y rastreables.",
-    "hint-subtitle": "Nos hemos asociado con Atala Prism para que tu ID descentralizado pueda recibir credenciales verificables.",
+    "title": "Verificación de identidad",
+    "subtitle": "Verifica tu cuenta para prevenir suplantaciones y desbloquear funciones como reclamar tu impacto, verificar tu experiencia y votar por proyectos de impacto.",
+    "why-verify-title": "¿Por qué verificar tu identidad?",
+    "why-verify-subtitle": "Este paso es esencial para mantener la integridad y seguridad de nuestra plataforma, y prevenir actividades fraudulentas.",
+    "learn-more": "Más información sobre la verificación de identidad",
     "how-verify": "Cómo verificar tu identidad",
-    "how-verify-step1": "1. Completa el proceso de incorporación en la aplicación, lo que creará un ID descentralizado en Atala Prism.",
-    "how-verify-step2": "2. Verifica tu identidad con Veriff, nuestro socio de KYC.",
-    "download-wallet": "Descargar la aplicación Socious Wallet",
-    "open-wallet": "Abrir la aplicación Socious Wallet"
+    "how-verify-step1": "Completa el proceso de incorporación en la app, lo cual creará una ID descentralizada en Atala Prism.",
+    "how-verify-step2": "Verifica tu identidad con Veriff, nuestro socio de KYC.",
+    "download-wallet": "Descarga la app Socious Wallet",
+    "open-wallet": "Abre la app Socious Wallet",
+    "banner-success-title": "Verificación exitosa",
+    "banner-success-subtitle": "¡Felicidades! Tu cuenta ha sido verificada.",
+    "banner-error-title": "Error de verificación",
+    "banner-error-subtitle": "Ocurrió un error durante el proceso de verificación.",
+    "banner-error-btn": "Por favor, inténtalo de nuevo"
   }
 }
