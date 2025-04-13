@@ -1,4 +1,8 @@
-import { UserVerificationStatus } from 'src/core/api';
+import { OrgVerificationStatus, UserVerificationStatus } from 'src/core/api';
+
+export interface KYB {
+  status: OrgVerificationStatus;
+}
 
 export type KYCStatus = '' | 'succeed' | 'failed' | 'exceeded';
 
