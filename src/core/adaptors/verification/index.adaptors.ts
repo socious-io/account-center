@@ -1,14 +1,11 @@
 import { getConnection, getKYC, requestKYB, requestKYC } from 'src/core/api';
 
-import { AdaptorRes, KYC, KYCStatus, SuccessRes } from '..';
+import { AdaptorRes, KYB, KYC, KYCStatus } from '..';
 
-export const verifyOrganizationAdaptor = async (
-  orgId: string,
-  documents: string[],
-): Promise<AdaptorRes<SuccessRes>> => {
+export const verifyOrganizationAdaptor = async (orgId: string, documents: string[]): Promise<AdaptorRes<KYB>> => {
   try {
-    await requestKYB(orgId, { documents });
-    return { data: { message: 'succeed' }, error: null };
+    const data = await requestKYB(orgId, { documents });
+    return { data: { status: data.status }, error: null };
   } catch {
     return { data: null, error: 'Error in verifying organization API call' };
   }
