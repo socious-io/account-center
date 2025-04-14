@@ -18,6 +18,7 @@ const Avatar: React.FC<AvatarProps> = props => {
     iconName,
     iconSize,
     iconCustomStyle,
+    tier,
     ...rest
   } = props;
 
@@ -57,6 +58,7 @@ const Avatar: React.FC<AvatarProps> = props => {
           <img className={styles['badge__img']} src={badge.image} alt="badge" />
         </div>
       )}
+      {tier && <div className={styles['tier']}>Tier {tier}</div>}
       {isVerified && (
         <div className={styles['badge--verified']}>
           <Icon name="check-verified-02-filled" color="#0788F5" fontSize={20} />
