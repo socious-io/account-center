@@ -5,7 +5,7 @@ import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
 import { checkVerificationAdaptor } from '../adaptors';
-import { getImpactAdaptor } from '../adaptors/impact/index.adaptors';
+import { getImpactAdaptor } from '../adaptors';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
