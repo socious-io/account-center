@@ -1,4 +1,5 @@
 import { CSSProperties, useEffect, useState } from 'react';
+import { translate } from 'src/core/helpers/utils';
 import variables from 'src/styles/constants/_exports.module.scss';
 
 import styles from './index.module.scss';
@@ -58,7 +59,11 @@ const Avatar: React.FC<AvatarProps> = props => {
           <img className={styles['badge__img']} src={badge.image} alt="badge" />
         </div>
       )}
-      {tier && <div className={styles['tier']}>Tier {tier}</div>}
+      {tier && (
+        <div className={styles['tier']}>
+          {translate('avatar-tier')} {tier}
+        </div>
+      )}
       {isVerified && (
         <div className={styles['badge--verified']}>
           <Icon name="check-verified-02-filled" color="#0788F5" fontSize={20} />

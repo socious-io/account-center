@@ -61,14 +61,18 @@
         width: 20px;
         height: 20px;
     }
+
     .tier {
         display: inline-flex;
+        padding: 0.25rem 0.75rem;
         position: absolute;
-        bottom: 0;
-        font-size: 14px;
-        border: 1px solid black;
-        background: white;
-        padding: 4px 12px;
+        bottom: -0.5rem;
+        border: 1px solid $color-primary-200;
+        background: $color-primary-50;
         border-radius: $radius-full;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $color-primary-700;
     }
 }
