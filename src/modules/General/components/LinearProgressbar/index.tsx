@@ -3,11 +3,18 @@ import React from 'react';
 import styles from './index.module.scss';
 import { ProgressBarProps } from './index.types';
 
-const ProgressBar = ({ value }: ProgressBarProps) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({
+  value,
+  description = '',
+  containerClassName = '',
+  customStyle = '',
+}) => {
   return (
-    <div className={styles['progress-container']}>
-      <div className={styles['progress-fill']} style={{ width: `${value}%` }} />
-      adfs
+    <div className={`${styles['container']} ${containerClassName}`}>
+      <div className={styles['progress']}>
+        <div className={`${styles['bar']} ${customStyle}`} style={{ width: `${value}%` }} />
+      </div>
+      {description && <p className={styles['description']}>{description}</p>}
     </div>
   );
 };
