@@ -1,7 +1,6 @@
-import { AdaptorRes } from '..';
-import { ImpactData } from './index.types';
+import { AdaptorRes, Impact } from '..';
 
-export const getImpactAdaptor = async (): Promise<AdaptorRes<ImpactData>> => {
+export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
     const data = {
       accounts: [
@@ -30,6 +29,7 @@ export const getImpactAdaptor = async (): Promise<AdaptorRes<ImpactData>> => {
       stats: {
         hoursContributed: 324,
         hoursWorked: 300,
+        hoursVolunteered: 24,
         projectsSupported: 24,
         totalDonated: 10000.0,
       },

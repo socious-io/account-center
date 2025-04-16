@@ -1,8 +1,9 @@
-export interface ImpactData {
+export interface Impact {
   accounts: any[];
   stats: {
     hoursContributed: number;
     hoursWorked: number;
+    hoursVolunteered: number;
     projectsSupported: number;
     totalDonated: number;
   };
