@@ -1,0 +1,22 @@
+{
+  "impact-title": "Mi impacto",
+  "impact-subtitle": "Mide y sigue tu impacto",
+  "impact-tab1": "Contribuciones",
+  "impact-tab2": "Votos",
+  "impact-tab3": "Logros",
+  "impact-details": {
+    "points": "Puntos de impacto",
+    "next-tier": "{{count}} puntos hasta el siguiente nivel",
+    "see-my-perk": "Ver mis beneficios",
+    "hours": "Horas",
+    "contributed": "contribuidas",
+    "worked": "trabajadas",
+    "volunteered": "voluntario",
+    "projects": "Proyectos",
+    "supported": "apoyados",
+    "total": "Total",
+    "donated": "donados",
+    "see-more-btn": "Ver más",
+    "see-less-btn": "Ver menos"
+  }
+}
