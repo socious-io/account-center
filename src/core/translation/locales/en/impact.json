@@ -1,9 +1,6 @@
 {
   "impact-title": "My impact",
   "impact-subtitle": "Measure and track your impact",
-  "impact-tab1": "Contributions",
-  "impact-tab2": "Votes",
-  "impact-tab3": "Achievements",
   "impact-details": {
     "points": "Impact points",
     "next-tier": "{{count}} points until next tier",
@@ -18,5 +15,13 @@
     "donated": "donated",
     "see-more-btn": "See more",
     "see-less-btn": "See less"
-  }
+  },
+  "impact-contributions": {
+    "tab": "Contributions",
+    "date": "Date",
+    "type": "Type",
+    "points": "Points"
+  },
+  "impact-votes": "Votes",
+  "impact-achievements": "Achievements"
 }

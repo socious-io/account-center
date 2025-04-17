@@ -1,9 +1,6 @@
 {
   "impact-title": "나의 임팩트",
   "impact-subtitle": "당신의 임팩트를 측정하고 추적하세요",
-  "impact-tab1": "기여",
-  "impact-tab2": "투표",
-  "impact-tab3": "업적",
   "impact-details": {
     "points": "임팩트 포인트",
     "next-tier": "다음 등급까지 {{count}}포인트 남음",
@@ -18,5 +15,13 @@
     "donated": "기부함",
     "see-more-btn": "더 보기",
     "see-less-btn": "간단히 보기"
-  }
+  },
+  "impact-contributions": {
+    "tab": "기여",
+    "date": "날짜",
+    "type": "유형",
+    "points": "포인트"
+  },
+  "impact-votes": "투표",
+  "impact-achievements": "업적"
 }
