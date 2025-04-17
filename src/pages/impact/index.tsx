@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { translate } from 'src/core/helpers/utils';
 import BackLink from 'src/modules/General/components/BackLink';
 import HorizontalTabs from 'src/modules/General/components/HorizontalTabs';
+import ContributionsList from 'src/modules/Impact/containers/ContributionsList';
 import Details from 'src/modules/Impact/containers/Details';
 import { showMenu } from 'src/store/reducers/menu.reducer';
 
@@ -11,15 +12,15 @@ export const Impact = () => {
   const dispatch = useDispatch();
   const tabs = [
     {
-      label: translate('impact-tab1'),
+      label: translate('impact-contributions.tab'),
+      content: <ContributionsList />,
+    },
+    {
+      label: translate('impact-votes'),
       content: <></>,
     },
     {
-      label: translate('impact-tab2'),
-      content: <></>,
-    },
-    {
-      label: translate('impact-tab3'),
+      label: translate('impact-achievements'),
       content: <></>,
     },
   ];

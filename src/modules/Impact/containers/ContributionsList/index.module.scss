@@ -1,0 +1,59 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.table {
+    min-width: fit-content;
+    @include flex(normal, normal, column);
+
+    .header {
+        height: 2.75rem;
+
+        &__item {
+            padding: 0.75rem 0;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            color: $color-grey-600;
+            vertical-align: middle;
+
+            & + .header__item {
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+    &__row {
+        border-top: 1px solid $color-grey-200;
+        cursor: pointer;
+    }
+
+    &__col {
+        max-width: 8.75rem;
+        padding: 1rem 0;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 20px;
+        color: $color-grey-600;
+        vertical-align: middle;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        & + .table__col {
+            padding-left: 1.5rem;
+        }
+
+        &--bold {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            color: $color-grey-900;
+        }
+    }
+
+    &__pagination {
+        border-top: 1px solid $color-grey-200;
+        border-radius: 0;
+        padding: 1.25rem 0;
+    }
+}
