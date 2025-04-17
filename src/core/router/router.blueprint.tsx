@@ -99,4 +99,6 @@ function ErrorBoundary() {
   return <FallBack />;
 }
 
-export const routes = createBrowserRouter(blueprint);
+export const routes = createBrowserRouter(blueprint, {
+  basename: '/app',
+});
