@@ -22,6 +22,10 @@
     "type": "Tipo",
     "points": "Puntos"
   },
-  "impact-votes": "Votos",
+  "impact-votes": {
+    "tab": "Votos",
+    "donated": "Donado",
+    "voted": "Votado"
+  },
   "impact-achievements": "Logros"
 }
