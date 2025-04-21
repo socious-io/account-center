@@ -4,7 +4,7 @@ export type Account = {
   id: string;
   name: string;
   username: string;
-  img: string;
+  img?: string;
   type: UserType;
 };
 

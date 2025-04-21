@@ -36,23 +36,55 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
   }
 };
 
-export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org) => {
-  const currentIdentity = {
-    id: identity.id,
-    firstName: identity.type === 'users' ? (identity as User).firstName : null,
-    lastName: identity.type === 'users' ? (identity as User).lastName : null,
-    name:
-      identity.type === 'users'
-        ? `${(identity as User).firstName} ${(identity as User).lastName}`
-        : (identity as Org).name,
-    img: identity.type === 'users' ? (identity as User).avatar?.url : (identity as Org).logo?.url,
-    imgId: identity.type === 'users' ? (identity as User).avatar?.id : (identity as Org).logo?.id,
-    type: identity.type || 'users',
-    username: identity.username || '',
-    email: identity.email,
-    verified: identity.verified,
-    verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
-  };
+export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org | undefined) => {
+  if (!identity) {
+    return {
+      id: '',
+      firstName: '',
+      lastName: '',
+      name: '',
+      img: '',
+      imgId: '',
+      type: '',
+      username: '',
+      email: '',
+      verified: false,
+      verificationStatus: null,
+    };
+  }
+  // CurrentIdentity type
+  if ('img' in identity) {
+    return {
+      id: identity.id,
+      firstName: (identity as CurrentIdentity).firstName,
+      lastName: (identity as CurrentIdentity).lastName,
+      name: (identity as CurrentIdentity).name,
+      img: (identity as CurrentIdentity).img,
+      imgId: (identity as CurrentIdentity).imgId,
+      type: identity.type || 'users',
+      username: identity.username || '',
+      email: identity.email,
+      verified: identity.verified,
+      verificationStatus: identity.verificationStatus,
+    };
+  } else {
+    // User or Org type
+    const isUser = identity.type === 'users';
+    const user = identity as User;
+    const org = identity as Org;
 
-  return currentIdentity;
+    return {
+      id: identity.id,
+      firstName: isUser ? user.firstName : null,
+      lastName: isUser ? user.lastName : null,
+      name: isUser ? `${user.firstName} ${user.lastName}` : org.name,
+      img: isUser ? user.avatar?.url : org.logo?.url,
+      imgId: isUser ? user.avatar?.id : org.logo?.id,
+      type: identity.type || 'users',
+      username: identity.username || '',
+      email: identity.email,
+      verified: identity.verified,
+      verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
+    };
+  }
 };

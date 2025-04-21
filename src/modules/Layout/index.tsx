@@ -23,6 +23,7 @@ const Layout = () => {
       <HamburgerMenu animatable menuIsOpened={menuIsOpened} onCloseMenu={handleCloseMenu} />
       <div className={styles['content']}>
         {/* <VerifyTopBanner /> */}
+        <div className={styles['header']}>Socious ID</div>
         <Outlet />
       </div>
     </div>

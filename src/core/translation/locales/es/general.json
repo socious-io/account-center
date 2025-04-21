@@ -11,5 +11,6 @@
   "file-uploader-max-error": "{{name}} excede el tamaño máximo de {{max}}MB",
   "file-uploader-limit-error": "Puedes subir un máximo de {{limit}} archivos. Selecciona menos archivos.",
   "copy-link": "Copiar",
-  "multi-select-popular": "Popular"
+  "multi-select-popular": "Popular",
+  "avatar-tier": "Nivel"
 }

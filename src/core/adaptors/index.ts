@@ -16,6 +16,9 @@ export * from './password/index.types';
 export * from './verification/index.adaptors';
 export * from './verification/index.types';
 
+export * from './impact/index.adaptors';
+export * from './impact/index.types';
+
 export interface CustomError {
   response: { data: { error: string } };
 }

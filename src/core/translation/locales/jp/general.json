@@ -11,5 +11,6 @@
   "file-uploader-max-error": "{{name}} は最大サイズ {{max}}MB を超えています",
   "file-uploader-limit-error": "最大 {{limit}} 個のファイルをアップロードできます。ファイル数を減らしてください。",
   "copy-link": "コピー",
-  "multi-select-popular": "人気"
+  "multi-select-popular": "人気",
+  "avatar-tier": "ランク"
 }

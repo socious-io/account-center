@@ -9,6 +9,8 @@ const HorizontalTabs: React.FC<HorizontalTabsProps> = ({
   activeIndex = 0,
   onActiveIndex,
   containerCustomStyle = '',
+  tabsCustomStyle = '',
+  contentCustomStyle = '',
 }) => {
   const [active, setActive] = useState(activeIndex);
 
@@ -26,7 +28,7 @@ const HorizontalTabs: React.FC<HorizontalTabsProps> = ({
 
   return (
     <div className={`${styles['container']} ${containerCustomStyle}`}>
-      <div className={styles['tabs']}>
+      <div className={`${styles['tabs']} ${tabsCustomStyle}`}>
         {tabs.map((tab, index) => (
           <div
             key={`${tab.label}-${index.toString()}`}
@@ -37,7 +39,7 @@ const HorizontalTabs: React.FC<HorizontalTabsProps> = ({
           </div>
         ))}
       </div>
-      <div className="w-full h-full">{tabs[active]?.content}</div>
+      <div className={`w-full h-full ${contentCustomStyle}`}>{tabs[active]?.content}</div>
     </div>
   );
 };

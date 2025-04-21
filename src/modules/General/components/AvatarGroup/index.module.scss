@@ -1,0 +1,25 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(normal, center);
+    position: relative;
+
+    .account {
+        margin-left: -0.5rem;
+    }
+
+    .more {
+        @include flex(center, center);
+        padding: 0.25rem;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $color-grey-700;
+        background-color: $color-grey-200;
+        border: 0.75px solid $color-grey-300;
+        border-radius: 999px;
+        position: absolute;
+        left: calc(100% - 0.5rem);
+    }
+}
