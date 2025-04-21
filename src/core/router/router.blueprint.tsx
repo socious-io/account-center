@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
+import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
@@ -100,5 +101,5 @@ function ErrorBoundary() {
 }
 
 export const routes = createBrowserRouter(blueprint, {
-  basename: '/app',
+  basename: config.basePath,
 });
