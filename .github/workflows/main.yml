@@ -39,6 +39,15 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Create .env file
+        run: |
+          echo "VITE_ENV=${{ vars.ENV }}" >> .env
+          echo "VITE_BASE_URL=${{ vars.BASE_URL }}" >> .env
+          echo "VITE_ACCESS_EXPIRE=${{ vars.ACCESS_EXPIRE }}" >> .env
+          echo "VITE_REFRESH_EXPIRE=${{ vars.REFRESH_EXPIRE }}" >> .env
+          echo "VITE_APP_URL=${{ vars.APP_URL }}" >> .env
+          echo "VITE_BASE_PATH=${{ vars.BASE_PATH }}" >> .env
+
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v6.7.0
@@ -47,14 +56,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-              VITE_ENV=${{ vars.ENV }}
-              VITE_BASE_URL=${{ vars.BASE_URL }}
-              VITE_ACCESS_EXPIRE=${{ vars.ACCESS_EXPIRE }}
-              VITE_REFRESH_EXPIRE=${{ vars.REFRESH_EXPIRE }}
-              VITE_APP_URL=${{ vars.APP_URL }}
-              VITE_BASE_PATH=${{ vars.BASE_PATH }}
-
 
   deploy-dev:
     name: Deploy on Development
