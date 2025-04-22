@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import router from 'src/core/router';
 
+import { config } from './config';
 import { setupInterceptors } from './core/api';
 import RequestLoading from './modules/General/components/RequestLoading';
 import store from './store';
@@ -17,6 +18,8 @@ function App() {
     setupInterceptors(store);
     store.dispatch(currentIdentities());
   }, []);
+
+  console.log(config.basePath);
 
   return (
     <StyledEngineProvider injectFirst>
