@@ -1,6 +1,6 @@
 import { CURRENCIES } from 'src/constants/CURRENCIES';
 
-import { AdaptorRes, ContributionsRes, ContributionType, Impact, VotesRes, VoteType } from '..';
+import { AchievementsRes, AdaptorRes, ContributionsRes, ContributionType, Impact, VotesRes, VoteType } from '..';
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
@@ -127,5 +127,49 @@ export const getVotesAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<
   } catch (error) {
     console.error('Error in getting Votes List', error);
     return { data: null, error: 'Error in getting Votes List' };
+  }
+};
+
+export const getAchievementsAdaptor = async (): Promise<AdaptorRes<AchievementsRes>> => {
+  try {
+    //FIXME: later with BE API
+    const data = [
+      {
+        name: 'NO_POVERTY',
+        level: 3,
+      },
+      {
+        name: 'ZERO_HUNGER',
+        level: 3,
+      },
+      {
+        name: 'HEALTH',
+        level: 3,
+      },
+      {
+        name: 'EDUCATION_QUALITY',
+        level: 3,
+      },
+      {
+        name: 'GENDER_EQUALITY',
+        level: 3,
+      },
+      {
+        name: 'CLEAN_WATER_SANITATION',
+        level: 1,
+      },
+      {
+        name: 'ENERGY',
+        level: 1,
+      },
+    ];
+
+    return {
+      data,
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Achievements List', error);
+    return { data: null, error: 'Error in getting Achievements List' };
   }
 };

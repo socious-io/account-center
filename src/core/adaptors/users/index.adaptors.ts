@@ -15,6 +15,7 @@ export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
       email: user.email,
       type: 'users' as UserType,
       verified: !!user.identity_verified_at,
+      impactPoints: user.impact_points,
     };
     return { data: res, error: null };
   } catch (error) {
@@ -42,6 +43,7 @@ export const changeUserProfileAdaptor = async (payload: UserReq): Promise<Adapto
       email: user.email,
       type: 'users' as UserType,
       verified: !!user.identity_verified_at,
+      impactPoints: user.impact_points,
     };
     return { data: res, error: null };
   } catch (error) {

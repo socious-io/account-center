@@ -12,6 +12,7 @@ export interface User extends UserReq {
   id: string;
   avatar?: Media;
   identity_verified_at: Date | null;
+  impact_points: number;
   created_at: Date;
   updated_at: Date;
 }
