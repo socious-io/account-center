@@ -27,5 +27,11 @@
     "donated": "Donated",
     "voted": "Voted"
   },
-  "impact-achievements": "Achievements"
+  "impact-achievements": {
+    "tab": "Achievements",
+    "unlocked-title": "Unlocked",
+    "unlocked-subtitle": "Your unlocked badge",
+    "progress-title": "In progress",
+    "progress-subtitle": "Continue to make an impact to unlock new badges!"
+  }
 }

@@ -27,5 +27,11 @@
     "donated": "Donado",
     "voted": "Votado"
   },
-  "impact-achievements": "Logros"
+  "impact-achievements": {
+    "tab": "Logros",
+    "unlocked-title": "Desbloqueado",
+    "unlocked-subtitle": "Tu insignia desbloqueada",
+    "progress-title": "En progreso",
+    "progress-subtitle": "¡Sigue generando impacto para desbloquear nuevas insignias!"
+  }
 }

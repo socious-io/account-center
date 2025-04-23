@@ -27,5 +27,11 @@
     "donated": "寄付済み",
     "voted": "投票済み"
   },
-  "impact-achievements": "実績"
+  "impact-achievements": {
+    "tab": "実績",
+    "unlocked-title": "アンロック済み",
+    "unlocked-subtitle": "アンロックされたバッジ",
+    "progress-title": "進行中",
+    "progress-subtitle": "新しいバッジをアンロックするには、さらにインパクトを与えましょう！"
+  }
 }
