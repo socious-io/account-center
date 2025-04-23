@@ -1,0 +1,15 @@
+@import 'src/styles/constants/_primitives.scss';
+@import 'src/styles/utilities/_mixins.scss';
+
+.container {
+    width: 100%;
+    @include flex(normal, center);
+    gap: 0.25rem;
+
+    .level {
+        flex: 1;
+        background-color: $color-grey-200;
+        border-radius: 9999px;
+        height: 0.5rem;
+    }
+}
