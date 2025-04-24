@@ -1,9 +1,6 @@
 {
   "impact-title": "私のインパクト",
   "impact-subtitle": "あなたのインパクトを測定・追跡しましょう",
-  "impact-tab1": "貢献",
-  "impact-tab2": "投票",
-  "impact-tab3": "実績",
   "impact-details": {
     "points": "インパクトポイント",
     "next-tier": "次のランクまであと{{count}}ポイント",
@@ -18,5 +15,13 @@
     "donated": "寄付済み",
     "see-more-btn": "もっと見る",
     "see-less-btn": "閉じる"
-  }
+  },
+  "impact-contributions": {
+    "tab": "貢献",
+    "date": "日付",
+    "type": "種類",
+    "points": "ポイント"
+  },
+  "impact-votes": "投票",
+  "impact-achievements": "実績"
 }

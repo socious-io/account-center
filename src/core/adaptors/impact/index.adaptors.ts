@@ -1,7 +1,8 @@
-import { AdaptorRes, Impact } from '..';
+import { AdaptorRes, ContributionsRes, ContributionType, Impact } from '..';
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
+    //FIXME: later with BE API
     const data = {
       accounts: [
         {
@@ -43,5 +44,50 @@ export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   } catch (error) {
     console.error('Error in getting impact data', error);
     return { data: null, error: 'Error in getting impact data' };
+  }
+};
+
+export const getContributionsAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<ContributionsRes>> => {
+  try {
+    //FIXME: later with BE API
+    const results = [
+      {
+        id: '1',
+        identity: {
+          id: '1',
+          name: 'Ocean Protection',
+          username: 'Product Designer',
+          type: 'organizations',
+        },
+        date: new Date(),
+        type: 'Job' as ContributionType,
+        points: 35,
+      },
+      {
+        id: '2',
+        identity: {
+          id: '1',
+          name: 'Ocean Protection2',
+          username: 'Product Designer2',
+          type: 'users',
+        },
+        date: new Date(),
+        type: 'Service' as ContributionType,
+        points: 35,
+      },
+    ];
+
+    return {
+      data: {
+        results,
+        total: 2,
+        limit,
+        page,
+      },
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Contributions List', error);
+    return { data: null, error: 'Error in getting Contributions List' };
   }
 };

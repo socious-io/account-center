@@ -1,3 +1,7 @@
+import { PaginateRes } from '..';
+
+export type ContributionType = 'Job' | 'Service';
+
 export interface Impact {
   accounts: any[];
   stats: {
@@ -12,3 +16,14 @@ export interface Impact {
     tier: number;
   };
 }
+
+export interface Contribution {
+  id: string;
+  //FIXME: fix any later
+  identity: any;
+  date: Date;
+  type: ContributionType;
+  points: number;
+}
+
+export type ContributionsRes = PaginateRes<Contribution>;

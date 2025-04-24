@@ -36,3 +36,10 @@ export interface OptionType {
   label: string;
   value: string;
 }
+
+export interface PaginateRes<T> {
+  page: number;
+  limit: number;
+  total: number;
+  results: T[];
+}
