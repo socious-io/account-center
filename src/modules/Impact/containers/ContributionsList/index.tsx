@@ -59,40 +59,42 @@ const ContributionsList = () => {
   });
 
   return (
-    <div className={styles['table']}>
-      <table className="w-full rounded-lg">
-        <thead className={styles['header']}>
-          {table.getHeaderGroups().map(headerGroup => {
-            return (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map(header => (
-                  <th id={header.id} key={header.id} className={styles['header__item']}>
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                  </th>
+    !!currentList.length && (
+      <div className={styles['table']}>
+        <table className="w-full rounded-lg">
+          <thead className={styles['header']}>
+            {table.getHeaderGroups().map(headerGroup => {
+              return (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map(header => (
+                    <th id={header.id} key={header.id} className={styles['header__item']}>
+                      {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+                    </th>
+                  ))}
+                </tr>
+              );
+            })}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map(row => (
+              <tr key={row.id} className={styles['table__row']}>
+                {row.getVisibleCells().map(cell => (
+                  <td className={styles['table__col']} key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
                 ))}
               </tr>
-            );
-          })}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map(row => (
-            <tr key={row.id} className={styles['table__row']}>
-              {row.getVisibleCells().map(cell => (
-                <td className={styles['table__col']} key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className={`${styles['table__pagination']} hidden md:block`}>
-        <Pagination page={page} count={totalPage} onChange={(_, p) => onChangePage(p)} />
+            ))}
+          </tbody>
+        </table>
+        <div className={`${styles['table__pagination']} hidden md:block`}>
+          <Pagination page={page} count={totalPage} onChange={(_, p) => onChangePage(p)} />
+        </div>
+        <div className={`${styles['table__pagination']} block md:hidden`}>
+          <PaginationMobile page={page} count={totalPage} handleChange={onChangePage} />
+        </div>
       </div>
-      <div className={`${styles['table__pagination']} block md:hidden`}>
-        <PaginationMobile page={page} count={totalPage} handleChange={onChangePage} />
-      </div>
-    </div>
+    )
   );
 };
 
