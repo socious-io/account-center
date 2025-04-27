@@ -22,6 +22,10 @@
     "type": "유형",
     "points": "포인트"
   },
-  "impact-votes": "투표",
+  "impact-votes": {
+    "tab": "투표",
+    "donated": "기부됨",
+    "voted": "투표됨"
+  },
   "impact-achievements": "업적"
 }

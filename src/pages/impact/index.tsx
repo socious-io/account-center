@@ -4,6 +4,7 @@ import BackLink from 'src/modules/General/components/BackLink';
 import HorizontalTabs from 'src/modules/General/components/HorizontalTabs';
 import ContributionsList from 'src/modules/Impact/containers/ContributionsList';
 import Details from 'src/modules/Impact/containers/Details';
+import VotesList from 'src/modules/Impact/containers/VotesList';
 import { showMenu } from 'src/store/reducers/menu.reducer';
 
 import styles from './index.module.scss';
@@ -16,8 +17,8 @@ export const Impact = () => {
       content: <ContributionsList />,
     },
     {
-      label: translate('impact-votes'),
-      content: <></>,
+      label: translate('impact-votes.tab'),
+      content: <VotesList />,
     },
     {
       label: translate('impact-achievements'),

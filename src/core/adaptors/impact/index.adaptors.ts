@@ -1,4 +1,6 @@
-import { AdaptorRes, ContributionsRes, ContributionType, Impact } from '..';
+import { CURRENCIES } from 'src/constants/CURRENCIES';
+
+import { AdaptorRes, ContributionsRes, ContributionType, Impact, VotesRes, VoteType } from '..';
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
@@ -89,5 +91,41 @@ export const getContributionsAdaptor = async (page = 1, limit = 10): Promise<Ada
   } catch (error) {
     console.error('Error in getting Contributions List', error);
     return { data: null, error: 'Error in getting Contributions List' };
+  }
+};
+
+export const getVotesAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<VotesRes>> => {
+  try {
+    //FIXME: later with BE API
+    const results = [
+      {
+        id: '1',
+        donated_identity: { name: 'Accessible Healthcare for Remote Communities' },
+        type: 'donate' as VoteType,
+        date: new Date(),
+        donated_price: 100,
+        currency: CURRENCIES.find(currency => currency.value === 'lovelace')?.label || 'ADA',
+        converted_value: 44.5,
+      },
+      {
+        id: '2',
+        donated_identity: { name: 'Empowering Women Through Education' },
+        type: 'vote' as VoteType,
+        date: new Date(),
+      },
+    ];
+
+    return {
+      data: {
+        results,
+        total: 2,
+        limit,
+        page,
+      },
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Votes List', error);
+    return { data: null, error: 'Error in getting Votes List' };
   }
 };

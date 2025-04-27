@@ -6,7 +6,7 @@ import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
 import { checkVerificationAdaptor } from '../adaptors';
-import { getContributionsAdaptor, getImpactAdaptor } from '../adaptors';
+import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
@@ -58,8 +58,12 @@ export const blueprint: RouteObject[] = [
           {
             path: 'impact',
             loader: async () => {
-              const [impact, contributions] = await Promise.all([getImpactAdaptor(), getContributionsAdaptor()]);
-              return { impact: impact.data, contributionsList: contributions.data };
+              const [impact, contributions, votes] = await Promise.all([
+                getImpactAdaptor(),
+                getContributionsAdaptor(1, 10),
+                getVotesAdaptor(1, 10),
+              ]);
+              return { impact: impact.data, contributionsList: contributions.data, votesList: votes.data };
             },
             async lazy() {
               const { Impact } = await import('src/pages/impact');

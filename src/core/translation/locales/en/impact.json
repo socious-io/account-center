@@ -22,6 +22,10 @@
     "type": "Type",
     "points": "Points"
   },
-  "impact-votes": "Votes",
+  "impact-votes": {
+    "tab": "Votes",
+    "donated": "Donated",
+    "voted": "Voted"
+  },
   "impact-achievements": "Achievements"
 }

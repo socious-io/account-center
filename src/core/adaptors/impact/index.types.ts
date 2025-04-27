@@ -2,6 +2,8 @@ import { PaginateRes } from '..';
 
 export type ContributionType = 'Job' | 'Service';
 
+export type VoteType = 'donate' | 'vote';
+
 export interface Impact {
   accounts: any[];
   stats: {
@@ -27,3 +29,16 @@ export interface Contribution {
 }
 
 export type ContributionsRes = PaginateRes<Contribution>;
+
+export interface Vote {
+  id: string;
+  //FIXME: fix any later
+  donated_identity: any;
+  date: Date;
+  type: VoteType;
+  donated_price?: number;
+  currency?: string;
+  converted_value?: number;
+}
+
+export type VotesRes = PaginateRes<Vote>;

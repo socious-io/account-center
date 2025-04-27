@@ -22,6 +22,10 @@
     "type": "種類",
     "points": "ポイント"
   },
-  "impact-votes": "投票",
+  "impact-votes": {
+    "tab": "投票",
+    "donated": "寄付済み",
+    "voted": "投票済み"
+  },
   "impact-achievements": "実績"
 }
