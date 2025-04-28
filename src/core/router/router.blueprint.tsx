@@ -84,28 +84,29 @@ export const blueprint: RouteObject[] = [
   { path: '*', element: <div>Page not found :(</div> },
 ];
 
+function DefaultRoute() {
+  return <Navigate to="/profile" />;
+}
+
 function GlobalStatusGuard() {
   const status = useSelector((state: RootState) => state.identity.status);
 
+  if (status === 'succeed') return <Navigate to="/profile" />;
   if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
+  if (status === 'failed') {
+    window.location.href = config.appBaseURL + '/auth/login';
+    return null;
+  }
 
   return <Outlet />;
 }
 
-function DefaultRoute() {
-  const status = useSelector((state: RootState) => state.identity.status);
-
-  if (status === 'succeeded') return <Navigate to="/profile" />;
-  if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
-
-  return <Navigate to="/profile" />;
-}
-
 function ErrorBoundary() {
   const error: any = useRouteError();
-  if (error?.response?.status === 401) return <Navigate to="/sign-in" />;
+  if (error?.response?.status === 401) {
+    window.location.href = config.appBaseURL + '/auth/login';
+    return null;
+  }
   return <FallBack />;
 }
 
