@@ -1,0 +1,23 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    width: 30rem;
+
+    @media (max-width: $md) {
+        width: 100%;
+    }
+
+    .content {
+        @include flex(center, center);
+        padding: 0 1rem 1rem;
+    }
+
+    .qrcode {
+        flex: 1;
+        @include flex(center, center);
+        padding: 1rem;
+        border-radius: 12px;
+        background-color: $color-grey-50;
+    }
+}
