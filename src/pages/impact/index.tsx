@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { translate } from 'src/core/helpers/utils';
 import BackLink from 'src/modules/General/components/BackLink';
 import HorizontalTabs from 'src/modules/General/components/HorizontalTabs';
+import AchievementsList from 'src/modules/Impact/containers/AchievementsList';
 import ContributionsList from 'src/modules/Impact/containers/ContributionsList';
 import Details from 'src/modules/Impact/containers/Details';
 import VotesList from 'src/modules/Impact/containers/VotesList';
@@ -21,8 +22,8 @@ export const Impact = () => {
       content: <VotesList />,
     },
     {
-      label: translate('impact-achievements'),
-      content: <></>,
+      label: translate('impact-achievements.tab'),
+      content: <AchievementsList />,
     },
   ];
 

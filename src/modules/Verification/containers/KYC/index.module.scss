@@ -40,16 +40,5 @@
             color: $color-grey-600;
             list-style: decimal;
         }
-
-        &__qrcode {
-            @include flex(center, center);
-            padding: 1rem;
-            border-radius: 16px;
-            background-color: $color-grey-50;
-
-            @media (max-width: $md) {
-                display: none;
-            }
-        }
     }
 }

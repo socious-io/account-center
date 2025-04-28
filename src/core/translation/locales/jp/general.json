@@ -12,5 +12,22 @@
   "file-uploader-limit-error": "最大 {{limit}} 個のファイルをアップロードできます。ファイル数を減らしてください。",
   "copy-link": "コピー",
   "multi-select-popular": "人気",
-  "avatar-tier": "ランク"
+  "avatar-tier": "ランク",
+  "NO_POVERTY": "貧困をなくそう",
+  "ZERO_HUNGER": "飢餓をゼロに",
+  "HEALTH": "すべての人に健康と福祉を",
+  "EDUCATION_QUALITY": "質の高い教育をみんなに",
+  "GENDER_EQUALITY": "ジェンダー平等を実現しよう",
+  "CLEAN_WATER_SANITATION": "安全な水とトイレを世界中に",
+  "ENERGY": "エネルギーをみんなに そしてクリーンに",
+  "ECONOMIC_GROWTH": "働きがいも経済成長も",
+  "INDUSTRY_INNOVATION_INFRASTRUCTURE": "産業と技術革新の基盤をつくろう",
+  "REDUCED_INEQUALITIES": "人や国の不平等をなくそう",
+  "SUSTAINABLE_CITIES_COMMUNITIES": "住み続けられるまちづくりを",
+  "RESPONSIBLE_CONSUMPTION_PRODUCTION": "つくる責任 つかう責任",
+  "CLIMATE_ACTION": "気候変動に具体的な対策を",
+  "LIFE_BELOW_WATER": "海の豊かさを守ろう",
+  "LIFE": "陸の豊かさも守ろう",
+  "PEACE_JUSTICE": "平和と公正をすべての人に",
+  "GOALS_PARTNERSHIPS": "パートナーシップで目標を達成しよう"
 }
