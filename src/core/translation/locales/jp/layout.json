@@ -11,5 +11,11 @@
     "not-verified-secondary-btn": "詳細を見る",
     "title-organization": "組織",
     "title-identity": "アイデンティティ"
+  },
+  "error-not-found": {
+    "header": "404 - ページが見つかりません",
+    "subheader": "お探しのページは存在しません",
+    "brand": "Socious ID",
+    "go-to-home-btn": "ホームに戻る"
   }
 }
