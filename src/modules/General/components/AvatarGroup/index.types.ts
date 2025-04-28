@@ -6,6 +6,7 @@ interface Account {
 
 export interface AvatarGroupProps {
   accounts: Account[];
+  tier?: number;
   visibleCount?: number;
   showMore?: boolean;
   size?: string;

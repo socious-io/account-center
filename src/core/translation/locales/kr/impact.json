@@ -27,5 +27,11 @@
     "donated": "기부됨",
     "voted": "투표됨"
   },
-  "impact-achievements": "업적"
+  "impact-achievements": {
+    "tab": "업적",
+    "unlocked-title": "잠금 해제됨",
+    "unlocked-subtitle": "잠금 해제된 배지",
+    "progress-title": "진행 중",
+    "progress-subtitle": "더 많은 임팩트를 만들어 새로운 배지를 잠금 해제하세요!"
+  }
 }

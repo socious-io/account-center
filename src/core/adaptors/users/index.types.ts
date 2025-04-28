@@ -13,4 +13,5 @@ export interface User extends UserReq {
   avatar: { url?: string; id?: string };
   verified?: boolean;
   type?: UserType;
+  impactPoints: number;
 }

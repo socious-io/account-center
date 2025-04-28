@@ -10,7 +10,15 @@ import useDetails from './useDetails';
 
 const Details = () => {
   const {
-    data: { impact, currentIdentityProfile, currentIdentityImpactPoints, isExpanded },
+    data: {
+      impact,
+      currentIdentityProfile,
+      currentIdentityImpactPoints,
+      tier,
+      pointsLeft,
+      progressPercent,
+      isExpanded,
+    },
     operations: { handleToggle },
   } = useDetails();
 
@@ -66,23 +74,23 @@ const Details = () => {
     <div className={styles['container']}>
       <div className={styles['impact']}>
         <div className={styles['impact__inner']}>
-          <Avatar img={currentIdentityProfile} type="users" size="100px" tier={impact.points.tier} hasBorder />
+          <Avatar img={currentIdentityProfile} type="users" size="100px" tier={tier} hasBorder />
           <div className={styles['impact__points']}>
-            <span className={styles['impact__points--bold']}>{currentIdentityImpactPoints.toLocaleString()}</span>
+            <span className={styles['impact__points--bold']}>{currentIdentityImpactPoints?.toLocaleString()}</span>
             {translate('impact-details.points')}
           </div>
           <ProgressBar
-            value={impact.points.value}
-            description={translate('impact-details.next-tier', { count: 126 })}
+            value={progressPercent || 0}
+            description={translate('impact-details.next-tier', { count: pointsLeft })}
             containerClassName="w-full"
           />
           <AvatarGroup
             accounts={[
-              { id: '1', image: '/images/achievements/tier-1.svg' },
               { id: '2', image: '/images/achievements/zero-hunger.svg' },
               { id: '3', image: '/images/achievements/health.svg' },
               { id: '4', image: '/images/achievements/education-quality.svg' },
             ]}
+            tier={tier}
             visibleCount={3}
             showMore
             size="40px"
