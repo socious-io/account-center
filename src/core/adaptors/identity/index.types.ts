@@ -13,4 +13,5 @@ export interface CurrentIdentity {
   current?: boolean;
   verified?: boolean;
   verificationStatus?: OrgVerificationStatus | null;
+  impactPoints?: number | null;
 }

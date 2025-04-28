@@ -1,5 +1,3 @@
-import { QRCodeSVG } from 'qrcode.react';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { translate } from 'src/core/helpers/utils';
 import AlertMessage from 'src/modules/General/components/AlertMessage';
@@ -8,8 +6,15 @@ import Button from 'src/modules/General/components/Button';
 
 import styles from './index.module.scss';
 import { KYCProps } from './index.types';
+import QRModal from './QRModal';
+import { useKYC } from './useKYC';
 
 const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
+  const {
+    data: { openQRModal },
+    operations: { setOpenQRModal, onVerify },
+  } = useKYC(connectUrl);
+
   const alertMessageProps = {
     succeed: {
       theme: 'success' as AlertMessageProps['theme'],
@@ -68,20 +73,10 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
             <li>{translate('verification-kyc.how-verify-step1')}</li>
             <li>{translate('verification-kyc.how-verify-step2')}</li>
           </ol>
-          <div className={styles['verify__qrcode']}>
-            <QRCodeSVG value={connectUrl} size={200} />
-          </div>
-          <Button
-            variant="contained"
-            color="primary"
-            customStyle="self-end"
-            onClick={() => {
-              const newTab = window.open(connectUrl, '_blank');
-              newTab?.focus();
-            }}
-          >
-            {translate('verification-kyc.open-wallet')}
+          <Button variant="contained" color="primary" customStyle="self-end" disabled={!connectUrl} onClick={onVerify}>
+            {translate('verification-kyc.verify-now')}
           </Button>
+          <QRModal open={openQRModal} handleClose={() => setOpenQRModal(false)} connectUrl={connectUrl} />
         </>
       )}
     </div>

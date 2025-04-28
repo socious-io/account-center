@@ -3,6 +3,7 @@ import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import { useLoaderData } from 'react-router-dom';
 import { CurrentIdentity, getCurrentIdentityAdaptor, Impact } from 'src/core/adaptors';
+import { getTierDetails } from 'src/core/helpers/getTierDetails';
 import { RootState } from 'src/store';
 
 const useDetails = () => {
@@ -10,9 +11,9 @@ const useDetails = () => {
   const currentIdentity = useSelector<RootState, CurrentIdentity | undefined>(state =>
     state.identity.entities.find(identity => identity.current),
   );
-  const { img: currentIdentityProfile } = getCurrentIdentityAdaptor(currentIdentity);
-  //FIXME: replace with real data
-  const currentIdentityImpactPoints = 1276;
+  const { img: currentIdentityProfile, impactPoints } = getCurrentIdentityAdaptor(currentIdentity);
+  const currentIdentityImpactPoints = impactPoints || 0;
+  const { tier, progressPercent, pointsLeft } = getTierDetails(currentIdentityImpactPoints);
   const [isExpanded, setIsExpanded] = useState(!isMobile);
 
   const handleToggle = () => setIsExpanded(prev => !prev);
@@ -22,6 +23,9 @@ const useDetails = () => {
       impact,
       currentIdentityProfile,
       currentIdentityImpactPoints,
+      tier,
+      pointsLeft,
+      progressPercent,
       isExpanded,
     },
     operations: {

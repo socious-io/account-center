@@ -22,8 +22,12 @@ export const useHamburgerMenu = () => {
   }, [pathname]);
 
   const handleNavigate = (selected: string, path: string) => {
-    setSelectedItem(selected);
-    navigate(path);
+    if (pathname.includes(path)) {
+      return;
+    } else {
+      setSelectedItem(selected);
+      navigate(path);
+    }
   };
 
   const onLogout = () => {

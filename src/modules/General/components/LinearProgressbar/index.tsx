@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styles from './index.module.scss';
-import { ProgressBarProps } from './index.types';
+import { LinearProgressbarProps } from './index.types';
 
-const ProgressBar: React.FC<ProgressBarProps> = ({
+const LinearProgressbar: React.FC<LinearProgressbarProps> = ({
   value,
   description = '',
   containerClassName = '',
@@ -19,4 +19,4 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   );
 };
 
-export default ProgressBar;
+export default LinearProgressbar;

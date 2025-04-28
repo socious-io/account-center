@@ -1,9 +1,6 @@
 {
   "impact-title": "Mi impacto",
   "impact-subtitle": "Mide y sigue tu impacto",
-  "impact-tab1": "Contribuciones",
-  "impact-tab2": "Votos",
-  "impact-tab3": "Logros",
   "impact-details": {
     "points": "Puntos de impacto",
     "next-tier": "{{count}} puntos hasta el siguiente nivel",
@@ -18,5 +15,23 @@
     "donated": "donados",
     "see-more-btn": "Ver más",
     "see-less-btn": "Ver menos"
+  },
+  "impact-contributions": {
+    "tab": "Contribuciones",
+    "date": "Fecha",
+    "type": "Tipo",
+    "points": "Puntos"
+  },
+  "impact-votes": {
+    "tab": "Votos",
+    "donated": "Donado",
+    "voted": "Votado"
+  },
+  "impact-achievements": {
+    "tab": "Logros",
+    "unlocked-title": "Desbloqueado",
+    "unlocked-subtitle": "Tu insignia desbloqueada",
+    "progress-title": "En progreso",
+    "progress-subtitle": "¡Sigue generando impacto para desbloquear nuevas insignias!"
   }
 }

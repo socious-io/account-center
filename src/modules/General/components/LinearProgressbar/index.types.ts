@@ -1,4 +1,4 @@
-export interface ProgressBarProps {
+export interface LinearProgressbarProps {
   value: number;
   description?: string;
   containerClassName?: string;

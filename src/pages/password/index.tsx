@@ -2,7 +2,7 @@ import { Divider } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { translate } from 'src/core/helpers/utils';
 import BackLink from 'src/modules/General/components/BackLink';
-import ManagePassword from 'src/modules/Profile/ManagePassword';
+import ManagePassword from 'src/modules/Profile/containers/ManagePassword';
 import { showMenu } from 'src/store/reducers/menu.reducer';
 
 import styles from './index.module.scss';

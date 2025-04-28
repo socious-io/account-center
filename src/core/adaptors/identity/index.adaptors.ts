@@ -13,23 +13,27 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
     const { data: orgsData } = await getOrgsAdaptor();
     if (orgsData) identities = [...identities, ...(orgsData as Org[])];
 
-    const data = identities.map((identity, index) => ({
-      id: identity.id,
-      firstName: identity.type === 'users' ? (identity as User).firstName : null,
-      lastName: identity.type === 'users' ? (identity as User).lastName : null,
-      name:
-        identity.type === 'users'
-          ? `${(identity as User).firstName} ${(identity as User).lastName}`
-          : (identity as Org).name,
-      img: identity.type === 'users' ? (identity as User).avatar?.url : (identity as Org).logo?.url,
-      imgId: identity.type === 'users' ? (identity as User).avatar?.id : (identity as Org).logo?.id,
-      type: identity.type || 'users',
-      username: identity.username || '',
-      email: identity.email,
-      current: currentIdentityId ? identity.id === currentIdentityId : index === 0,
-      verified: identity.verified,
-      verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
-    }));
+    const data = identities.map((identity, index) => {
+      const isUser = identity.type === 'users';
+      const user = identity as User;
+      const org = identity as Org;
+
+      return {
+        id: identity.id,
+        firstName: isUser ? user.firstName : null,
+        lastName: isUser ? user.lastName : null,
+        name: isUser ? `${user.firstName} ${user.lastName}` : org.name,
+        img: isUser ? user.avatar?.url : org.logo?.url,
+        imgId: isUser ? user.avatar?.id : org.logo?.id,
+        type: identity.type || 'users',
+        username: identity.username || '',
+        email: identity.email,
+        current: currentIdentityId ? identity.id === currentIdentityId : index === 0,
+        verified: identity.verified,
+        verificationStatus: identity.type === 'organizations' ? org.verificationStatus : null,
+        impactPoints: isUser ? user.impactPoints : null,
+      };
+    });
     return { data, error: null };
   } catch {
     return { data: null, error: 'Error is Identity API call' };
@@ -66,6 +70,7 @@ export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org
       email: identity.email,
       verified: identity.verified,
       verificationStatus: identity.verificationStatus,
+      impactPoints: identity.impactPoints,
     };
   } else {
     // User or Org type
@@ -84,7 +89,8 @@ export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org
       username: identity.username || '',
       email: identity.email,
       verified: identity.verified,
-      verificationStatus: identity.type === 'organizations' ? (identity as Org).verificationStatus : null,
+      verificationStatus: identity.type === 'organizations' ? org.verificationStatus : null,
+      impactPoints: isUser ? user.impactPoints : null,
     };
   }
 };

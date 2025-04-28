@@ -1,9 +1,11 @@
 import Avatar from '../Avatar';
+import Medal from '../Medal';
 import styles from './index.module.scss';
 import { AvatarGroupProps } from './index.types';
 
 const AvatarGroup: React.FC<AvatarGroupProps> = ({
   accounts,
+  tier = 0,
   visibleCount = accounts.length,
   size = '32px',
   showMore = false,
@@ -15,6 +17,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
 
   return (
     <div className={styles['container']}>
+      {!!tier && <Medal tier={tier} />}
       {visibleAccounts.map(account => {
         return (
           <Avatar

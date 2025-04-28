@@ -1,0 +1,27 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.card {
+    @include flex(normal, center, column);
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    border: 1px solid $color-grey-200;
+    border-radius: 6px;
+    box-shadow: $shadow-md;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: $color-grey-900;
+    word-wrap: break-word;
+    text-align: center;
+
+    &__tier {
+        gap: 0.5rem;
+    }
+
+    &__point {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+}
