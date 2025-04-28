@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
 import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
+import { NotFound } from 'src/pages/error/NotFound';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
@@ -81,7 +82,7 @@ export const blueprint: RouteObject[] = [
     ],
     errorElement: <ErrorBoundary />,
   },
-  { path: '*', element: <div>Page not found :(</div> },
+  { path: '*', element: <NotFound /> },
 ];
 
 function GlobalStatusGuard() {
