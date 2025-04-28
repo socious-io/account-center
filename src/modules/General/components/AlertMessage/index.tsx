@@ -7,6 +7,7 @@ import FeaturedIconOutlined from '../FeaturedIconOutlined';
 const AlertMessage: React.FC<AlertMessageProps> = ({
   theme,
   iconName,
+  iconTheme = theme,
   title,
   subtitle = '',
   children,
@@ -17,7 +18,7 @@ const AlertMessage: React.FC<AlertMessageProps> = ({
     <div
       className={`${styles['container']} ${styles[`container--${theme}`]} ${colOrderMobileView && 'flex-col md:flex-row'} ${containerClassName}`}
     >
-      <FeaturedIconOutlined iconName={iconName} size="md" theme={theme} />
+      <FeaturedIconOutlined iconName={iconName} size="md" theme={iconTheme} />
       <div className={styles['header']}>
         <span className={`${styles['title']} ${styles[`title--${theme}`]}`}>{title}</span>
         {subtitle && (

@@ -1,4 +1,6 @@
-export interface KYBProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
+export type FileState = {
+  id: string;
+  file: File;
+  progress: number;
+  error: boolean;
+};
