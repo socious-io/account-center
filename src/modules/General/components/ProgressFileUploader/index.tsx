@@ -5,6 +5,7 @@ import styles from './index.module.scss';
 import { ProgressFileUploaderProps } from './index.types';
 import { useProgressFileUploader } from './useProgressFileUploader';
 import Icon from '../Icon';
+import Image from '../Image';
 
 const ProgressFileUploader: React.FC<ProgressFileUploaderProps> = ({
   files,
@@ -63,7 +64,7 @@ const ProgressFileUploader: React.FC<ProgressFileUploaderProps> = ({
                     className={`${styles['file']} ${uploadedErrors?.[item.id] && styles['file--error']}`}
                   >
                     {getIconByType(item.file.type) && (
-                      <img src={getIconByType(item.file.type)} alt={item.file.type} width={40} height={40} />
+                      <Image src={getIconByType(item.file.type)} alt={item.file.type} width={40} height={40} />
                     )}
                     <div className={styles['file__right']}>
                       <div className={styles['file__info']}>
