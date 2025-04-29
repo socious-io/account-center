@@ -6,6 +6,7 @@ import { FileUploaderProps } from './index.types';
 import { useFileUploader } from './useFileUploader';
 import FeaturedIcon from '../FeaturedIcon';
 import Icon from '../Icon';
+import Image from '../Image';
 
 const FileUploader: React.FC<FileUploaderProps> = ({
   files,
@@ -78,7 +79,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({
         <div className={styles['preview']}>
           {files.map(file => (
             <div key={file.id} className={styles['preview__item']}>
-              <img src={file.url} className={styles['preview__image']} />
+              <Image src={file.url} className={styles['preview__image']} />
               <div className={styles['preview__delete']} onClick={() => onDeleteFiles?.(file.id)}>
                 <Icon name="x-close" color={variables.color_grey_700} fontSize={16} cursor="pointer" />
               </div>
