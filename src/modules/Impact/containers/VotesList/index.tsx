@@ -45,7 +45,9 @@ const VotesList = () => {
               {list?.donated_price && (
                 <div className={styles['list__price']}>
                   {list.donated_price.toLocaleString()} {list.currency}
-                  <span className={styles['list__price--soft']}>(${list.converted_value} USD)</span>
+                  {list.converted_value && (
+                    <span className={styles['list__price--soft']}>(${list.converted_value} USD)</span>
+                  )}
                 </div>
               )}
             </div>

@@ -15,8 +15,10 @@ const Details = () => {
       currentIdentityProfile,
       currentIdentityImpactPoints,
       tier,
+      isLastTier,
       pointsLeft,
       progressPercent,
+      badges,
       isExpanded,
     },
     operations: { handleToggle },
@@ -39,11 +41,11 @@ const Details = () => {
       label1: translate('impact-details.hours'),
       label2: translate('impact-details.volunteered'),
     },
-    {
-      value: impact.stats.projectsSupported,
-      label1: translate('impact-details.projects'),
-      label2: translate('impact-details.supported'),
-    },
+    // {
+    //   value: impact.stats.projectsSupported,
+    //   label1: translate('impact-details.projects'),
+    //   label2: translate('impact-details.supported'),
+    // },
     {
       value: `$${impact.stats.totalDonated.toLocaleString()}`,
       label1: translate('impact-details.total'),
@@ -79,22 +81,14 @@ const Details = () => {
             <span className={styles['impact__points--bold']}>{currentIdentityImpactPoints?.toLocaleString()}</span>
             {translate('impact-details.points')}
           </div>
-          <ProgressBar
-            value={progressPercent || 0}
-            description={translate('impact-details.next-tier', { count: pointsLeft })}
-            containerClassName="w-full"
-          />
-          <AvatarGroup
-            accounts={[
-              { id: '2', image: '/images/achievements/zero-hunger.svg' },
-              { id: '3', image: '/images/achievements/health.svg' },
-              { id: '4', image: '/images/achievements/education-quality.svg' },
-            ]}
-            tier={tier}
-            visibleCount={3}
-            showMore
-            size="40px"
-          />
+          {!isLastTier && (
+            <ProgressBar
+              value={progressPercent || 0}
+              description={translate('impact-details.next-tier', { count: pointsLeft })}
+              containerClassName="w-full"
+            />
+          )}
+          <AvatarGroup accounts={badges} tier={tier} visibleCount={3} showMore size="40px" />
           <Button
             startIcon={<Icon name="star-06" />}
             variant="outlined"
