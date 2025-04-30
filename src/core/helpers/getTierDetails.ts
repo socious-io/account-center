@@ -1,7 +1,7 @@
 import { TIERS } from 'src/constants/TIERS';
 
 export const getTierDetails = (impactPoints: number) => {
-  const tier = TIERS.find(({ min, max }) => impactPoints >= min && impactPoints < max);
+  const tier = TIERS.find(({ min, max }) => impactPoints >= min && impactPoints <= max);
 
   if (!tier)
     return {
@@ -13,7 +13,7 @@ export const getTierDetails = (impactPoints: number) => {
     };
 
   const progressPercent = ((impactPoints - tier.min) / (tier.max - tier.min)) * 100;
-  const pointsLeft = tier.max - impactPoints;
+  const pointsLeft = tier.max - impactPoints + 1;
   return {
     tier: tier.tier,
     min: tier.min,
