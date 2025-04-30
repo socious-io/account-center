@@ -61,8 +61,8 @@ export const blueprint: RouteObject[] = [
             loader: async () => {
               const [impact, contributions, votes, achievements] = await Promise.all([
                 getImpactAdaptor(),
-                getContributionsAdaptor(1, 10),
-                getVotesAdaptor(1, 10),
+                getContributionsAdaptor(),
+                getVotesAdaptor(),
                 getAchievementsAdaptor(),
               ]);
               return {
