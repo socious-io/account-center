@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
 import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
+import { NotFound } from 'src/pages/error/NotFound';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
@@ -81,31 +82,32 @@ export const blueprint: RouteObject[] = [
     ],
     errorElement: <ErrorBoundary />,
   },
-  { path: '*', element: <div>Page not found :(</div> },
+  { path: '*', element: <NotFound /> },
 ];
+
+function DefaultRoute() {
+  return <Navigate to="/profile" />;
+}
 
 function GlobalStatusGuard() {
   const status = useSelector((state: RootState) => state.identity.status);
 
+  if (status === 'succeed') return <Navigate to="/profile" />;
   if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
+  if (status === 'failed') {
+    window.location.href = config.appBaseURL + '/auth/login';
+    return null;
+  }
 
   return <Outlet />;
 }
 
-function DefaultRoute() {
-  const status = useSelector((state: RootState) => state.identity.status);
-
-  if (status === 'succeeded') return <Navigate to="/profile" />;
-  if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
-
-  return <Navigate to="/profile" />;
-}
-
 function ErrorBoundary() {
   const error: any = useRouteError();
-  if (error?.response?.status === 401) return <Navigate to="/sign-in" />;
+  if (error?.response?.status === 401) {
+    window.location.href = config.appBaseURL + '/auth/login';
+    return null;
+  }
   return <FallBack />;
 }
 

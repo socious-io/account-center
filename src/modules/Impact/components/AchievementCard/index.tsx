@@ -1,3 +1,4 @@
+import Image from 'src/modules/General/components/Image';
 import Medal from 'src/modules/General/components/Medal';
 import Progressbar from 'src/modules/General/components/Progressbar';
 import variables from 'src/styles/constants/_exports.module.scss';
@@ -21,7 +22,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
       {tier ? (
         <Medal tier={tier} size="lg" />
       ) : (
-        <img src={`/images/achievements/${iconName}.svg`} width={48} height={48} />
+        <Image src={`/images/achievements/${iconName}.svg`} width={48} height={48} />
       )}
       {hasPoint ? (
         <p className={styles['card__point']}>{point}</p>

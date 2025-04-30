@@ -7,10 +7,12 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
     const currentIdentityId = await nonPermanentStorage.get('identity');
 
     let identities: (User | Org)[] = [];
-    const { data: userData } = await getUserProfileAdaptor();
+    const { error: userError, data: userData } = await getUserProfileAdaptor();
+    if (userError) throw new Error(userError);
     if (userData) identities = [userData as User];
 
-    const { data: orgsData } = await getOrgsAdaptor();
+    const { error: orgError, data: orgsData } = await getOrgsAdaptor();
+    if (orgError) throw new Error(orgError);
     if (orgsData) identities = [...identities, ...(orgsData as Org[])];
 
     const data = identities.map((identity, index) => {

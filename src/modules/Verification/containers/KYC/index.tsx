@@ -3,6 +3,7 @@ import { translate } from 'src/core/helpers/utils';
 import AlertMessage from 'src/modules/General/components/AlertMessage';
 import { AlertMessageProps } from 'src/modules/General/components/AlertMessage/index.types';
 import Button from 'src/modules/General/components/Button';
+import Image from 'src/modules/General/components/Image';
 
 import styles from './index.module.scss';
 import { KYCProps } from './index.types';
@@ -57,10 +58,16 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
           </div>
           <div className={styles['verify__download']}>
             <Link to="https://wallet.socious.io/ios" target="_blank">
-              <img src="/images/app-store.svg" alt="App Store" width="100%" height="100%" className="cursor-pointer" />
+              <Image
+                src="/images/app-store.svg"
+                alt="App Store"
+                width="100%"
+                height="100%"
+                className="cursor-pointer"
+              />
             </Link>
             <Link to="https://wallet.socious.io/android" target="_blank">
-              <img
+              <Image
                 src="/images/google-play.svg"
                 alt="Google Play"
                 width="100%"
