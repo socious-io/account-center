@@ -1,83 +1,53 @@
-import { CURRENCIES } from 'src/constants/CURRENCIES';
+import { getBadges, getImpactOverview, getImpactPoints } from 'src/core/api';
+import { getBadgeLevel } from 'src/core/helpers/getBadgeLevel';
 
 import { AchievementsRes, AdaptorRes, ContributionsRes, ContributionType, Impact, VotesRes, VoteType } from '..';
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
-    //FIXME: later with BE API
+    const { overviews } = await getImpactOverview();
+    const getOverviewValue = (type: string) => overviews.find(overview => overview.type === type)?.total_values || 0;
+    const hoursWorked = getOverviewValue('WORKSUBMIT');
+    const hoursVolunteered = getOverviewValue('VOLUNTEER');
+    const totalDonated = getOverviewValue('DONATION');
     const data = {
-      accounts: [
-        {
-          id: '1',
-          name: 'Heather Jenks',
-          username: 'heatherj',
-          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
-          type: 'user',
-        },
-        {
-          id: '2',
-          name: 'Heather Jenks',
-          username: 'heatherj',
-          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
-          type: 'user',
-        },
-        {
-          id: '3',
-          name: 'Heather Jenks',
-          username: 'heatherj',
-          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
-          type: 'user',
-        },
-      ],
       stats: {
-        hoursContributed: 324,
-        hoursWorked: 300,
-        hoursVolunteered: 24,
-        projectsSupported: 24,
-        totalDonated: 10000.0,
-      },
-      points: {
-        value: 50,
-        tier: 1,
+        hoursContributed: hoursWorked + hoursVolunteered,
+        hoursWorked,
+        hoursVolunteered,
+        // projectsSupported: 24,
+        totalDonated,
       },
     };
 
     return { data, error: null };
   } catch (error) {
-    console.error('Error in getting impact data', error);
-    return { data: null, error: 'Error in getting impact data' };
+    console.error('Error in getting Impact Points Overview', error);
+    return { data: null, error: 'Error in getting Impact Points Overview' };
   }
 };
 
 export const getContributionsAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<ContributionsRes>> => {
   try {
-    //FIXME: later with BE API
-    const results = [
-      {
-        id: '1',
+    const { impact_points: contributions } = await getImpactPoints({
+      page,
+      limit,
+      type: 'WORKSUBMIT,VOLUNTEER,SERVICE',
+    });
+    const results = contributions.map(contribution => {
+      const user = contribution.user;
+      return {
+        id: contribution.id,
         identity: {
-          id: '1',
-          name: 'Ocean Protection',
-          username: 'Product Designer',
-          type: 'organizations',
+          name: `${user.first_name} ${user.last_name}`,
+          username: user.username,
+          img: user.avatar?.url || '',
         },
-        date: new Date(),
-        type: 'Job' as ContributionType,
-        points: 35,
-      },
-      {
-        id: '2',
-        identity: {
-          id: '1',
-          name: 'Ocean Protection2',
-          username: 'Product Designer2',
-          type: 'users',
-        },
-        date: new Date(),
-        type: 'Service' as ContributionType,
-        points: 35,
-      },
-    ];
+        date: contribution.created_at,
+        type: (contribution.type === 'SERVICE' ? 'Service' : 'Job') as ContributionType,
+        points: contribution.total_points,
+      };
+    });
 
     return {
       data: {
@@ -96,24 +66,18 @@ export const getContributionsAdaptor = async (page = 1, limit = 10): Promise<Ada
 
 export const getVotesAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<VotesRes>> => {
   try {
-    //FIXME: later with BE API
-    const results = [
-      {
-        id: '1',
-        donated_identity: { name: 'Accessible Healthcare for Remote Communities' },
+    const { impact_points: votes } = await getImpactPoints({ page, limit, type: 'DONATION' });
+    const results = votes.map(vote => {
+      const user = vote.user;
+      return {
+        id: vote.id,
+        donated_identity: { name: `${user.first_name} ${user.last_name}` },
+        date: vote.created_at,
         type: 'donate' as VoteType,
-        date: new Date(),
-        donated_price: 100,
-        currency: CURRENCIES.find(currency => currency.value === 'lovelace')?.label || 'ADA',
-        converted_value: 44.5,
-      },
-      {
-        id: '2',
-        donated_identity: { name: 'Empowering Women Through Education' },
-        type: 'vote' as VoteType,
-        date: new Date(),
-      },
-    ];
+        currency: vote.meta?.donation.currency,
+        donated_price: vote.meta?.donation.amount,
+      };
+    });
 
     return {
       data: {
@@ -132,37 +96,11 @@ export const getVotesAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<
 
 export const getAchievementsAdaptor = async (): Promise<AdaptorRes<AchievementsRes>> => {
   try {
-    //FIXME: later with BE API
-    const data = [
-      {
-        name: 'NO_POVERTY',
-        level: 3,
-      },
-      {
-        name: 'ZERO_HUNGER',
-        level: 3,
-      },
-      {
-        name: 'HEALTH',
-        level: 3,
-      },
-      {
-        name: 'EDUCATION_QUALITY',
-        level: 3,
-      },
-      {
-        name: 'GENDER_EQUALITY',
-        level: 3,
-      },
-      {
-        name: 'CLEAN_WATER_SANITATION',
-        level: 1,
-      },
-      {
-        name: 'ENERGY',
-        level: 1,
-      },
-    ];
+    const { badges } = await getBadges();
+    const data = badges.map(badge => ({
+      name: badge.social_cause_category,
+      level: getBadgeLevel(badge.total_points),
+    }));
 
     return {
       data,
