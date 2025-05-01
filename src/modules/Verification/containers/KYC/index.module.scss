@@ -1,0 +1,44 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(normal, normal, column);
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+    max-width: 35rem;
+
+    @media (max-width: $md) {
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .verify {
+        @include flex(flex-start, stretch, column);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $color-grey-900;
+
+        &__subtitle {
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 20px;
+            color: $color-grey-600;
+        }
+
+        &__download {
+            @include flex(flex-start, center);
+            gap: 1rem;
+        }
+
+        &__steps {
+            @include flex(flex-start, stretch, column);
+            margin-left: 1rem;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 20px;
+            color: $color-grey-600;
+            list-style: decimal;
+        }
+    }
+}

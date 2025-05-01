@@ -1,0 +1,175 @@
+import { CURRENCIES } from 'src/constants/CURRENCIES';
+
+import { AchievementsRes, AdaptorRes, ContributionsRes, ContributionType, Impact, VotesRes, VoteType } from '..';
+
+export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
+  try {
+    //FIXME: later with BE API
+    const data = {
+      accounts: [
+        {
+          id: '1',
+          name: 'Heather Jenks',
+          username: 'heatherj',
+          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
+          type: 'user',
+        },
+        {
+          id: '2',
+          name: 'Heather Jenks',
+          username: 'heatherj',
+          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
+          type: 'user',
+        },
+        {
+          id: '3',
+          name: 'Heather Jenks',
+          username: 'heatherj',
+          img: 'https://www.researchgate.net/profile/Heather-Jenks/publication/305777043/figure/fig3/AS:1004774900133892@1616568412580/Sample-badge-designs-provided-by-ANU-Marketing.jpg',
+          type: 'user',
+        },
+      ],
+      stats: {
+        hoursContributed: 324,
+        hoursWorked: 300,
+        hoursVolunteered: 24,
+        projectsSupported: 24,
+        totalDonated: 10000.0,
+      },
+      points: {
+        value: 50,
+        tier: 1,
+      },
+    };
+
+    return { data, error: null };
+  } catch (error) {
+    console.error('Error in getting impact data', error);
+    return { data: null, error: 'Error in getting impact data' };
+  }
+};
+
+export const getContributionsAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<ContributionsRes>> => {
+  try {
+    //FIXME: later with BE API
+    const results = [
+      {
+        id: '1',
+        identity: {
+          id: '1',
+          name: 'Ocean Protection',
+          username: 'Product Designer',
+          type: 'organizations',
+        },
+        date: new Date(),
+        type: 'Job' as ContributionType,
+        points: 35,
+      },
+      {
+        id: '2',
+        identity: {
+          id: '1',
+          name: 'Ocean Protection2',
+          username: 'Product Designer2',
+          type: 'users',
+        },
+        date: new Date(),
+        type: 'Service' as ContributionType,
+        points: 35,
+      },
+    ];
+
+    return {
+      data: {
+        results,
+        total: 2,
+        limit,
+        page,
+      },
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Contributions List', error);
+    return { data: null, error: 'Error in getting Contributions List' };
+  }
+};
+
+export const getVotesAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<VotesRes>> => {
+  try {
+    //FIXME: later with BE API
+    const results = [
+      {
+        id: '1',
+        donated_identity: { name: 'Accessible Healthcare for Remote Communities' },
+        type: 'donate' as VoteType,
+        date: new Date(),
+        donated_price: 100,
+        currency: CURRENCIES.find(currency => currency.value === 'lovelace')?.label || 'ADA',
+        converted_value: 44.5,
+      },
+      {
+        id: '2',
+        donated_identity: { name: 'Empowering Women Through Education' },
+        type: 'vote' as VoteType,
+        date: new Date(),
+      },
+    ];
+
+    return {
+      data: {
+        results,
+        total: 2,
+        limit,
+        page,
+      },
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Votes List', error);
+    return { data: null, error: 'Error in getting Votes List' };
+  }
+};
+
+export const getAchievementsAdaptor = async (): Promise<AdaptorRes<AchievementsRes>> => {
+  try {
+    //FIXME: later with BE API
+    const data = [
+      {
+        name: 'NO_POVERTY',
+        level: 3,
+      },
+      {
+        name: 'ZERO_HUNGER',
+        level: 3,
+      },
+      {
+        name: 'HEALTH',
+        level: 3,
+      },
+      {
+        name: 'EDUCATION_QUALITY',
+        level: 3,
+      },
+      {
+        name: 'GENDER_EQUALITY',
+        level: 3,
+      },
+      {
+        name: 'CLEAN_WATER_SANITATION',
+        level: 1,
+      },
+      {
+        name: 'ENERGY',
+        level: 1,
+      },
+    ];
+
+    return {
+      data,
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting Achievements List', error);
+    return { data: null, error: 'Error in getting Achievements List' };
+  }
+};

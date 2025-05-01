@@ -1,0 +1,37 @@
+{
+  "impact-title": "나의 임팩트",
+  "impact-subtitle": "당신의 임팩트를 측정하고 추적하세요",
+  "impact-details": {
+    "points": "임팩트 포인트",
+    "next-tier": "다음 등급까지 {{count}}포인트 남음",
+    "see-my-perk": "내 혜택 보기",
+    "hours": "시간",
+    "contributed": "기여함",
+    "worked": "작업함",
+    "volunteered": "자원봉사",
+    "projects": "프로젝트",
+    "supported": "지원함",
+    "total": "총합",
+    "donated": "기부함",
+    "see-more-btn": "더 보기",
+    "see-less-btn": "간단히 보기"
+  },
+  "impact-contributions": {
+    "tab": "기여",
+    "date": "날짜",
+    "type": "유형",
+    "points": "포인트"
+  },
+  "impact-votes": {
+    "tab": "투표",
+    "donated": "기부됨",
+    "voted": "투표됨"
+  },
+  "impact-achievements": {
+    "tab": "업적",
+    "unlocked-title": "잠금 해제됨",
+    "unlocked-subtitle": "잠금 해제된 배지",
+    "progress-title": "진행 중",
+    "progress-subtitle": "더 많은 임팩트를 만들어 새로운 배지를 잠금 해제하세요!"
+  }
+}

@@ -11,5 +11,11 @@
     "not-verified-secondary-btn": "Más información",
     "title-organization": "organización",
     "title-identity": "identidad"
+  },
+  "error-not-found": {
+    "header": "404 - Página no encontrada",
+    "subheader": "¡Vaya! La página que buscas no existe en",
+    "brand": "Socious ID",
+    "go-to-home-btn": "Ir a Inicio"
   }
 }

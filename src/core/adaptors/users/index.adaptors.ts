@@ -11,10 +11,11 @@ export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
       avatar: { url: user.avatar?.url || '', id: user.avatar_id },
       firstName: user.first_name,
       lastName: user.last_name,
-      username: user.username ? `@${user.username}` : '',
+      username: user.username,
       email: user.email,
       type: 'users' as UserType,
-      isVerified: !!user.identity_verified_at,
+      verified: !!user.identity_verified_at,
+      impactPoints: user.impact_points,
     };
     return { data: res, error: null };
   } catch (error) {
@@ -36,10 +37,13 @@ export const changeUserProfileAdaptor = async (payload: UserReq): Promise<Adapto
     const res = {
       id: user.id,
       avatar: { url: user.avatar?.url || '', id: user.avatar_id || '' },
-      firstName: user.first_name || '',
-      lastName: user.last_name || '',
-      username: user.username || '',
+      firstName: user.first_name,
+      lastName: user.last_name,
+      username: user.username,
       email: user.email,
+      type: 'users' as UserType,
+      verified: !!user.identity_verified_at,
+      impactPoints: user.impact_points,
     };
     return { data: res, error: null };
   } catch (error) {

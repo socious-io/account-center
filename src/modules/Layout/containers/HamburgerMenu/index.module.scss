@@ -16,11 +16,19 @@ $menu-width: 19.5rem;
     border-right: 1px solid $color-grey-200;
     @include flex(space-between, flex-start, column);
     overflow-y: auto;
+    transform: translateX(0);
+    visibility: visible;
+    transition: all 0.6s ease-in-out;
 
     @media (max-width: $md) {
         padding: 1.5rem 1rem;
         width: 100%;
         box-shadow: $shadow-xl;
+    }
+
+    &--closed {
+        transform: translateX(-100%);
+        visibility: hidden;
     }
 
     &__top {
@@ -50,7 +58,6 @@ $menu-width: 19.5rem;
             padding: 1rem;
             border-bottom: 1px solid $color-grey-200;
         }
-
     }
 
     .subheader {

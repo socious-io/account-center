@@ -1,4 +1,4 @@
-import { UserType, VerificationStatus } from 'src/core/api';
+import { UserType, OrgVerificationStatus } from 'src/core/api';
 
 export interface OrgReq {
   logoId?: string;
@@ -10,7 +10,7 @@ export interface OrgReq {
 export interface Org extends OrgReq {
   id: string;
   logo: { url?: string; id?: string };
-  isVerified?: boolean;
-  verificationStatus: VerificationStatus | null;
+  verified?: boolean;
+  verificationStatus: OrgVerificationStatus | null;
   type?: UserType;
 }

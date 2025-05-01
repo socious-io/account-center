@@ -1,8 +1,13 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
+import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
+import { NotFound } from 'src/pages/error/NotFound';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
+
+import { checkVerificationAdaptor, getAchievementsAdaptor } from '../adaptors';
+import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
@@ -20,10 +25,56 @@ export const blueprint: RouteObject[] = [
             },
           },
           {
-            path: 'verify',
+            path: 'password',
             async lazy() {
-              const { Verify } = await import('src/pages/verify');
-              return { Component: Verify };
+              const { Password } = await import('src/pages/password');
+              return { Component: Password };
+            },
+          },
+          {
+            path: 'verification',
+            children: [
+              {
+                path: '',
+                loader: async () => {
+                  const { data } = await checkVerificationAdaptor();
+                  return { verifyId: data?.id || '' };
+                },
+                async lazy() {
+                  const { Verification } = await import('src/pages/verification/user');
+                  return {
+                    Component: Verification,
+                  };
+                },
+              },
+              {
+                path: 'connect/:id',
+                async lazy() {
+                  const { Connect } = await import('src/pages/verification/user/connect');
+                  return { Component: Connect };
+                },
+              },
+            ],
+          },
+          {
+            path: 'impact',
+            loader: async () => {
+              const [impact, contributions, votes, achievements] = await Promise.all([
+                getImpactAdaptor(),
+                getContributionsAdaptor(1, 10),
+                getVotesAdaptor(1, 10),
+                getAchievementsAdaptor(),
+              ]);
+              return {
+                impact: impact.data,
+                contributionsList: contributions.data,
+                votesList: votes.data,
+                achievementsList: achievements.data,
+              };
+            },
+            async lazy() {
+              const { Impact } = await import('src/pages/impact');
+              return { Component: Impact };
             },
           },
         ],
@@ -31,32 +82,35 @@ export const blueprint: RouteObject[] = [
     ],
     errorElement: <ErrorBoundary />,
   },
-  { path: '*', element: <div>Page not found :(</div> },
+  { path: '*', element: <NotFound /> },
 ];
+
+function DefaultRoute() {
+  return <Navigate to="/profile" />;
+}
 
 function GlobalStatusGuard() {
   const status = useSelector((state: RootState) => state.identity.status);
 
+  if (status === 'succeed') return <Navigate to="/profile" />;
   if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
+  if (status === 'failed') {
+    window.location.href = config.baseURL + '/auth/login';
+    return null;
+  }
 
   return <Outlet />;
 }
 
-function DefaultRoute() {
-  const status = useSelector((state: RootState) => state.identity.status);
-
-  if (status === 'succeeded') return <Navigate to="/profile" />;
-  if (status === 'loading') return <div></div>;
-  if (status === 'failed') return <Navigate to="/intro" />;
-
-  return <Navigate to="/profile" />;
-}
-
 function ErrorBoundary() {
   const error: any = useRouteError();
-  if (error?.response?.status === 401) return <Navigate to="/sign-in" />;
+  if (error?.response?.status === 401) {
+    window.location.href = config.baseURL + '/auth/login';
+    return null;
+  }
   return <FallBack />;
 }
 
-export const routes = createBrowserRouter(blueprint);
+export const routes = createBrowserRouter(blueprint, {
+  basename: config.basePath,
+});

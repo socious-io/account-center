@@ -11,4 +11,6 @@ export interface HorizontalTabsProps {
   activeIndex?: number;
   onActiveIndex?: (index: number) => void;
   containerCustomStyle?: string;
+  tabsCustomStyle?: string;
+  contentCustomStyle?: string;
 }

@@ -13,7 +13,7 @@ const AvatarLabelGroup: React.FC<AvatarLabelGroupProps> = props => {
       className={`${styles['container']} ${!removeFull && styles['container--full']} ${customStyle} ${handleClick && 'cursor-pointer'}`}
       onClick={handleClick}
     >
-      <Avatar img={account.img} type={account.type} size={avatarSize || '40px'} />
+      <Avatar img={account?.img || ''} type={account.type} size={avatarSize || '40px'} />
       <div className={styles['info']}>
         <Typography variant="subtitle2" color={variables.color_grey_900}>
           {account.name}

@@ -1,0 +1,53 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(normal, normal, column);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin-top: 0.75rem;
+    background-color: $color-white;
+    border: 1px solid $color-grey-200;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-xs;
+    max-width: 45rem;
+
+    @media (max-width: $md) {
+        gap: 1rem;
+        padding: 0;
+        margin-top: 0;
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .upload {
+        @include flex(normal, flex-start);
+        gap: 1.25rem;
+
+        @media (max-width: $md) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .inputs {
+        @include flex(normal, center);
+        gap: 1.5rem;
+
+        @media (max-width: $md) {
+            @include flex(flex-start, stretch, column);
+            gap: 1rem;
+        }
+
+        &__error {
+            margin-top: 0.375rem;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: $color-error-500;
+            text-align: left;
+        }
+    }
+}

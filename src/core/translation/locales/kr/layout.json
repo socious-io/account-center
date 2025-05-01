@@ -11,5 +11,11 @@
     "not-verified-secondary-btn": "자세히 알아보기",
     "title-organization": "기관",
     "title-identity": "신원"
+  },
+  "error-not-found": {
+    "header": "404 - 페이지를 찾을 수 없습니다",
+    "subheader": "죄송합니다. 요청하신 페이지를 찾을 수 없습니다",
+    "brand": "Socious ID",
+    "go-to-home-btn": "홈으로 이동"
   }
 }

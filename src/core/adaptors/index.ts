@@ -14,6 +14,10 @@ export * from './password/index.adaptors';
 export * from './password/index.types';
 
 export * from './verification/index.adaptors';
+export * from './verification/index.types';
+
+export * from './impact/index.adaptors';
+export * from './impact/index.types';
 
 export interface CustomError {
   response: { data: { error: string } };
@@ -31,4 +35,11 @@ export type AdaptorRes<T = null> = {
 export interface OptionType {
   label: string;
   value: string;
+}
+
+export interface PaginateRes<T> {
+  page: number;
+  limit: number;
+  total: number;
+  results: T[];
 }

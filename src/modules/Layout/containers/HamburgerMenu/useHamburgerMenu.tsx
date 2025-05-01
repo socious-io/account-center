@@ -14,7 +14,7 @@ export const useHamburgerMenu = () => {
   const currentIdentity = useSelector<RootState, CurrentIdentity | undefined>(state => {
     return state.identity.entities.find(identity => identity.current);
   });
-  const type = currentIdentity?.type;
+  const currentIdentityType = currentIdentity?.type;
   const [selectedItem, setSelectedItem] = useState(path || 'credentials');
 
   useEffect(() => {
@@ -22,8 +22,12 @@ export const useHamburgerMenu = () => {
   }, [pathname]);
 
   const handleNavigate = (selected: string, path: string) => {
-    setSelectedItem(selected);
-    navigate(path);
+    if (pathname.includes(path)) {
+      return;
+    } else {
+      setSelectedItem(selected);
+      navigate(path);
+    }
   };
 
   const onLogout = () => {
@@ -36,7 +40,7 @@ export const useHamburgerMenu = () => {
   return {
     data: {
       translate,
-      type,
+      currentIdentityType,
       selectedItem,
     },
     operations: {

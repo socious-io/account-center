@@ -9,6 +9,7 @@ const CustomSnackbar: React.FC<CustomSnackbarProps> = ({
   onClose,
   anchorOrigin = { vertical: 'top', horizontal: 'center' },
   children,
+  theme = 'gray',
   icon,
   containerClassName = '',
   contentClassName = '',
@@ -17,9 +18,9 @@ const CustomSnackbar: React.FC<CustomSnackbarProps> = ({
   return (
     <Snackbar open={open} onClose={onClose} anchorOrigin={anchorOrigin} {...props}>
       <SnackbarContent
-        className={`${styles['container']} ${containerClassName}`}
+        className={`${styles['container']} ${styles[`container--${theme}`]} ${containerClassName}`}
         message={
-          <div className={`${styles['content']} ${contentClassName}`}>
+          <div className={`${styles['content']} ${styles[`content--${theme}`]} ${contentClassName}`}>
             {icon}
             {children}
           </div>

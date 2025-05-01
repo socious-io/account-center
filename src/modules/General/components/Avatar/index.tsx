@@ -1,9 +1,11 @@
 import { CSSProperties, useEffect, useState } from 'react';
+import { translate } from 'src/core/helpers/utils';
 import variables from 'src/styles/constants/_exports.module.scss';
 
 import styles from './index.module.scss';
 import { AvatarProps } from './index.types';
 import Icon from '../Icon';
+import Image from '../Image';
 
 const Avatar: React.FC<AvatarProps> = props => {
   const {
@@ -18,6 +20,7 @@ const Avatar: React.FC<AvatarProps> = props => {
     iconName,
     iconSize,
     iconCustomStyle,
+    tier,
     ...rest
   } = props;
 
@@ -44,7 +47,7 @@ const Avatar: React.FC<AvatarProps> = props => {
     >
       <div onClick={onClick} style={style} className={styles['avatar']}>
         {img ? (
-          <img className={`${styles['avatar__img']} ${iconCustomStyle}`} src={img} alt="" />
+          <Image className={`${styles['avatar__img']} ${iconCustomStyle}`} src={img} alt="" />
         ) : (
           <Icon name={icon} fontSize={iconSize || 24} color={variables.color_grey_600} className={iconCustomStyle} />
         )}
@@ -54,7 +57,12 @@ const Avatar: React.FC<AvatarProps> = props => {
           className={styles['badge']}
           style={{ backgroundColor: badge.color, width: badge.width, height: badge.height }}
         >
-          <img className={styles['badge__img']} src={badge.image} alt="badge" />
+          <Image className={styles['badge__img']} src={badge.image} alt="badge" />
+        </div>
+      )}
+      {tier && (
+        <div className={styles['tier']}>
+          {translate('avatar-tier')} {tier}
         </div>
       )}
       {isVerified && (

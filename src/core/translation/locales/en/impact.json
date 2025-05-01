@@ -1,0 +1,37 @@
+{
+  "impact-title": "My impact",
+  "impact-subtitle": "Measure and track your impact",
+  "impact-details": {
+    "points": "Impact points",
+    "next-tier": "{{count}} points until next tier",
+    "see-my-perk": "See my perks",
+    "hours": "Hours",
+    "contributed": "contributed",
+    "worked": "worked",
+    "volunteered": "volunteered",
+    "projects": "Projects",
+    "supported": "supported",
+    "total": "Total",
+    "donated": "donated",
+    "see-more-btn": "See more",
+    "see-less-btn": "See less"
+  },
+  "impact-contributions": {
+    "tab": "Contributions",
+    "date": "Date",
+    "type": "Type",
+    "points": "Points"
+  },
+  "impact-votes": {
+    "tab": "Votes",
+    "donated": "Donated",
+    "voted": "Voted"
+  },
+  "impact-achievements": {
+    "tab": "Achievements",
+    "unlocked-title": "Unlocked",
+    "unlocked-subtitle": "Your unlocked badge",
+    "progress-title": "In progress",
+    "progress-subtitle": "Continue to make an impact to unlock new badges!"
+  }
+}

@@ -4,6 +4,7 @@ export const config = {
   accessExpire: import.meta.env.VITE_ACCESS_EXPIRE,
   refreshExpire: import.meta.env.VITE_REFRESH_EXPIRE,
   appBaseURL: import.meta.env.VITE_APP_URL,
+  basePath: import.meta.env.VITE_BASE_PATH,
 };
 
 export const isTestingEnvironment = config.env === 'test';

@@ -16,14 +16,23 @@
     "cancel-button": "취소"
   },
   "verification-kyc": {
-    "title": "신원을 인증하세요",
-    "subtitle": "Socious의 모든 기능을 이용하려면 신원 인증이 필요합니다.",
-    "hint-title": "Socious는 블록체인 기술을 사용하여 자격 증명의 투명성과 추적성을 보장합니다.",
-    "hint-subtitle": "우리는 Atala Prism과 제휴하여 귀하의 탈중앙화 ID가 검증 가능한 자격 증명을 받을 수 있도록 지원합니다.",
+    "title": "신원 인증",
+    "subtitle": "사칭을 방지하고 임팩트 인증, 경험 검증, 임팩트 프로젝트 투표와 같은 기능을 사용하려면 계정을 인증하세요.",
+    "why-verify-title": "왜 신원 인증이 필요하나요?",
+    "why-verify-subtitle": "이 단계는 플랫폼의 무결성과 보안을 유지하고 사기 행위를 방지하기 위해 필수적입니다.",
+    "learn-more": "신원 인증에 대해 더 알아보기",
     "how-verify": "신원 인증 방법",
-    "how-verify-step1": "1. 앱 온보딩 과정을 완료하면 Atala Prism에서 탈중앙화 ID가 생성됩니다.",
-    "how-verify-step2": "2. KYC 파트너인 Veriff를 통해 신원을 인증하세요.",
-    "download-wallet": "Socious Wallet 앱 다운로드",
-    "open-wallet": "Socious Wallet 앱 열기"
+    "how-verify-step1": "앱의 온보딩 과정을 완료하면 Atala Prism에서 분산형 ID가 생성됩니다.",
+    "how-verify-step2": "KYC 파트너인 Veriff를 통해 신원을 인증합니다.",
+    "download-wallet": "Socious 지갑 앱 다운로드",
+    "open-wallet": "Socious 지갑 앱 열기",
+    "verify-now": "지금 인증하기",
+    "modal-title": "신원을 확인하세요",
+    "modal-subtitle": "신원을 확인하려면 QR 코드를 스캔해 주세요.",
+    "banner-success-title": "인증 성공",
+    "banner-success-subtitle": "축하합니다! 계정이 인증되었습니다.",
+    "banner-error-title": "인증 오류",
+    "banner-error-subtitle": "인증 과정 중 오류가 발생했습니다.",
+    "banner-error-btn": "다시 시도해주세요"
   }
 }

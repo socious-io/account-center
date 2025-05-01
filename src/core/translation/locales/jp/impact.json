@@ -1,0 +1,37 @@
+{
+  "impact-title": "私のインパクト",
+  "impact-subtitle": "あなたのインパクトを測定・追跡しましょう",
+  "impact-details": {
+    "points": "インパクトポイント",
+    "next-tier": "次のランクまであと{{count}}ポイント",
+    "see-my-perk": "特典を確認する",
+    "hours": "時間",
+    "contributed": "貢献済み",
+    "worked": "作業済み",
+    "volunteered": "ボランティア",
+    "projects": "プロジェクト",
+    "supported": "支援済み",
+    "total": "合計",
+    "donated": "寄付済み",
+    "see-more-btn": "もっと見る",
+    "see-less-btn": "閉じる"
+  },
+  "impact-contributions": {
+    "tab": "貢献",
+    "date": "日付",
+    "type": "種類",
+    "points": "ポイント"
+  },
+  "impact-votes": {
+    "tab": "投票",
+    "donated": "寄付済み",
+    "voted": "投票済み"
+  },
+  "impact-achievements": {
+    "tab": "実績",
+    "unlocked-title": "アンロック済み",
+    "unlocked-subtitle": "アンロックされたバッジ",
+    "progress-title": "進行中",
+    "progress-subtitle": "新しいバッジをアンロックするには、さらにインパクトを与えましょう！"
+  }
+}
