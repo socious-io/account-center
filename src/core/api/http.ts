@@ -5,7 +5,6 @@ import { dialog } from 'src/core/dialog/dialog';
 import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 import { hideLoading, showLoading } from 'src/store/reducers/loading.reducer';
 
-import { refreshToken } from './auth/auth.service';
 import { removedEmptyProps } from '../helpers/objects-arrays';
 
 export const http = axios.create({
@@ -103,12 +102,9 @@ export function setupInterceptors(store: Store) {
     async function (error) {
       store.dispatch(hideLoading());
       if (error?.response?.status === 401 && !error.config.url.includes('auth')) {
-        try {
-          await refreshToken();
-          return http.request(error.config);
-        } catch {
-          return Promise.reject(error);
-        }
+        // Redirect to login
+        window.location.href = config.baseURL + '/auth/login';
+        return Promise.reject(error);
       }
       // Any status codes that falls outside the range of 2xx cause this function to trigger
       return Promise.reject(error);

@@ -6,5 +6,5 @@ export async function getUser(): Promise<User> {
 }
 
 export async function updateProfile(payload: UserReq): Promise<User> {
-  return (await put<User>(`users`, payload)).data;
+  return (await put<User>('users', payload)).data;
 }
