@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 import App from './App';
 import './styles/main.scss';
+import { translate } from './core/helpers/utils';
 import { FallBack } from './pages/fallback';
 import { logError } from './pages/fallback/index.services';
 
@@ -16,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <meta charSet="UTF-8" />
       <meta name="version" content={VERSION} />
       <link rel="icon" type="image/png" href="/favicon.png" />
-      <title>Socious ID - Account Center</title>
+      <title>{translate('layout.brand-full')}</title>
     </Helmet>
     <ErrorBoundary fallback={<FallBack />} onError={logError}>
       <App />
