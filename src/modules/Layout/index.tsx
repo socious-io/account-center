@@ -1,6 +1,7 @@
 import { isMobile } from 'react-device-detect';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
+import { translate } from 'src/core/helpers/utils';
 import { RootState } from 'src/store';
 import { hideMenu } from 'src/store/reducers/menu.reducer';
 
@@ -23,7 +24,7 @@ const Layout = () => {
       <HamburgerMenu animatable menuIsOpened={menuIsOpened} onCloseMenu={handleCloseMenu} />
       <div className={styles['content']}>
         {/* <VerifyTopBanner /> */}
-        <div className={styles['header']}>Socious ID</div>
+        <div className={styles['header']}>{translate('layout.brand')}</div>
         <Outlet />
       </div>
     </div>
