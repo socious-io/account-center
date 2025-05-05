@@ -20,7 +20,7 @@ const ManageProfile = () => {
     <>
       <form className={styles['container']} onSubmit={handleSubmit(onSubmit)}>
         <div className={styles['upload']}>
-          <Avatar img={avatarImg} type="organizations" size="4rem" />
+          <Avatar img={avatarImg} type={type} size="4rem" />
           <FileUploader
             files={attachments}
             onDropFiles={onDropFiles}
