@@ -23,8 +23,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuI
           { id: 'impact', iconName: 'heart-circle', title: 'My impact', path: '/impact' },
         ]
       : [{ id: 'kyb', iconName: 'shield-tick', title: 'KYB', path: '/verify' }]),
-    { id: 'payments', iconName: 'credit-card-02', title: 'Payments', path: '/payments' },
-    { id: 'staking', iconName: 'line-chart-up-03', title: 'Staking', path: '/staking' },
+    // { id: 'payments', iconName: 'credit-card-02', title: 'Payments', path: '/payments' },
+    // { id: 'staking', iconName: 'line-chart-up-03', title: 'Staking', path: '/staking' },
   ];
 
   return (
