@@ -76,6 +76,13 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
               />
             </Link>
           </div>
+          <Image
+            src="/images/socious-wallet-qrcode.svg"
+            alt="Socious Wallet Download"
+            width="50%"
+            height="50%"
+            className="hidden md:inline-block"
+          />
           <ol className={styles['verify__steps']}>
             <li>{translate('verification-kyc.how-verify-step1')}</li>
             <li>{translate('verification-kyc.how-verify-step2')}</li>
