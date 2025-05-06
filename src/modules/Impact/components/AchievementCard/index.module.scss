@@ -16,10 +16,11 @@
     text-align: center;
 
     &__tier {
-        gap: 0.5rem;
+        gap: 0;
     }
 
     &__point {
+        margin-top: 0.5rem;
         font-size: 16px;
         font-weight: 700;
         line-height: 24px;

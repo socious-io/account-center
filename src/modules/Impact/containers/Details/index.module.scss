@@ -10,7 +10,7 @@ $padding-impact-mobile: 1rem;
     .impact {
         @include flex(center, stretch, row);
         padding: 3rem 2rem 6rem;
-        background-color: $color-bloom-50;
+        background-color: $color-sail-100;
         position: relative;
 
         @media (max-width: $md) {
@@ -38,6 +38,11 @@ $padding-impact-mobile: 1rem;
                 font-weight: 700;
                 line-height: 60px;
                 color: $color-grey-900;
+
+                @media (max-width: $md) {
+                    font-size: 36px;
+                    line-height: 44px;
+                }
             }
         }
 
@@ -59,7 +64,7 @@ $padding-impact-mobile: 1rem;
         border-radius: 12px;
         background-color: $color-white;
         box-shadow: $shadow-xl;
-        transform: translateY(-4rem);
+        transform: translateY(-3rem);
 
         @media (max-width: $md) {
             min-width: calc(100% - ($padding-impact-mobile * 2));

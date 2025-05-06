@@ -18,3 +18,6 @@ export * from './verification/verification.types';
 
 export * from './media/media.types';
 export * from './media/media.api';
+
+export * from './impact/impact.api';
+export * from './impact/impact.types';
