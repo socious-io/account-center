@@ -1,0 +1,9 @@
+{
+  "settings-title": "Configuración",
+  "settings-subtitle": "Administra la configuración de tu cuenta y tus preferencias.",
+  "settings-fields": {
+    "language-title": "Cambiar idioma",
+    "language-desc": "Selecciona tu idioma predeterminado."
+  },
+  "settings-save-btn": "Guardar"
+}
