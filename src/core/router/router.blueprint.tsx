@@ -77,6 +77,13 @@ export const blueprint: RouteObject[] = [
               return { Component: Impact };
             },
           },
+          {
+            path: 'settings',
+            async lazy() {
+              const { Settings } = await import('src/pages/settings');
+              return { Component: Settings };
+            },
+          },
         ],
       },
     ],
