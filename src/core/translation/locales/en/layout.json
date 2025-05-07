@@ -1,4 +1,10 @@
 {
+  "layout": {
+    "brand": "Socious ID",
+    "brand-full": "Socious ID - Account Center",
+    "bio": "Manage your account across your Socious ecosystem",
+    "log-out-btn": "Log out"
+  },
   "layout-verification": {
     "success-text": "Your {{title}} has been successfully verified",
     "success-support-text": "You can now vote and donate for projects.",
@@ -15,7 +21,6 @@
   "error-not-found": {
     "header": "404 - Page Not Found",
     "subheader": "Oops! The page you're looking for doesn't exist on",
-    "brand": "Socious ID",
     "go-to-home-btn": "Go to Home"
   }
 }

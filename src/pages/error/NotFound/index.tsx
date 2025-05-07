@@ -12,7 +12,7 @@ export const NotFound = () => {
       <h1 className={styles['header']}>{translate('error-not-found.header')}</h1>
       <p className={styles['subheader']}>
         {translate('error-not-found.subheader')}
-        <span className={styles['brand']}> {translate('error-not-found.brand')}</span>.
+        <span className={styles['brand']}> {translate('layout.brand')}</span>.
       </p>
       <Button color="primary" onClick={() => navigate('/')}>
         {translate('error-not-found.go-to-home-btn')}

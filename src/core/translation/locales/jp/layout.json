@@ -1,4 +1,10 @@
 {
+  "layout": {
+    "brand": "Socious ID",
+    "brand-full": "Socious ID - アカウントセンター",
+    "bio": "Socious エコシステム全体でアカウントを管理する",
+    "log-out-btn": "ログアウト"
+  },
   "layout-verification": {
     "success-text": "あなたの{{title}}は正常に認証されました",
     "success-support-text": "これでプロジェクトへの投票や寄付が可能になりました。",
@@ -15,7 +21,6 @@
   "error-not-found": {
     "header": "404 - ページが見つかりません",
     "subheader": "お探しのページは存在しません",
-    "brand": "Socious ID",
     "go-to-home-btn": "ホームに戻る"
   }
 }

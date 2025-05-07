@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { config } from 'src/config';
 import { CurrentIdentity } from 'src/core/adaptors';
-import { cleanAuthParams } from 'src/core/api/auth/auth.service';
 import { RootState } from 'src/store';
 
 export const useHamburgerMenu = () => {
@@ -30,12 +30,7 @@ export const useHamburgerMenu = () => {
     }
   };
 
-  const onLogout = () => {
-    cleanAuthParams();
-    // dispatch(clearUserProfile());
-    // dispatch(clearOrgProfile());
-    navigate('/sign-in');
-  };
+  const onLogout = () => (window.location.href = config.baseURL + '/auth/logout');
 
   return {
     data: {

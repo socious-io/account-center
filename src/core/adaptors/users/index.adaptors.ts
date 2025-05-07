@@ -18,8 +18,12 @@ export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
       impactPoints: user.impact_points,
     };
     return { data: res, error: null };
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in getting User Profile', error);
+    const status = error?.response?.status || error?.status || 500;
+    if (status === 401) {
+      throw { message: 'Unauthorized - login required', status };
+    }
     return { data: null, error: 'Error in getting User Profile' };
   }
 };
