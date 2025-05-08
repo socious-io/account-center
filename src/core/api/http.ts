@@ -103,6 +103,7 @@ export function setupInterceptors(store: Store) {
       store.dispatch(hideLoading());
       if (error?.response?.status === 401 && !error.config.url.includes('auth')) {
         // Redirect to login
+        await nonPermanentStorage.clear();
         window.location.href = config.baseURL + '/auth/login';
         return Promise.reject(error);
       }
