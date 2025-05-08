@@ -33,6 +33,9 @@
     "banner-success-subtitle": "Congratulations! Your account is now verified.",
     "banner-error-title": "Verification Error",
     "banner-error-subtitle": "An error occurred during the verification process.",
-    "banner-error-btn": "Please try again"
+    "banner-error-btn": "Please try again",
+    "banner-exceeded-title": "Verification Failed",
+    "banner-exceeded-subtitle": "This wallet is already linked to another account. You can only verify one account with each wallet.",
+    "banner-exceeded-btn": "Retry Verification"
   }
 }
