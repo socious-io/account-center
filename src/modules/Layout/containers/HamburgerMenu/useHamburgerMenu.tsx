@@ -30,6 +30,8 @@ export const useHamburgerMenu = () => {
     }
   };
 
+  const onCreateAccount = () => (window.location.href = config.baseURL + '/auth/register/pre');
+
   const onLogout = () => (window.location.href = config.baseURL + '/auth/logout');
 
   return {
@@ -40,6 +42,7 @@ export const useHamburgerMenu = () => {
     },
     operations: {
       handleNavigate,
+      onCreateAccount,
       onLogout,
     },
   };
