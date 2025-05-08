@@ -34,7 +34,8 @@ export const checkVerificationAdaptor = async (): Promise<AdaptorRes<KYC>> => {
     const res = await getKYC();
     return {
       error: null,
-      data: { id: res.id, connectURL: res.connection_url, status: res.status },
+      //FIXME: BE change string to object with type of error
+      data: { id: res.id, connectURL: res.connection_url, status: res.status, validationError: res.validation_error },
     };
   } catch {
     return {
@@ -50,6 +51,8 @@ export const verifyActionAdaptor = async (signal?: AbortSignal): Promise<KYCStat
     const { data } = await checkVerificationAdaptor();
     if (data) {
       const status = data.status;
+      //FIXME: BE change string to object with type of error
+      const duplicateError = data?.validationError;
       switch (status) {
         case 'REQUESTED':
         case 'CREATED':
@@ -70,7 +73,7 @@ export const verifyActionAdaptor = async (signal?: AbortSignal): Promise<KYCStat
           checkedStatus = 'succeed';
           return checkedStatus;
         case 'FAILED':
-          checkedStatus = 'failed';
+          checkedStatus = duplicateError ? 'exceeded' : 'failed';
           return checkedStatus;
         default:
           throw new Error('Unknown status received');
