@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { config } from 'src/config';
 import { CurrentIdentity } from 'src/core/adaptors';
+import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 import { RootState } from 'src/store';
 
 export const useHamburgerMenu = () => {
@@ -30,7 +31,12 @@ export const useHamburgerMenu = () => {
     }
   };
 
-  const onLogout = () => (window.location.href = config.baseURL + '/auth/logout');
+  const onCreateAccount = () => (window.location.href = config.baseURL + '/auth/register/pre');
+
+  const onLogout = async () => {
+    await nonPermanentStorage.clear();
+    window.location.href = config.baseURL + '/auth/logout';
+  };
 
   return {
     data: {
@@ -40,6 +46,7 @@ export const useHamburgerMenu = () => {
     },
     operations: {
       handleNavigate,
+      onCreateAccount,
       onLogout,
     },
   };

@@ -1,4 +1,5 @@
 import { Divider, Typography } from '@mui/material';
+import { translate } from 'src/core/helpers/utils';
 import AvatarLabelGroup from 'src/modules/General/components/AvatarLabelGroup';
 import Icon from 'src/modules/General/components/Icon';
 import variables from 'src/styles/constants/_exports.module.scss';
@@ -42,10 +43,10 @@ export const AvatarDropDown: React.FC<AvatarDropDownProps> = ({
                       customStyle="py-3 px-4"
                     />
                   ))}
-                <div className="flex gap-2 px-4 py-[10px]" onClick={onCreateAccount}>
+                <div className="flex gap-2 px-4 py-[10px] cursor-pointer" onClick={onCreateAccount}>
                   <Icon name="plus" fontSize={20} color={variables.color_grey_700} className="!p-0" />
                   <Typography variant="subtitle2" className="text-Brand-700">
-                    {selectedAccount?.type === 'users' ? 'Create an organization' : 'Create a talent profile'}
+                    {selectedAccount?.type === 'users' ? translate('create-org') : translate('create-user')}
                   </Typography>
                 </div>
               </>

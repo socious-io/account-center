@@ -11,7 +11,7 @@ import { useHamburgerMenu } from './useHamburgerMenu';
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuIsOpened = false, onCloseMenu }) => {
   const {
     data: { translate, currentIdentityType, selectedItem },
-    operations: { handleNavigate, onLogout },
+    operations: { handleNavigate, onCreateAccount, onLogout },
   } = useHamburgerMenu();
 
   const menuItems = [
@@ -37,7 +37,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuI
       <div className={styles['container__top']}>
         <div className={styles['header']}>{translate('layout.brand')}</div>
         <span className={styles['subheader']}>{translate('layout.bio')}</span>
-        <AvatarDropDown displayOtherAccounts onCreateAccount={() => console.log('create account')} />
+        <AvatarDropDown displayOtherAccounts onCreateAccount={onCreateAccount} />
         <div className={styles['menu']}>
           {menuItems.map(item => (
             <LinkItem
