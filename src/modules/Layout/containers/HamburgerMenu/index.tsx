@@ -15,16 +15,21 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuI
   } = useHamburgerMenu();
 
   const menuItems = [
-    { id: 'profile', iconName: 'user-circle', title: 'Account profile', path: '/profile' },
+    { id: 'profile', iconName: 'user-circle', title: translate('layout.account'), path: '/profile' },
     ...(currentIdentityType === 'users'
       ? [
-          { id: 'password', iconName: 'passcode', title: 'Password', path: '/password' },
-          { id: 'verification', iconName: 'shield-tick', title: 'Verification', path: '/verification' },
-          { id: 'impact', iconName: 'heart-circle', title: 'My impact', path: '/impact' },
+          { id: 'password', iconName: 'passcode', title: translate('layout.password'), path: '/password' },
+          {
+            id: 'verification',
+            iconName: 'shield-tick',
+            title: translate('layout.verification'),
+            path: '/verification',
+          },
+          { id: 'impact', iconName: 'heart-circle', title: translate('layout.impact'), path: '/impact' },
         ]
-      : [{ id: 'kyb', iconName: 'shield-tick', title: 'KYB', path: '/verify' }]),
-    // { id: 'payments', iconName: 'credit-card-02', title: 'Payments', path: '/payments' },
-    // { id: 'staking', iconName: 'line-chart-up-03', title: 'Staking', path: '/staking' },
+      : [{ id: 'kyb', iconName: 'shield-tick', title: translate('layout.kyb'), path: '/verify' }]),
+    // { id: 'payments', iconName: 'credit-card-02', title: 'Payments', path: translate('layout.payments') },
+    // { id: 'staking', iconName: 'line-chart-up-03', title: 'Staking', path: translate('layout.staking') },
   ];
 
   return (
@@ -47,15 +52,27 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuI
           ))}
         </div>
       </div>
-      <Button
-        color="inherit"
-        variant="text"
-        customStyle={styles['container__bottom']}
-        startIcon={<Icon name="log-out-01" fontSize={24} color={variables.color_grey_600} cursor="pointer" />}
-        onClick={onLogout}
-      >
-        {translate('layout.log-out-btn')}
-      </Button>
+      <div className={styles['menu']}>
+        <LinkItem
+          key="settings"
+          iconName="settings-01"
+          title={translate('layout.settings')}
+          onClick={() => {
+            handleNavigate('settings', '/settings');
+            onCloseMenu?.();
+          }}
+          isSelected={selectedItem.includes('settings')}
+        />
+        <Button
+          color="inherit"
+          variant="text"
+          customStyle={styles['container__bottom']}
+          startIcon={<Icon name="log-out-01" fontSize={24} color={variables.color_grey_600} cursor="pointer" />}
+          onClick={onLogout}
+        >
+          {translate('layout.log-out-btn')}
+        </Button>
+      </div>
     </div>
   );
 };

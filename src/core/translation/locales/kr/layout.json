@@ -3,6 +3,14 @@
     "brand": "Socious ID",
     "brand-full": "Socious ID - 계정 센터",
     "bio": "Socious 생태계 전반에서 계정을 관리하세요",
+    "account": "계정 프로필",
+    "password": "비밀번호",
+    "verification": "인증",
+    "impact": "내 임팩트",
+    "payments": "결제",
+    "staking": "스테이킹",
+    "kyb": "KYB",
+    "settings": "설정",
     "log-out-btn": "로그아웃"
   },
   "layout-verification": {

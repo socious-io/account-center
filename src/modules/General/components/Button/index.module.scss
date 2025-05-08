@@ -21,6 +21,10 @@
         background-color: transparent;
         box-shadow: none;
     }
+
+    :global(.MuiButton-startIcon) {
+        margin: 0;
+    }
 }
 
 .block {

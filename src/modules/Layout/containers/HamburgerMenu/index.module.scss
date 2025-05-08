@@ -40,11 +40,11 @@ $menu-width: 19.5rem;
     &__bottom {
         @include flex(flex-start, center);
         gap: 0.75rem;
+        padding: 0.5rem 0.75rem;
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
         color: $color-grey-700;
-        cursor: pointer;
     }
 
     .header {

@@ -1,0 +1,9 @@
+{
+  "settings-title": "設定",
+  "settings-subtitle": "アカウント設定と環境設定を管理します。",
+  "settings-fields": {
+    "language-title": "言語を変更",
+    "language-desc": "デフォルトの言語を選択してください。"
+  },
+  "settings-save-btn": "保存"
+}

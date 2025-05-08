@@ -1,0 +1,9 @@
+{
+  "settings-title": "Settings",
+  "settings-subtitle": "Manage your account settings and preferences.",
+  "settings-fields": {
+    "language-title": "Change language",
+    "language-desc": "Select your default language."
+  },
+  "settings-save-btn": "Save"
+}
