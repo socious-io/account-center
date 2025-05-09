@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Navigate, Outlet, RouteObject, createBrowserRouter, useRouteError } from 'react-router-dom';
+import { Navigate, Outlet, RouteObject, createBrowserRouter, useLocation, useRouteError } from 'react-router-dom';
 import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
 import { NotFound } from 'src/pages/error/NotFound';
@@ -93,7 +93,8 @@ export const blueprint: RouteObject[] = [
 ];
 
 function DefaultRoute() {
-  return <Navigate to="/profile" />;
+  const { search } = useLocation();
+  return <Navigate to={`/profile${search}`} replace />;
 }
 
 function GlobalStatusGuard() {
