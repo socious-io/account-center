@@ -33,6 +33,9 @@
     "banner-success-subtitle": "¡Felicidades! Tu cuenta ha sido verificada.",
     "banner-error-title": "Error de verificación",
     "banner-error-subtitle": "Ocurrió un error durante el proceso de verificación.",
-    "banner-error-btn": "Por favor, inténtalo de nuevo"
+    "banner-error-btn": "Por favor, inténtalo de nuevo",
+    "banner-exceeded-title": "Verificación fallida",
+    "banner-exceeded-subtitle": "Esta cartera ya está vinculada a otra cuenta. Solo puedes verificar una cuenta por cartera.",
+    "banner-exceeded-btn": "Reintentar verificación"
   }
 }

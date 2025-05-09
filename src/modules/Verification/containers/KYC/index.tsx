@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { KYCStatus } from 'src/core/adaptors';
 import { translate } from 'src/core/helpers/utils';
 import AlertMessage from 'src/modules/General/components/AlertMessage';
 import { AlertMessageProps } from 'src/modules/General/components/AlertMessage/index.types';
@@ -16,7 +17,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
     operations: { setOpenQRModal, onVerify },
   } = useKYC(connectUrl);
 
-  const alertMessageProps = {
+  const alertMessageProps: Record<KYCStatus, AlertMessageProps> = {
     succeed: {
       theme: 'success' as AlertMessageProps['theme'],
       iconName: 'check-circle',
@@ -34,24 +35,35 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
         </Link>
       ),
     },
+    exceeded: {
+      theme: 'error' as AlertMessageProps['theme'],
+      iconName: 'alert-circle',
+      title: translate('verification-kyc.banner-exceeded-title'),
+      subtitle: translate('verification-kyc.banner-exceeded-subtitle'),
+      children: (
+        <Link to="/verification" className="link !text-Error-700">
+          {translate('verification-kyc.banner-exceeded-btn')}
+        </Link>
+      ),
+    },
+    '': {
+      theme: 'gray' as AlertMessageProps['theme'],
+      iconName: 'alert-circle',
+      title: translate('verification-kyc.why-verify-title'),
+      subtitle: translate('verification-kyc.why-verify-subtitle'),
+      children: (
+        <Link to="" className="link mt-3">
+          {translate('verification-kyc.learn-more')}
+        </Link>
+      ),
+    },
   };
+
   return (
     <div className={styles['container']}>
-      {status ? (
-        <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
-      ) : (
+      <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
+      {!status && (
         <>
-          <AlertMessage
-            theme="gray"
-            iconName="alert-circle"
-            title={translate('verification-kyc.why-verify-title')}
-            subtitle={translate('verification-kyc.why-verify-subtitle')}
-            containerClassName="!items-start"
-          >
-            <Link to="" className="link mt-3">
-              {translate('verification-kyc.learn-more')}
-            </Link>
-          </AlertMessage>
           <div className={styles['verify']}>
             {translate('verification-kyc.how-verify')}
             <span className={styles['verify__subtitle']}>{translate('verification-kyc.download-wallet')}</span>

@@ -28,6 +28,7 @@ export interface KYCRes {
   connection_url: string;
   connection_id: string;
   status: UserVerificationStatus;
+  validation_error: string;
   created_at: Date;
   updated_at: Date;
   verified_at?: Date;
