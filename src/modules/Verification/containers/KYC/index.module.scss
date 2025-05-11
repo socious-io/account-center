@@ -41,4 +41,13 @@
             list-style: decimal;
         }
     }
+
+    .banner {
+        &__btn {
+            height: auto;
+            padding: 0;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    }
 }
