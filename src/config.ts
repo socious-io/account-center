@@ -6,6 +6,7 @@ export const config = {
   appBaseURL: import.meta.env.VITE_APP_URL,
   basePath: import.meta.env.VITE_BASE_PATH,
   logDiscordWebHook: import.meta.env.VITE_LOG_DISCORD_WEBHOOK,
+  stripePublicKey: import.meta.env.VITE_STRIPE_PUBLIC_KEY,
 };
 
 export const isTestingEnvironment = config.env === 'test';
