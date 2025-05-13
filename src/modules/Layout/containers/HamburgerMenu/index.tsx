@@ -33,7 +33,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           { id: 'impact', iconName: 'heart-circle', title: translate('layout.impact'), path: '/impact' },
         ]
       : [{ id: 'kyb', iconName: 'shield-tick', title: translate('layout.kyb'), path: '/kyb' }]),
-    // { id: 'payments', iconName: 'credit-card-02', title: translate('layout.payments'), path: '/payments' },
+    { id: 'payments', iconName: 'credit-card-02', title: translate('layout.payments'), path: '/payments' },
     // { id: 'staking', iconName: 'line-chart-up-03', title: translate('layout.staking'), path: '/staking' },
   ];
 
