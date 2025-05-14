@@ -1,0 +1,31 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(normal, normal, column);
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+
+    @media (max-width: $md) {
+        margin-top: 0;
+    }
+
+    .setting {
+        @include flex(stretch, center);
+        gap: 1.5rem;
+
+        &__title {
+            @include flex(normal, stretch, column);
+            gap: 0.25rem;
+            font-size: 16px;
+            font-weight: 600;
+            color: $color-grey-900;
+        }
+
+        &__subtitle {
+            font-size: 14px;
+            font-weight: normal;
+            color: $color-grey-600;
+        }
+    }
+}
