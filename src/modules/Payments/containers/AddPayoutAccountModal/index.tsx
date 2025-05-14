@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { COUNTRIES } from 'src/constants/COUNTRIES';
+import { OptionType } from 'src/core/adaptors';
 import { translate } from 'src/core/helpers/utils';
 import AlertModal from 'src/modules/General/components/AlertModal';
 import Button from 'src/modules/General/components/Button';
@@ -52,13 +54,13 @@ const AddPayoutAccountModal: React.FC<AddPayoutAccountModalProps> = ({ open, han
         customStyle="md:max-w-[480px]"
         contentClassName={styles['modal__content']}
       >
-        {/* FIXME: ask BE about country */}
         <SearchDropdown
-          placeholder="Search a country"
+          placeholder={translate('payments-method-payout-account.add-country')}
           icon="search-lg"
-          options={[]}
+          options={COUNTRIES}
+          menuPortalTarget={document.body}
           isSearchable
-          onChange={onSelectCountry}
+          onChange={option => onSelectCountry(option as OptionType)}
         />
       </Modal>
       <AlertModal
