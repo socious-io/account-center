@@ -31,7 +31,9 @@ export const useHamburgerMenu = () => {
     }
   };
 
-  const onCreateAccount = () => (window.location.href = config.baseURL + '/auth/register/pre');
+  const onCreateAccount = () =>
+    (window.location.href =
+      config.baseURL + `/${currentIdentityType === 'users' ? 'organizations' : 'auth'}/register/pre`);
 
   const onLogout = async () => {
     await nonPermanentStorage.clear();
