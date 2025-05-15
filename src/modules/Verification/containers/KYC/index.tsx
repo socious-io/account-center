@@ -52,7 +52,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
       title: translate('verification-kyc.why-verify-title'),
       subtitle: translate('verification-kyc.why-verify-subtitle'),
       children: (
-        <Link to="" className="link mt-3">
+        <Link to="https://socious.io/verified-credentials" className="link mt-3">
           {translate('verification-kyc.learn-more')}
         </Link>
       ),
