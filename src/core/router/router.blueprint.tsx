@@ -78,6 +78,13 @@ export const blueprint: RouteObject[] = [
             },
           },
           {
+            path: 'kyb',
+            async lazy() {
+              const { OrgVerify } = await import('src/pages/verification/organization');
+              return { Component: OrgVerify };
+            },
+          },
+          {
             path: 'settings',
             async lazy() {
               const { Settings } = await import('src/pages/settings');
