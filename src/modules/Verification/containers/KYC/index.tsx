@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from 'src/assets/logo/wallet-logo.svg';
 import { KYCStatus } from 'src/core/adaptors';
 import { translate } from 'src/core/helpers/utils';
 import AlertMessage from 'src/modules/General/components/AlertMessage';
@@ -88,13 +89,11 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
               />
             </Link>
           </div>
-          <Image
-            src="/images/socious-wallet-qrcode.svg"
-            alt="Socious Wallet Download"
-            width="50%"
-            height="50%"
-            className="hidden md:inline-block"
-          />
+          <div className={styles['verify__qrcode']}>
+            <Image src="/images/socious-wallet-qrcode.svg" alt="Socious Wallet Download" width="100%" height="100%" />
+            <Image src={logo} alt="Socious Wallet Logo" className={styles['verify__logo']} />
+            Download Socious Wallet
+          </div>
           <div className={styles['verify__steps']}>
             <p>{translate('verification-kyc.how-verify-step1')}</p>
             <p>{translate('verification-kyc.how-verify-step2')}</p>
