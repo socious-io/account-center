@@ -95,10 +95,10 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
             height="50%"
             className="hidden md:inline-block"
           />
-          <ol className={styles['verify__steps']}>
-            <li>{translate('verification-kyc.how-verify-step1')}</li>
-            <li>{translate('verification-kyc.how-verify-step2')}</li>
-          </ol>
+          <div className={styles['verify__steps']}>
+            <p>{translate('verification-kyc.how-verify-step1')}</p>
+            <p>{translate('verification-kyc.how-verify-step2')}</p>
+          </div>
           <Button variant="contained" color="primary" customStyle="self-end" disabled={!connectUrl} onClick={onVerify}>
             {translate('verification-kyc.verify-now')}
           </Button>
