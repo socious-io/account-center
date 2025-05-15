@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from 'src/assets/logo/wallet-logo.svg';
 import { KYCStatus } from 'src/core/adaptors';
 import { translate } from 'src/core/helpers/utils';
 import AlertMessage from 'src/modules/General/components/AlertMessage';
@@ -52,7 +53,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
       title: translate('verification-kyc.why-verify-title'),
       subtitle: translate('verification-kyc.why-verify-subtitle'),
       children: (
-        <Link to="" className="link mt-3">
+        <Link to="https://socious.io/verified-credentials" className="link mt-3">
           {translate('verification-kyc.learn-more')}
         </Link>
       ),
@@ -88,17 +89,15 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
               />
             </Link>
           </div>
-          <Image
-            src="/images/socious-wallet-qrcode.svg"
-            alt="Socious Wallet Download"
-            width="50%"
-            height="50%"
-            className="hidden md:inline-block"
-          />
-          <ol className={styles['verify__steps']}>
-            <li>{translate('verification-kyc.how-verify-step1')}</li>
-            <li>{translate('verification-kyc.how-verify-step2')}</li>
-          </ol>
+          <div className={styles['verify__qrcode']}>
+            <Image src="/images/socious-wallet-qrcode.svg" alt="Socious Wallet Download" width="100%" height="100%" />
+            <Image src={logo} alt="Socious Wallet Logo" className={styles['verify__logo']} />
+            Download Socious Wallet
+          </div>
+          <div className={styles['verify__steps']}>
+            <p>{translate('verification-kyc.how-verify-step1')}</p>
+            <p>{translate('verification-kyc.how-verify-step2')}</p>
+          </div>
           <Button variant="contained" color="primary" customStyle="self-end" disabled={!connectUrl} onClick={onVerify}>
             {translate('verification-kyc.verify-now')}
           </Button>
