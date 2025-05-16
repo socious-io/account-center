@@ -1,0 +1,26 @@
+@import 'src/styles/constants/_primitives.scss';
+
+.menu {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    margin-top: 0.5rem;
+    background-color: $color-white;
+    border: 1px solid $color-grey-200;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    cursor: pointer;
+
+    &__item {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: $color-grey-700;
+        text-align: left;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-grey-100;
+        }
+    }
+}
