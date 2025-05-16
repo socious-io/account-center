@@ -1,0 +1,32 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.button {
+    @include flex(normal, center);
+    gap: 1rem;
+
+    .symbol {
+        @include flex(normal, center);
+        gap: 0.5rem;
+    }
+
+    .address {
+        flex: 1;
+        @include flex(center, center);
+        gap: 0.5rem;
+        font-size: 16px;
+        font-weight: 600;
+        border-left: 0;
+        color: $color-grey-600;
+
+        &--connected {
+            padding-left: 1rem;
+            color: $color-grey-400;
+            border-left: 1px solid $color-grey-300;
+        }
+    }
+
+    .balance {
+        color: $color-grey-300;
+    }
+}
