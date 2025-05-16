@@ -8,7 +8,7 @@ import { usePaymentMethods } from './usePaymentMethods';
 
 const PaymentMethods = () => {
   const {
-    data: { currentList, currentIdentityName, currentIdentityType },
+    data: { currentList, currentIdentityName, currentIdentityType, ConnectButton },
   } = usePaymentMethods();
 
   const creditCards = currentList.map(card => {
@@ -46,7 +46,10 @@ const PaymentMethods = () => {
           <Divider />
         </>
       )}
-      <div className={styles['section']}>Crypto Wallet</div>
+      <div className={styles['section']}>
+        Crypto Wallet
+        <ConnectButton />
+      </div>
     </div>
   );
 };

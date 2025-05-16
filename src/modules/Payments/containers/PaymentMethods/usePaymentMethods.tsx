@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLoaderData } from 'react-router-dom';
 import { Cards, CurrentIdentity, getCurrentIdentityAdaptor } from 'src/core/adaptors';
+import Connect from 'src/modules/General/components/ConnectButton';
 import { RootState } from 'src/store';
 
 export const usePaymentMethods = () => {
@@ -14,6 +15,7 @@ export const usePaymentMethods = () => {
   // const PER_PAGE = 10;
   // const [page] = useState(currentCardsList.page || 1);
   const currentList = currentCardsList.results || [];
+  const { ConnectButton } = Connect();
 
   // const fetchMore = async (newPage: number) => {
   //   const { error, data } = await getCardsAdaptor(newPage, PER_PAGE);
@@ -39,6 +41,7 @@ export const usePaymentMethods = () => {
       currentList,
       currentIdentityName,
       currentIdentityType,
+      ConnectButton,
     },
   };
 };
