@@ -1,0 +1,29 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.wallets {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+
+    .wallet {
+        @include flex(normal, center, column);
+        gap: 0.75rem;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-grey-700;
+
+        &__logo {
+            @include flex(center, center);
+            padding: 0.25rem;
+            border: 1px solid $color-grey-200;
+            border-radius: 10px;
+
+            &:hover {
+                border-color: $color-primary-300;
+                box-shadow: $shadow-sm;
+            }
+        }
+    }
+}
