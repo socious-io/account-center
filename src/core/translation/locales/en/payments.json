@@ -1,0 +1,30 @@
+{
+  "payments-title": "Payments",
+  "payments-subtitle": "Manage your payments and subscriptions",
+  "payments-methods-title": "Payment methods",
+  "payments-methods-desc": "Payment methods are saved in your Socious ID account so you can use them across Socious ecosystem.",
+  "payment-cards": {
+    "add-card": "Add a credit card",
+    "add-btn": "Add",
+    "failed": "Failed"
+  },
+  "payments-method-payout-account": {
+    "title": "Payout account",
+    "add": "Add a payout account",
+    "add-desc": "Socious partners with Stripe for transactions payments. By selecting continue you will be directed to Stripe’s website.",
+    "add-country": "Search a country",
+    "add-failed": "Failed",
+    "add-continue-btn": "Continue",
+    "add-cancel-btn": "Cancel",
+    "saving": "Saving"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "Crypto Wallet",
+    "connect": "Connect your wallet",
+    "connect-btn": "Connect wallet",
+    "disconnect": "Disconnect",
+    "copy": "Copy Address",
+    "not-installed-error": "No Cardano or EVM wallet detected. Please install a compatible wallet.",
+    "not-connected-error": "Failed to connect your {{walletName}} wallet. Please try again."
+  }
+}

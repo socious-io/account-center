@@ -1,0 +1,30 @@
+{
+  "payments-title": "支払い",
+  "payments-subtitle": "支払いとサブスクリプションを管理します",
+  "payments-methods-title": "支払い方法",
+  "payments-methods-desc": "支払い方法はSocious IDアカウントに保存され、Sociousエコシステム全体で使用できます。",
+  "payment-cards": {
+    "add-card": "クレジットカードを追加",
+    "add-btn": "追加",
+    "failed": "失敗しました"
+  },
+  "payments-method-payout-account": {
+    "title": "支払い口座",
+    "add": "支払い口座を追加",
+    "add-desc": "Sociousは取引の支払いにStripeと提携しています。「続行」を選択すると、Stripeのウェブサイトにリダイレクトされます。",
+    "add-country": "国を検索",
+    "add-failed": "失敗しました",
+    "add-continue-btn": "続行",
+    "add-cancel-btn": "キャンセル",
+    "saving": "保存中"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "暗号ウォレット",
+    "connect": "ウォレットを接続",
+    "connect-btn": "ウォレットを接続",
+    "disconnect": "切断",
+    "copy": "アドレスをコピー",
+    "not-installed-error": "CardanoまたはEVMウォレットが検出されませんでした。互換性のあるウォレットをインストールしてください。",
+    "not-connected-error": "{{walletName}}ウォレットの接続に失敗しました。もう一度お試しください。"
+  }
+}

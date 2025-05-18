@@ -1,0 +1,30 @@
+{
+  "payments-title": "Pagos",
+  "payments-subtitle": "Gestiona tus pagos y suscripciones",
+  "payments-methods-title": "Métodos de pago",
+  "payments-methods-desc": "Los métodos de pago se guardan en tu cuenta de Socious ID para que puedas usarlos en todo el ecosistema de Socious.",
+  "payment-cards": {
+    "add-card": "Agregar una tarjeta de crédito",
+    "add-btn": "Agregar",
+    "failed": "Fallido"
+  },
+  "payments-method-payout-account": {
+    "title": "Cuenta de pago",
+    "add": "Agregar una cuenta de pagos",
+    "add-desc": "Socious se asocia con Stripe para los pagos de transacciones. Al seleccionar continuar, serás dirigido al sitio web de Stripe.",
+    "add-country": "Buscar un país",
+    "add-failed": "Fallido",
+    "add-continue-btn": "Continuar",
+    "add-cancel-btn": "Cancelar",
+    "saving": "Guardando"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "Billetera Cripto",
+    "connect": "Conectar tu billetera",
+    "connect-btn": "Conectar billetera",
+    "disconnect": "Desconectar",
+    "copy": "Copiar dirección",
+    "not-installed-error": "No se detectó ninguna billetera Cardano o EVM. Por favor, instala una billetera compatible.",
+    "not-connected-error": "No se pudo conectar tu billetera {{walletName}}. Por favor, inténtalo de nuevo."
+  }
+}
