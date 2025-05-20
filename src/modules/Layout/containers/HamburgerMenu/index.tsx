@@ -8,7 +8,12 @@ import styles from './index.module.scss';
 import { HamburgerMenuProps } from './index.types';
 import { useHamburgerMenu } from './useHamburgerMenu';
 
-const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuIsOpened = false, onCloseMenu }) => {
+const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
+  animatable = false,
+  menuIsOpened = false,
+  isRTL = false,
+  onCloseMenu,
+}) => {
   const {
     data: { translate, currentIdentityType, selectedItem },
     operations: { handleNavigate, onCreateAccount, onLogout },
@@ -33,7 +38,9 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ animatable = false, menuI
   ];
 
   return (
-    <div className={`${styles['container']} ${animatable && !menuIsOpened && styles['container--closed']}`}>
+    <div
+      className={`${styles['container']} ${animatable && !menuIsOpened && styles['container--closed']} ${isRTL && styles['container--rlt']}`}
+    >
       <div className={styles['container__top']}>
         <div className={styles['header']}>{translate('layout.brand')}</div>
         <span className={styles['subheader']}>{translate('layout.bio')}</span>

@@ -1,0 +1,9 @@
+{
+  "settings-title": "الإعدادات",
+  "settings-subtitle": "إدارة إعدادات وتفضيلات حسابك.",
+  "settings-fields": {
+    "language-title": "تغيير اللغة",
+    "language-desc": "اختر لغتك الافتراضية."
+  },
+  "settings-save-btn": "حفظ"
+}

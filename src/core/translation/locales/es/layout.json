@@ -10,8 +10,9 @@
     "payments": "Pagos",
     "staking": "Staking",
     "kyb": "KYB",
-    "settings": "Configuración",  
-    "log-out-btn": "Cerrar sesión"
+    "settings": "Configuración",
+    "log-out-btn": "Cerrar sesión",
+    "back": "Atrás"
   },
   "layout-verification": {
     "success-text": "Tu {{title}} ha sido verificado con éxito",

@@ -31,6 +31,13 @@ $menu-width: 19.5rem;
         visibility: hidden;
     }
 
+    &--rlt {
+        left: unset;
+        right: 0;
+        border-right: none;
+        border-left: 1px solid $color-grey-200;
+    }
+
     &__top {
         width: 100%;
         @include flex(normal, stretch, column);

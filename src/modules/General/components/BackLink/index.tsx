@@ -1,13 +1,19 @@
 import { useNavigate } from 'react-router-dom';
+import { translate } from 'src/core/helpers/utils';
 
 import styles from './index.module.scss';
 import { BackLinkProps } from './index.types';
 import Button from '../Button';
 import Icon from '../Icon';
 
-const BackLink: React.FC<BackLinkProps> = props => {
+const BackLink: React.FC<BackLinkProps> = ({
+  title = translate('layout.back'),
+  block = false,
+  onBack,
+  customStyle = '',
+}) => {
   const navigate = useNavigate();
-  const { onBack, title, block = false, customStyle } = props;
+
   const onClick = () => {
     if (onBack) {
       onBack();

@@ -1,0 +1,35 @@
+{
+  "layout": {
+    "brand": "Socious 身份",
+    "brand-full": "Socious 身份 - 账户中心",
+    "bio": "在 Socious 生态系统中管理你的账户",
+    "account": "账户资料",
+    "password": "密码",
+    "verification": "验证",
+    "impact": "我的影响力",
+    "payments": "支付",
+    "staking": "质押",
+    "kyb": "KYB（了解你的企业）",
+    "settings": "设置",
+    "log-out-btn": "退出登录",
+    "back": "返回"
+  },
+  "layout-verification": {
+    "success-text": "您的 {{title}} 已成功验证",
+    "success-support-text": "您现在可以为项目投票和捐款。",
+    "success-primary-btn": "关闭",
+    "pending-text": "验证处理中",
+    "pending-support-text": "我们正在审核您提交的文件，完成后将通知您。",
+    "not-verified-text": "验证您的 {{title}}",
+    "not-verified-support-text": "为了在平台上投票和捐赠，请验证您的 {{title}}。",
+    "not-verified-primary-btn": "立即验证",
+    "not-verified-secondary-btn": "了解更多",
+    "title-organization": "组织",
+    "title-identity": "身份"
+  },
+  "error-not-found": {
+    "header": "404 - 页面未找到",
+    "subheader": "哎呀！您访问的页面在本站不存在",
+    "go-to-home-btn": "返回首页"
+  }
+}
