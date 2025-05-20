@@ -11,7 +11,8 @@
     "staking": "ステーキング",
     "kyb": "KYB",
     "settings": "設定",
-    "log-out-btn": "ログアウト"
+    "log-out-btn": "ログアウト",
+    "back": "戻る"
   },
   "layout-verification": {
     "success-text": "あなたの{{title}}は正常に認証されました",

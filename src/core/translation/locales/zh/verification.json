@@ -1,0 +1,43 @@
+{
+  "verification-kyb": {
+    "title": "验证您的组织",
+    "subtitle": "解锁对所有功能的完整访问权限",
+    "verify-title": "完成验证",
+    "verify-subtitle": "立即验证以访问所有功能",
+    "what-next": "接下来是什么？",
+    "what-next-step1": "等待验证（1-3个工作日）",
+    "what-next-step2": "您将收到一封电子邮件和通知",
+    "what-next-step3": "开始发布职位和发放证书",
+    "send-btn": "发送",
+    "success-title": "您的文件已发送",
+    "success-subtitle": "我们的验证团队将在1至3天内处理您的请求。验证完成后您将收到电子邮件和通知，之后即可发放证书。",
+    "banner-success-title": "验证成功",
+    "banner-success-subtitle": "恭喜！您的组织已成功通过验证。",
+    "banner-pending-title": "验证待处理",
+    "banner-pending-subtitle": "我们正在审核您提交的文件，完成后将通知您。",
+    "banner-pending-btn": "联系支持团队"
+  },
+  "verification-kyc": {
+    "title": "简化账户验证",
+    "subtitle": "为什么要验证？账户验证有助于保障安全、防止欺诈，同时保护您的隐私。使用可重复使用的KYC，我们只验证您是独立个体，不收集敏感数据。",
+    "why-verify-title": "什么是可重复使用的KYC？",
+    "why-verify-subtitle": "可重复使用的KYC让您只需验证一次身份，便可在多个平台重复使用。您掌控共享的信息 —— 在我们的平台上，仅需证明您是唯一用户，而无需提供个人信息。这简化了验证流程并提升用户体验。已有KYC时只需30秒完成验证，否则大约需2分钟。",
+    "learn-more": "了解更多关于可重复使用的KYC",
+    "how-verify": "快速验证步骤：",
+    "how-verify-step1": "2. 按照钱包中的说明设置您的KYC",
+    "how-verify-step2": "3. 点击下方按钮并使用钱包扫描二维码",
+    "download-wallet": "1. 已有KYC？跳至第3步。没有？请下载 Socious Wallet 应用",
+    "open-wallet": "打开 Socious Wallet 应用",
+    "verify-now": "立即验证",
+    "modal-title": "验证您的账户",
+    "modal-subtitle": "使用您的钱包扫描二维码进行账户验证。",
+    "banner-success-title": "验证成功",
+    "banner-success-subtitle": "恭喜！您的账户已验证。",
+    "banner-error-title": "验证错误",
+    "banner-error-subtitle": "验证过程中发生错误。",
+    "banner-error-btn": "请重试",
+    "banner-exceeded-title": "验证失败",
+    "banner-exceeded-subtitle": "此钱包已关联其他账户。每个钱包只能验证一个账户。",
+    "banner-exceeded-btn": "重试验证"
+  }
+}

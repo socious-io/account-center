@@ -1,0 +1,37 @@
+{
+  "impact-title": "أثري",
+  "impact-subtitle": "قِس وتابع أثرك",
+  "impact-details": {
+    "points": "نقاط الأثر",
+    "next-tier": "{{count}} نقطة للوصول إلى الرتبة التالية",
+    "see-my-perk": "عرض مزاياي",
+    "hours": "ساعات",
+    "contributed": "ساهمت",
+    "worked": "عملت",
+    "volunteered": "تطوعت",
+    "projects": "مشاريع",
+    "supported": "دعمت",
+    "total": "الإجمالي",
+    "donated": "تبرعت",
+    "see-more-btn": "عرض المزيد",
+    "see-less-btn": "عرض أقل"
+  },
+  "impact-contributions": {
+    "tab": "المساهمات",
+    "date": "التاريخ",
+    "type": "النوع",
+    "points": "النقاط"
+  },
+  "impact-votes": {
+    "tab": "التصويتات",
+    "donated": "تم التبرع",
+    "voted": "تم التصويت"
+  },
+  "impact-achievements": {
+    "tab": "الإنجازات",
+    "unlocked-title": "تم الفتح",
+    "unlocked-subtitle": "شارتك التي تم فتحها",
+    "progress-title": "قيد التقدم",
+    "progress-subtitle": "واصل التأثير لفتح شارات جديدة!"
+  }
+}

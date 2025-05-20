@@ -1,0 +1,43 @@
+{
+  "verification-kyb": {
+    "title": "Vérifiez votre organisation",
+    "subtitle": "Débloquez l'accès complet à toutes les fonctionnalités",
+    "verify-title": "Complétez la vérification",
+    "verify-subtitle": "Vérifiez maintenant pour accéder immédiatement à toutes les fonctionnalités",
+    "what-next": "Et ensuite ?",
+    "what-next-step1": "Attendez la vérification (1 à 3 jours ouvrables)",
+    "what-next-step2": "Un e-mail et une notification vous seront envoyés",
+    "what-next-step3": "Commencez à publier des offres et à délivrer des certifications",
+    "send-btn": "Envoyer",
+    "success-title": "Vos documents ont été envoyés",
+    "success-subtitle": "Notre équipe de vérification prendra 1 à 3 jours pour traiter votre demande. Un e-mail et une notification vous seront envoyés une fois la vérification réussie et vous pourrez alors délivrer des certifications.",
+    "banner-success-title": "Vérification réussie",
+    "banner-success-subtitle": "Félicitations ! Votre organisation a été vérifiée avec succès.",
+    "banner-pending-title": "Vérification en attente",
+    "banner-pending-subtitle": "Nous examinons les documents soumis, nous vous informerons une fois la vérification terminée.",
+    "banner-pending-btn": "Contacter notre support"
+  },
+  "verification-kyc": {
+    "title": "Vérification de compte simplifiée",
+    "subtitle": "Pourquoi vérifier ? La vérification du compte aide à maintenir la sécurité et à prévenir la fraude tout en protégeant votre vie privée. Avec le KYC réutilisable, nous vérifions uniquement que vous êtes une personne unique, sans collecter de données sensibles.",
+    "why-verify-title": "Qu'est-ce que le KYC réutilisable ?",
+    "why-verify-subtitle": "Le KYC réutilisable vous permet de vérifier votre identité une seule fois et de réutiliser ces informations sur plusieurs plateformes. Vous contrôlez les données partagées – ici, vous prouvez simplement que vous êtes unique sans révéler de détails personnels. Cela simplifie le processus de vérification et améliore l’expérience utilisateur. Si vous avez déjà un KYC réutilisable, la vérification prend 30 secondes. Sinon, elle prend environ 2 minutes.",
+    "learn-more": "En savoir plus sur le KYC réutilisable",
+    "how-verify": "Étapes rapides de vérification :",
+    "how-verify-step1": "2. Suivez les instructions du portefeuille pour configurer votre KYC réutilisable",
+    "how-verify-step2": "3. Cliquez sur le bouton ci-dessous et scannez le QR code avec votre portefeuille",
+    "download-wallet": "1. Vous avez déjà un KYC réutilisable ? Passez à l'étape 3. Sinon, téléchargez Socious Wallet",
+    "open-wallet": "Ouvrir l'application Socious Wallet",
+    "verify-now": "Vérifier maintenant",
+    "modal-title": "Vérifiez votre compte",
+    "modal-subtitle": "Scannez le QR code avec votre portefeuille pour vérifier votre compte.",
+    "banner-success-title": "Vérification réussie",
+    "banner-success-subtitle": "Félicitations ! Votre compte est maintenant vérifié.",
+    "banner-error-title": "Erreur de vérification",
+    "banner-error-subtitle": "Une erreur s'est produite lors de la vérification.",
+    "banner-error-btn": "Réessayez",
+    "banner-exceeded-title": "Échec de la vérification",
+    "banner-exceeded-subtitle": "Ce portefeuille est déjà lié à un autre compte. Un seul compte peut être vérifié par portefeuille.",
+    "banner-exceeded-btn": "Réessayer la vérification"
+  }
+}

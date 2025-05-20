@@ -1,0 +1,16 @@
+{
+  "profile-title": "Profil du compte",
+  "profile-subtitle": "Les informations de votre compte sont utilisées dans les e-mails et pour l'affichage dans l'écosystème Socious.",
+  "profile-fields": {
+    "first-name": "Prénom",
+    "last-name": "Nom de famille",
+    "organization-name": "Nom de l'organisation",
+    "username": "Nom d'utilisateur",
+    "email": "Adresse e-mail",
+    "save-btn": "Enregistrer les modifications",
+    "required-error": "Ce champ est requis",
+    "valid-email-error": "Ce champ doit contenir une adresse e-mail valide",
+    "success-message": "Profil mis à jour avec succès !",
+    "error-message": "Échec de la mise à jour du profil. Veuillez réessayer."
+  }
+}

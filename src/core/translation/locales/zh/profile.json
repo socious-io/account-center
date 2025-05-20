@@ -1,0 +1,16 @@
+{
+  "profile-title": "账户资料",
+  "profile-subtitle": "您的账户信息将用于电子邮件及 Socious 生态系统中的显示。",
+  "profile-fields": {
+    "first-name": "名字",
+    "last-name": "姓氏",
+    "organization-name": "组织名称",
+    "username": "用户名",
+    "email": "电子邮件地址",
+    "save-btn": "保存更改",
+    "required-error": "此字段为必填项",
+    "valid-email-error": "此字段必须为有效的电子邮件地址",
+    "success-message": "个人资料更新成功！",
+    "error-message": "更新个人资料失败。请再试一次。"
+  }
+}

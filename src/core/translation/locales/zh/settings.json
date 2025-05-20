@@ -1,0 +1,9 @@
+{
+  "settings-title": "设置",
+  "settings-subtitle": "管理您的账户设置和偏好。",
+  "settings-fields": {
+    "language-title": "更改语言",
+    "language-desc": "选择您的默认语言。"
+  },
+  "settings-save-btn": "保存"
+}

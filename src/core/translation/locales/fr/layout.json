@@ -1,0 +1,35 @@
+{
+  "layout": {
+    "brand": "Socious ID",
+    "brand-full": "Socious ID - Centre de compte",
+    "bio": "Gérez votre compte dans l'écosystème Socious",
+    "account": "Profil du compte",
+    "password": "Mot de passe",
+    "verification": "Vérification",
+    "impact": "Mon impact",
+    "payments": "Paiements",
+    "staking": "Staking",
+    "kyb": "KYB",
+    "settings": "Paramètres",
+    "log-out-btn": "Se déconnecter",
+    "back": "Retour"
+  },
+  "layout-verification": {
+    "success-text": "Votre {{title}} a été vérifié avec succès",
+    "success-support-text": "Vous pouvez maintenant voter et faire des dons pour des projets.",
+    "success-primary-btn": "Fermer",
+    "pending-text": "Vérification en attente",
+    "pending-support-text": "Nous examinons les documents que vous avez soumis et vous informerons une fois terminé.",
+    "not-verified-text": "Vérifiez votre {{title}}",
+    "not-verified-support-text": "Pour voter et faire des dons sur notre plateforme, veuillez vérifier votre {{title}}.",
+    "not-verified-primary-btn": "Vérifier maintenant",
+    "not-verified-secondary-btn": "En savoir plus",
+    "title-organization": "organisation",
+    "title-identity": "identité"
+  },
+  "error-not-found": {
+    "header": "404 - Page non trouvée",
+    "subheader": "Oups ! La page que vous recherchez n'existe pas sur",
+    "go-to-home-btn": "Aller à l'accueil"
+  }
+}
