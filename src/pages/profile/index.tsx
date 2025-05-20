@@ -12,7 +12,7 @@ export const Profile = () => {
 
   return (
     <div className={styles['container']}>
-      <BackLink title="Back" customStyle={styles['back']} onBack={() => dispatch(showMenu())} />
+      <BackLink customStyle={styles['back']} onBack={() => dispatch(showMenu())} />
       <div className={styles['header']}>
         <h1 className={styles['header__title']}>{translate('profile-title')}</h1>
         <h2 className={styles['header__subtitle']}>{translate('profile-subtitle')}</h2>
