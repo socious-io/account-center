@@ -4,6 +4,7 @@
 .table {
     min-width: fit-content;
     @include flex(normal, normal, column);
+    direction: ltr;
 
     .header {
         height: 2.75rem;

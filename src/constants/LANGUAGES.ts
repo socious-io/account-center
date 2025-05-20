@@ -30,3 +30,5 @@ export const LANGUAGES: OptionType[] = [
     label: 'Chinese 中文简体',
   },
 ];
+
+export const RTL_LANGUAGES = ['ar', 'he', 'fa', 'ur'];
