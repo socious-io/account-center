@@ -15,3 +15,15 @@ export interface User extends UserReq {
   type?: UserType;
   impactPoints: number;
 }
+
+export interface PasswordReq {
+  currentPass: string;
+  newPass: string;
+  confirmPass: string;
+}
+
+export interface StripeAccount {
+  account: string;
+  bankName: string;
+  last4: string;
+}

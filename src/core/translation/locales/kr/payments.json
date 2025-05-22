@@ -1,0 +1,30 @@
+{
+  "payments-title": "결제",
+  "payments-subtitle": "결제 및 구독을 관리하세요",
+  "payments-methods-title": "결제 수단",
+  "payments-methods-desc": "결제 수단은 Socious ID 계정에 저장되어 Socious 생태계 전반에서 사용할 수 있습니다.",
+  "payment-cards": {
+    "add-card": "신용카드 추가",
+    "add-btn": "추가",
+    "failed": "실패"
+  },
+  "payments-method-payout-account": {
+    "title": "출금 계좌",
+    "add": "출금 계좌 추가",
+    "add-desc": "Socious는 거래 결제를 위해 Stripe와 제휴하고 있습니다. 계속을 선택하면 Stripe 웹사이트로 이동합니다.",
+    "add-country": "국가 검색",
+    "add-failed": "실패함",
+    "add-continue-btn": "계속",
+    "add-cancel-btn": "취소",
+    "saving": "저장 중"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "암호화폐 지갑",
+    "connect": "지갑 연결",
+    "connect-btn": "지갑 연결",
+    "disconnect": "연결 해제",
+    "copy": "주소 복사",
+    "not-installed-error": "Cardano 또는 EVM 지갑이 감지되지 않았습니다. 호환 지갑을 설치해주세요.",
+    "not-connected-error": "{{walletName}} 지갑 연결에 실패했습니다. 다시 시도해주세요."
+  }
+}

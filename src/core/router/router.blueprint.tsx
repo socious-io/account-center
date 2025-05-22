@@ -6,7 +6,12 @@ import { NotFound } from 'src/pages/error/NotFound';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
-import { checkVerificationAdaptor, getAchievementsAdaptor } from '../adaptors';
+import {
+  checkVerificationAdaptor,
+  getAchievementsAdaptor,
+  getCardsAdaptor,
+  getUserStripAccountsAdaptor,
+} from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
 
 export const blueprint: RouteObject[] = [
@@ -82,6 +87,23 @@ export const blueprint: RouteObject[] = [
             async lazy() {
               const { OrgVerify } = await import('src/pages/verification/organization');
               return { Component: OrgVerify };
+            },
+          },
+          {
+            path: 'payments',
+            loader: async () => {
+              const [cards, stripeAccounts] = await Promise.all([
+                getCardsAdaptor(100, 1),
+                getUserStripAccountsAdaptor(),
+              ]);
+              return {
+                cards: cards.data,
+                stripeAccounts: stripeAccounts.data || [],
+              };
+            },
+            async lazy() {
+              const { Payments } = await import('src/pages/payments');
+              return { Component: Payments };
             },
           },
           {
