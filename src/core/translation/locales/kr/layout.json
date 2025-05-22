@@ -11,7 +11,8 @@
     "staking": "스테이킹",
     "kyb": "KYB",
     "settings": "설정",
-    "log-out-btn": "로그아웃"
+    "log-out-btn": "로그아웃",
+    "back": "뒤로"
   },
   "layout-verification": {
     "success-text": "귀하의 {{title}}이(가) 성공적으로 인증되었습니다",

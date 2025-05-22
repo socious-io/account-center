@@ -1,0 +1,37 @@
+{
+  "impact-title": "我的影响力",
+  "impact-subtitle": "衡量并追踪你的影响",
+  "impact-details": {
+    "points": "影响力积分",
+    "next-tier": "还差 {{count}} 分即可达到下一级",
+    "see-my-perk": "查看我的福利",
+    "hours": "小时",
+    "contributed": "已贡献",
+    "worked": "已工作",
+    "volunteered": "已志愿服务",
+    "projects": "项目",
+    "supported": "已支持",
+    "total": "总计",
+    "donated": "已捐赠",
+    "see-more-btn": "查看更多",
+    "see-less-btn": "收起"
+  },
+  "impact-contributions": {
+    "tab": "贡献",
+    "date": "日期",
+    "type": "类型",
+    "points": "积分"
+  },
+  "impact-votes": {
+    "tab": "投票",
+    "donated": "已捐赠",
+    "voted": "已投票"
+  },
+  "impact-achievements": {
+    "tab": "成就",
+    "unlocked-title": "已解锁",
+    "unlocked-subtitle": "你已解锁的徽章",
+    "progress-title": "进行中",
+    "progress-subtitle": "继续做出影响，解锁新的徽章！"
+  }
+}

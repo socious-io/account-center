@@ -11,7 +11,8 @@
     "staking": "Staking",
     "kyb": "KYB",
     "settings": "Settings",
-    "log-out-btn": "Log out"
+    "log-out-btn": "Log out",
+    "back": "Back"
   },
   "layout-verification": {
     "success-text": "Your {{title}} has been successfully verified",

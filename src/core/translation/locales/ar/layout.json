@@ -1,0 +1,35 @@
+{
+  "layout": {
+    "brand": "هوية سوشيوس",
+    "brand-full": "هوية سوشيوس - مركز الحساب",
+    "bio": "إدارة حسابك عبر نظام سوشيوس البيئي",
+    "account": "ملف الحساب",
+    "password": "كلمة المرور",
+    "verification": "التحقق",
+    "impact": "أثري",
+    "payments": "المدفوعات",
+    "staking": "التخزين",
+    "kyb": "اعرف عملك (KYB)",
+    "settings": "الإعدادات",
+    "log-out-btn": "تسجيل الخروج",
+    "back": "رجوع"
+  },
+  "layout-verification": {
+    "success-text": "تم التحقق من {{title}} بنجاح",
+    "success-support-text": "يمكنك الآن التصويت والتبرع للمشاريع.",
+    "success-primary-btn": "إغلاق",
+    "pending-text": "التحقق قيد الانتظار",
+    "pending-support-text": "نحن نراجع المستندات التي قدمتها، وسنخطرك عند الانتهاء.",
+    "not-verified-text": "تحقق من {{title}} الخاصة بك",
+    "not-verified-support-text": "للتصويت والتبرع على منصتنا، يرجى التحقق من {{title}} الخاصة بك.",
+    "not-verified-primary-btn": "تحقق الآن",
+    "not-verified-secondary-btn": "معرفة المزيد",
+    "title-organization": "المنظمة",
+    "title-identity": "الهوية"
+  },
+  "error-not-found": {
+    "header": "404 - الصفحة غير موجودة",
+    "subheader": "عذرًا! الصفحة التي تبحث عنها غير موجودة على",
+    "go-to-home-btn": "الانتقال إلى الصفحة الرئيسية"
+  }
+}

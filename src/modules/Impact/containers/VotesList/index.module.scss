@@ -3,6 +3,7 @@
 
 .container {
     @include flex(normal, stretch, column);
+    direction: ltr;
 
     .list {
         @include flex(normal, center);

@@ -1,0 +1,9 @@
+{
+  "settings-title": "Paramètres",
+  "settings-subtitle": "Gérez les paramètres et préférences de votre compte.",
+  "settings-fields": {
+    "language-title": "Changer de langue",
+    "language-desc": "Sélectionnez votre langue par défaut."
+  },
+  "settings-save-btn": "Enregistrer"
+}

@@ -19,6 +19,15 @@ $nav-height: 4rem;
             margin-left: 0;
         }
 
+        &--rtl {
+            margin-left: 0;
+            margin-right: $menu-width;
+
+            @media (max-width: $md) {
+                margin-right: 0;
+            }
+        }
+
         .header {
             display: none;
 
