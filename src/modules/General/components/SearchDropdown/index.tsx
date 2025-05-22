@@ -19,7 +19,7 @@ const CustomControl = (props: any) => {
 };
 
 const CustomOption = (props: any) => {
-  const { innerProps, label, data, value, options, selectId, ...rest } = props;
+  const { innerProps, label, data, value, options, selectId } = props;
   const labelValue = handleMultiValueAsync(label).isObject ? handleMultiValueAsync(label).label : label;
   const descriptionValue =
     (handleMultiValueAsync(label).isObject ? handleMultiValueAsync(label).description : data.description) || '';
@@ -69,7 +69,7 @@ const handleMultiValueAsync = (value: string) => {
   }
   try {
     return { ...JSON.parse(value), isObject: true };
-  } catch (e) {
+  } catch {
     return { isObject: false };
   }
 };
@@ -129,7 +129,8 @@ const SearchDropdown: React.FC<SelectProps> = ({
             ClearIndicator: CustomClearIndicator,
           }}
           styles={{
-            singleValue: (provided, state) => ({
+            menuPortal: base => ({ ...base, zIndex: 9999 }),
+            singleValue: provided => ({
               ...provided,
               color: '#101828',
               fontSize: '16px',
@@ -168,7 +169,8 @@ const SearchDropdown: React.FC<SelectProps> = ({
             ClearIndicator: CustomClearIndicator,
           }}
           styles={{
-            singleValue: (provided, state) => ({
+            menuPortal: base => ({ ...base, zIndex: 9999 }),
+            singleValue: provided => ({
               ...provided,
               color: '#101828',
               fontSize: '16px',
@@ -208,6 +210,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             ClearIndicator: CustomClearIndicator,
           }}
           styles={{
+            menuPortal: base => ({ ...base, zIndex: 9999 }),
             singleValue: provided => ({
               ...provided,
               color: '#101828',
