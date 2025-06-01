@@ -1,0 +1,25 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.modal {
+    &__content {
+        @include flex(normal, stretch, column);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+
+        @media (max-width: $md) {
+            padding: 0 1rem;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        @include flex(normal, center);
+        gap: 0.75rem;
+        padding: 1.5rem;
+
+        @media (max-width: $md) {
+            padding: 1rem;
+        }
+    }
+}
