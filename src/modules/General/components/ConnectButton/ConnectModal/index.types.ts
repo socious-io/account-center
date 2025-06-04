@@ -6,4 +6,5 @@ export interface ConnectModalProps {
   formattedBalance: string;
   handleDisconnect: () => void;
   handleCopy: () => void;
+  footer?: React.ReactNode;
 }

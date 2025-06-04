@@ -15,12 +15,15 @@ const ConnectModal: React.FC<ConnectModalProps> = ({
   formattedBalance,
   handleDisconnect,
   handleCopy,
+  footer,
 }) => {
   return (
     <Modal
       open={open}
       handleClose={handleClose}
+      footer={footer}
       headerDivider={false}
+      footerDivider={false}
       mobileCentered
       customStyle={styles['modal']}
       contentClassName={styles['modal__content']}
