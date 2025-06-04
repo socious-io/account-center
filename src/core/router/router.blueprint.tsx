@@ -10,6 +10,8 @@ import {
   checkVerificationAdaptor,
   getAchievementsAdaptor,
   getCardsAdaptor,
+  getMyReferralAdaptor,
+  getReferAdaptor,
   getUserStripAccountsAdaptor,
 } from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
@@ -104,6 +106,20 @@ export const blueprint: RouteObject[] = [
             async lazy() {
               const { Payments } = await import('src/pages/payments');
               return { Component: Payments };
+            },
+          },
+          {
+            path: 'refer',
+            loader: async () => {
+              const [overviews, referralList] = await Promise.all([getReferAdaptor(), getMyReferralAdaptor()]);
+              return {
+                overviews: overviews.data,
+                referralList: referralList.data,
+              };
+            },
+            async lazy() {
+              const { Refer } = await import('src/pages/refer');
+              return { Component: Refer };
             },
           },
           {
