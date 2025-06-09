@@ -5,7 +5,7 @@ import { AchievementsRes, AdaptorRes, ContributionsRes, ContributionType, Impact
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
-    const { overviews } = await getImpactOverview();
+    const { total_per_type: overviews } = await getImpactOverview();
     const getOverviewValue = (type: string) => overviews.find(overview => overview.type === type)?.total_values || 0;
     const hoursWorked = getOverviewValue('WORKSUBMIT');
     const hoursVolunteered = getOverviewValue('VOLUNTEER');
