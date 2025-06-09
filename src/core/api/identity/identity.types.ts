@@ -1,45 +1,17 @@
-import { MediaRes } from '../media/media.types';
-import { OrgVerificationStatus } from '../verification/verification.types';
+import { Organization } from '../organizations/organizations.types';
+import { User } from '../users/users.types';
 
 export type UserType = 'users' | 'organizations';
 
-export interface OrgMeta {
-  id: string;
-  name: string;
-  shortname: string;
-  email: string;
-  website: string;
-  bio: string;
-  logo: MediaRes | null;
-  logo_id: string;
-  description?: string;
-  country: string;
-  city: string;
-  wallet_address?: string;
-  status: OrgVerificationStatus;
-  verified: boolean;
-  verified_impact: boolean;
-  created_at: Date;
-  updated_at: Date;
-}
-
-export interface UserMeta {
-  id: string;
-  first_name: string;
-  last_name: string;
-  username: string;
-  bio: string;
-  email: string;
-  avatar: MediaRes | null;
-  avatar_id: string;
-  country: string;
-  city: string;
-  identity_verified_at: Date | null;
-  created_at: Date;
-  updated_at: Date;
-}
-
 export interface IdentityRes {
-  users: UserMeta;
-  organizations: OrgMeta[];
+  users: User;
+  organizations: Organization[];
+}
+
+export interface Identity {
+  id: string;
+  type: UserType;
+  meta: User | Organization;
+  updated_at: Date;
+  created_at: Date;
 }
