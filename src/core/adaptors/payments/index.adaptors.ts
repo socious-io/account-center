@@ -1,6 +1,6 @@
-import { addCard, cards, removeCard, setWallet } from 'src/core/api';
+import { addCard, cards, getStripeAccount, getStripeLink, removeCard, setWallet } from 'src/core/api';
 
-import { AdaptorRes, Cards, Card, SuccessRes, WalletReq } from '..';
+import { AdaptorRes, Cards, Card, SuccessRes, WalletReq, CustomError, StripeAccount } from '..';
 
 export const getCardsAdaptor = async (limit = 10, page = 1): Promise<AdaptorRes<Cards>> => {
   try {
@@ -51,6 +51,41 @@ export const removeCardAdaptor = async (cardId: string): Promise<AdaptorRes<Succ
   } catch (error) {
     console.error('Error in removing card', error);
     return { data: null, error: 'Error in removing card' };
+  }
+};
+
+export const getStripAccountsAdaptor = async (): Promise<AdaptorRes<StripeAccount[]>> => {
+  try {
+    const { external_accounts } = await getStripeAccount();
+    const data = external_accounts.data.map(account => ({
+      account: account.account,
+      bankName: account.bank_name,
+      last4: account.last4,
+    }));
+    return {
+      data,
+      error: null,
+    };
+  } catch (error) {
+    console.error('Error in getting user stripe accounts', error);
+    return { data: null, error: 'Error in getting user stripe accounts' };
+  }
+};
+
+export const getStripeLinkAdaptor = async (country: string, redirect_url: string): Promise<AdaptorRes<string>> => {
+  try {
+    const { url } = await getStripeLink({ country, redirect_url });
+    return {
+      data: url.url,
+      error: null,
+    };
+  } catch (error: unknown) {
+    console.error('Error in getting stripe link', error);
+    return {
+      data: null,
+      error:
+        (error as CustomError).response.data.error || (error as CustomError)?.message || 'Error in getting stripe link',
+    };
   }
 };
 

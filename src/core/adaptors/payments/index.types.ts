@@ -14,6 +14,12 @@ export interface Card {
 
 export type Cards = PaginateRes<Card>;
 
+export interface StripeAccount {
+  account: string;
+  bankName: string;
+  last4: string;
+}
+
 export type WalletReq = {
   chain: string;
   chain_id: string;
