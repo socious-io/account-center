@@ -56,9 +56,10 @@ const PaymentMethods = () => {
           <>
             <div className={styles['section']}>
               {translate('payments-method-payout-account.title')}
-              {/* FIXME: replace static data with BE API */}
               {stripeAccounts.length ? (
-                <PayoutAccount name="HSBC" number="••6543" />
+                stripeAccounts.map(account => (
+                  <PayoutAccount key={account.account} name={account.bankName} number={`**${account.last4}`} />
+                ))
               ) : (
                 <Button color="info" onClick={() => setOpenModal({ name: 'add-account', open: true })}>
                   {translate('payments-method-payout-account.add')}
