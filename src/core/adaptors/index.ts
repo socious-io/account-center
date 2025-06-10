@@ -19,6 +19,9 @@ export * from './impact/index.types';
 export * from './payments/index.adaptors';
 export * from './payments/index.types';
 
+export * from './refer/index.adaptors';
+export * from './refer/index.types';
+
 export interface CustomError {
   response: { data: { error: string } };
   message?: string;

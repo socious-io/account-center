@@ -14,9 +14,8 @@ export interface ImpactPoint {
   created_at: Date;
 }
 
-export interface ImpactPointsRes extends Omit<PaginateRes, 'total'> {
+export interface ImpactPointsRes extends PaginateRes {
   impact_points: ImpactPoint[];
-  total_count: number;
 }
 
 export interface ImpactPointOverview {
@@ -26,7 +25,7 @@ export interface ImpactPointOverview {
 }
 
 export type ImpactPointOverviewRes = {
-  overviews: ImpactPointOverview[];
+  total_per_type: ImpactPointOverview[];
 };
 
 export interface Badge {

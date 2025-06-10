@@ -1,3 +1,4 @@
+import { User as UserRes, Organization as OrgRes, Identity } from 'src/core/api';
 import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 
 import { AdaptorRes, getOrgsAdaptor, getUserProfileAdaptor, CurrentIdentity, Org, User } from '..';
@@ -40,7 +41,7 @@ export const getIdentitiesAdaptor = async (): Promise<AdaptorRes<CurrentIdentity
   }
 };
 
-export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org | undefined) => {
+export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | Identity | User | Org | undefined) => {
   if (!identity) {
     return {
       id: '',
@@ -71,6 +72,27 @@ export const getCurrentIdentityAdaptor = (identity: CurrentIdentity | User | Org
       verified: identity.verified,
       verificationStatus: identity.verificationStatus,
       impactPoints: identity.impactPoints,
+    };
+  }
+  // Identity type
+  if ('meta' in identity) {
+    const isUser = identity.type === 'users';
+    const user = identity.meta as UserRes;
+    const org = identity.meta as OrgRes;
+
+    return {
+      id: identity.id,
+      firstName: isUser ? user.first_name : null,
+      lastName: isUser ? user.last_name : null,
+      name: isUser ? `${user.first_name} ${user.last_name}` : org.name,
+      img: isUser ? user.avatar?.url : org.logo?.url,
+      imgId: isUser ? user.avatar?.id : org.logo?.id,
+      type: identity.type || 'users',
+      username: isUser ? user.username : org.shortname,
+      email: user.email,
+      verified: isUser ? !!user.identity_verified_at : org.verified,
+      verificationStatus: identity.type === 'organizations' ? org.status : null,
+      impactPoints: isUser ? user.impact_points : null,
     };
   } else {
     // User or Org type

@@ -1,4 +1,4 @@
-import { Media } from '../media/media.types';
+import { MediaRes } from '../media/media.types';
 import { User } from '../users/users.types';
 
 export type OrgVerificationStatus = 'NOT_ACTIVE' | 'PENDING' | 'ACTIVE';
@@ -14,7 +14,7 @@ export interface KYBRes {
   user_id: string;
   organization_id: string;
   status: OrgVerificationStatus;
-  documents: Media[];
+  documents: MediaRes[];
   created_at: Date;
   updated_at: Date;
 }

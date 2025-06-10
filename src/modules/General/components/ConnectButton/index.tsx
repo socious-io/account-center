@@ -16,9 +16,9 @@ import FeaturedIcon from '../FeaturedIcon';
 import Image from '../Image';
 import ConnectModal from './ConnectModal';
 
-const ConnectButton: React.FC<ConnectButtonProps> = ({ onSetWallet }) => {
+const ConnectButton: React.FC<ConnectButtonProps> = ({ defaultAddress = '', onSetWallet }) => {
   const { dispatch, state } = useWalletContext();
-  const { address, wallet, balance } = state;
+  const { address = defaultAddress, wallet, balance } = state;
 
   const { address: evmAddress = '0x', isConnected: isEvmConnected } = useAccount();
   const { connectors: evmConnectors, connect: connectEvm } = useConnect();

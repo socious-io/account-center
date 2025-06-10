@@ -3,7 +3,7 @@ import { FilterReq } from '../types';
 import { BadgesRes, ImpactPointOverviewRes, ImpactPointsRes } from './impact.types';
 
 export async function getImpactOverview(): Promise<ImpactPointOverviewRes> {
-  return (await get<ImpactPointOverviewRes>('impact-points/overview')).data;
+  return (await get<ImpactPointOverviewRes>('impact-points/stats')).data;
 }
 
 export async function getImpactPoints(payload?: FilterReq): Promise<ImpactPointsRes> {

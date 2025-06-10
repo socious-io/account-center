@@ -1,0 +1,32 @@
+{
+  "refer-header": "✨ Parrainer et gagner",
+  "refer-subheader": "Aidez-nous à avoir un plus grand impact et à prendre part à notre communauté",
+  "refer-desc": "En partageant Socious avec des utilisateurs prometteurs et des organisations à impact, vous ne faites pas qu'élargir notre réseau, vous accélérez également le changement.",
+  "refer-learn-more-link": "En savoir plus sur notre programme de parrainage et comment réclamer vos récompenses.",
+  "refer-list": "Mes parrainages",
+  "refer-overview": {
+    "see-more-btn": "Voir plus",
+    "see-less-btn": "Voir moins",
+    "referrals": "Parrainages",
+    "total-rewards": "Récompenses totales",
+    "unclaimed-rewards": "Vous avez {{no}} récompenses non réclamées",
+    "track-referral": "Vous pouvez suivre vos parrainages et récompenses dans le tableau ci-dessous.",
+    "claimed-color": "Les récompenses réclamées sont affichées en vert",
+    "unclaimed-color": "Les récompenses non réclamées sont affichées en rouge",
+    "share-code-continue": "Partagez vos codes de parrainage pour continuer à gagner des récompenses.",
+    "no-active-referral": "Vous n'avez aucun parrainage actif.",
+    "share-code-start": "Partagez vos codes de parrainage pour commencer à gagner des récompenses.",
+    "claim-now-btn": "Réclamer maintenant"
+  },
+  "refer-claim": {
+    "wallet-failed-title": "Échec",
+    "wallet-not-installed-error": "Aucun portefeuille Cardano détecté. Veuillez installer un portefeuille compatible.",
+    "wallet-not-connected-error": "Échec de la connexion de votre portefeuille {{walletName}}. Veuillez réessayer."
+  },
+  "refer-table": {
+    "name": "Filleul",
+    "date": "Date de parrainage",
+    "claimed": "Oui",
+    "unclaimed": "Non"
+  }
+}
