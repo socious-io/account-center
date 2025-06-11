@@ -29,18 +29,27 @@ export const getReferAdaptor = async (): Promise<AdaptorRes<ReferOverviews>> => 
 export const getMyReferralAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<MyReferralRes>> => {
   try {
     const { results: referrals, total_count: total } = await getReferrals();
+    const allAchievementTypes = Array.from(new Set(referrals.flatMap(r => r.achievements.map(a => a.type))));
     const results = referrals.map(referral => {
       const achievements = referral.achievements.reduce(
         (acc, { type, ...rest }) => {
           acc[type] = {
             claimed: !!rest.reward_claimed_at,
-            //FIXME: BE need
-            did: true,
+            done: true,
           };
           return acc;
         },
         {} as Record<string, ClaimedAchievement>,
       );
+
+      for (const type of allAchievementTypes) {
+        if (!achievements[type]) {
+          achievements[type] = {
+            claimed: false, // if something isn't done, so it's not claimed
+            done: false,
+          };
+        }
+      }
 
       const { name, email, img } = getCurrentIdentityAdaptor(referral.referee);
       return {
