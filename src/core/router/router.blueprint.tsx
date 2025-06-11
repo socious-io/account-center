@@ -12,7 +12,7 @@ import {
   getCardsAdaptor,
   getMyReferralAdaptor,
   getReferAdaptor,
-  getUserStripAccountsAdaptor,
+  getStripAccountsAdaptor,
 } from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
 
@@ -94,10 +94,7 @@ export const blueprint: RouteObject[] = [
           {
             path: 'payments',
             loader: async () => {
-              const [cards, stripeAccounts] = await Promise.all([
-                getCardsAdaptor(100, 1),
-                getUserStripAccountsAdaptor(),
-              ]);
+              const [cards, stripeAccounts] = await Promise.all([getCardsAdaptor(100, 1), getStripAccountsAdaptor()]);
               return {
                 cards: cards.data,
                 stripeAccounts: stripeAccounts.data || [],

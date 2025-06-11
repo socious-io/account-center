@@ -15,7 +15,7 @@ export interface ReferOverviews {
 
 export type ClaimedAchievement = {
   claimed: boolean;
-  did?: boolean;
+  done?: boolean;
 };
 
 export interface Referral {

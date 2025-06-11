@@ -21,9 +21,3 @@ export interface PasswordReq {
   newPass: string;
   confirmPass: string;
 }
-
-export interface StripeAccount {
-  account: string;
-  bankName: string;
-  last4: string;
-}
