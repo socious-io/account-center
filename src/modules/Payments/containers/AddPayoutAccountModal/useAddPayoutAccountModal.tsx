@@ -10,7 +10,7 @@ export const useAddPayoutAccountModal = () => {
     if (option.value === selectedCountry) return;
     else {
       setSelectedCountry(option.value);
-      generateStripeLink(selectedCountry);
+      generateStripeLink(option.value);
     }
   };
 

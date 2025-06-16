@@ -1,7 +1,7 @@
-import { getStripeLink, getUser, getUserStripeProfile, updatePassword, updateProfile, UserType } from 'src/core/api';
+import { getUser, updatePassword, updateProfile, UserType } from 'src/core/api';
 
 import { AdaptorRes, CustomError, SuccessRes } from '..';
-import { UserReq, User, PasswordReq, StripeAccount } from './index.types';
+import { UserReq, User, PasswordReq } from './index.types';
 
 export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
   try {
@@ -67,40 +67,5 @@ export const changePasswordAdaptor = async (payload: PasswordReq): Promise<Adapt
   } catch (error: unknown) {
     console.error('Error in changing Password', error);
     return { data: null, error: (error as CustomError).response.data.error || 'Error in changing Password' };
-  }
-};
-
-export const getUserStripAccountsAdaptor = async (): Promise<AdaptorRes<StripeAccount[]>> => {
-  try {
-    const { external_accounts } = await getUserStripeProfile();
-    const data = external_accounts.data.map(account => ({
-      account: account.account,
-      bankName: account.bank_name,
-      last4: account.last4,
-    }));
-    return {
-      data,
-      error: null,
-    };
-  } catch (error) {
-    console.error('Error in getting user stripe accounts', error);
-    return { data: null, error: 'Error in getting user stripe accounts' };
-  }
-};
-
-export const getStripeLinkAdaptor = async (country: string, redirect_url: string): Promise<AdaptorRes<string>> => {
-  try {
-    const { link } = await getStripeLink({ country, redirect_url });
-    return {
-      data: link.url,
-      error: null,
-    };
-  } catch (error: unknown) {
-    console.error('Error in getting stripe link', error);
-    return {
-      data: null,
-      error:
-        (error as CustomError).response.data.error || (error as CustomError)?.message || 'Error in getting stripe link',
-    };
   }
 };
