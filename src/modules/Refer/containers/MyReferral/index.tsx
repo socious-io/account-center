@@ -46,10 +46,10 @@ const MyReferral = () => {
       accessorKey: type,
       cell: ({ getValue }: { getValue: Getter<ClaimedAchievement> }) => {
         const claimed = getValue()?.claimed;
-        const did = getValue()?.did;
+        const done = getValue()?.done;
         return (
           <div className={claimed ? styles['table__claimed'] : styles['table__unclaimed']}>
-            {did ? translate('refer-table.claimed') : translate('refer-table.unclaimed')}
+            {done ? translate('refer-table.claimed') : translate('refer-table.unclaimed')}
             <Icon
               name={claimed ? 'tick' : 'alert-circle'}
               fontSize={12}
