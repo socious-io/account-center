@@ -32,6 +32,18 @@
     "unlocked-title": "Desbloqueado",
     "unlocked-subtitle": "Tu insignia desbloqueada",
     "progress-title": "En progreso",
-    "progress-subtitle": "¡Sigue generando impacto para desbloquear nuevas insignias!"
+    "progress-subtitle": "¡Sigue generando impacto para desbloquear nuevas insignias!",
+    "claim-badge": {
+      "button": "Reclamar insignia",
+      "modal-title": "Reclama tu insignia",
+      "alert-title": "Socious utiliza tecnología blockchain para hacer las credenciales transparentes y rastreables.",
+      "alert-subtitle": "Nos hemos asociado con Atala Prism para que tu ID descentralizado pueda recibir credenciales verificables.",
+      "how-get-certificate": "Cómo obtener tu certificado",
+      "step-1": "Abre tu billetera Socious",
+      "step-2": "Escanea el código QR a continuación",
+      "step-3": "Acepta la invitación para recibir tu credencial",
+      "download-wallet": "Descargar la aplicación de billetera Socious",
+      "open-wallet": "Abrir la aplicación de billetera Socious"
+    }
   }
 }
