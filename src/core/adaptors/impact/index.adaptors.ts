@@ -100,6 +100,7 @@ export const getAchievementsAdaptor = async (): Promise<AdaptorRes<AchievementsR
     const data = badges.map(badge => ({
       name: badge.social_cause_category,
       level: getBadgeLevel(badge.total_points),
+      claimed: badge.is_claimed,
     }));
 
     return {

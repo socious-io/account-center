@@ -43,6 +43,7 @@ export type VotesRes = PaginateRes<Vote>;
 export interface Achievement {
   name: string;
   level: number;
+  claimed?: boolean;
 }
 
 export type AchievementsRes = Achievement[];
