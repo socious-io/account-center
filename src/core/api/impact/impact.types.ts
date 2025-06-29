@@ -32,6 +32,7 @@ export interface Badge {
   total_points: number;
   count: number;
   social_cause_category: string;
+  is_claimed: boolean;
 }
 
 export type BadgesRes = {

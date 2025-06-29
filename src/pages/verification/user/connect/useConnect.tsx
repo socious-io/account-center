@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { CurrentIdentity, getConnectionAdaptor, KYC, KYCStatus, verifyActionAdaptor } from 'src/core/adaptors';
+import {
+  CurrentIdentity,
+  getVerificationConnectionAdaptor,
+  KYC,
+  KYCStatus,
+  verifyActionAdaptor,
+} from 'src/core/adaptors';
 import { RootState } from 'src/store';
 
 export const useConnect = () => {
@@ -17,7 +23,7 @@ export const useConnect = () => {
 
   const getConnectData = useCallback(async () => {
     if (!connectId) return;
-    const { error, data } = await getConnectionAdaptor(connectId);
+    const { error, data } = await getVerificationConnectionAdaptor(connectId);
     if (error) return;
     if (data) setData(data);
   }, [connectId]);

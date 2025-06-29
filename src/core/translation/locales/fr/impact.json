@@ -32,6 +32,18 @@
     "unlocked-title": "Débloqué",
     "unlocked-subtitle": "Votre badge débloqué",
     "progress-title": "En cours",
-    "progress-subtitle": "Continuez à avoir un impact pour débloquer de nouveaux badges !"
+    "progress-subtitle": "Continuez à avoir un impact pour débloquer de nouveaux badges !",
+    "claim-badge": {
+      "button": "Réclamer le badge",
+      "modal-title": "Réclamez votre badge",
+      "alert-title": "Socious utilise la technologie blockchain pour rendre les certificats transparents et traçables.",
+      "alert-subtitle": "Nous nous sommes associés à Atala Prism pour permettre à votre ID décentralisé de recevoir des certificats vérifiables.",
+      "how-get-certificate": "Comment obtenir votre certificat",
+      "step-1": "Ouvrez votre portefeuille Socious",
+      "step-2": "Scannez le code QR ci-dessous",
+      "step-3": "Acceptez l'invitation pour recevoir votre certificat",
+      "download-wallet": "Télécharger l'application Socious Wallet",
+      "open-wallet": "Ouvrir l'application Socious Wallet"
+    }
   }
 }
