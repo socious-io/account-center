@@ -24,3 +24,6 @@ export * from './payments/payments.types';
 
 export * from './refer/refer.api';
 export * from './refer/refer.types';
+
+export * from './credentials/credentials.api';
+export * from './credentials/credentials.types';

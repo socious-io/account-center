@@ -32,6 +32,18 @@
     "unlocked-title": "アンロック済み",
     "unlocked-subtitle": "アンロックされたバッジ",
     "progress-title": "進行中",
-    "progress-subtitle": "新しいバッジをアンロックするには、さらにインパクトを与えましょう！"
+    "progress-subtitle": "新しいバッジをアンロックするには、さらにインパクトを与えましょう！",
+    "claim-badge": {
+      "button": "バッジを獲得",
+      "modal-title": "バッジを受け取る",
+      "alert-title": "Sociousはブロックチェーン技術を使用して、証明書を透明かつ追跡可能にしています。",
+      "alert-subtitle": "分散型IDが検証可能な証明書を受け取れるよう、Atala Prismと提携しています。",
+      "how-get-certificate": "証明書の取得方法",
+      "step-1": "Sociousウォレットを開く",
+      "step-2": "下のQRコードをスキャンする",
+      "step-3": "招待を承諾して証明書を受け取る",
+      "download-wallet": "Sociousウォレットアプリをダウンロード",
+      "open-wallet": "Sociousウォレットアプリを開く"
+    }
   }
 }

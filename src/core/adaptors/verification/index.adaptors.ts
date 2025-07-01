@@ -1,4 +1,4 @@
-import { getConnection, getKYC, requestKYB, requestKYC } from 'src/core/api';
+import { requestKYB, getConnection, getCredential, requestCredential } from 'src/core/api';
 
 import { AdaptorRes, KYB, KYC, KYCStatus } from '..';
 
@@ -13,14 +13,14 @@ export const verifyOrganizationAdaptor = async (orgId: string, documents: string
 
 export const createVerificationAdaptor = async (): Promise<AdaptorRes<KYC>> => {
   try {
-    const res = await requestKYC();
+    const res = await requestCredential('KYC');
     return {
       error: null,
       data: { id: res.id, connectURL: res.connection_url, status: res.status },
     };
   } catch {
     return {
-      error: 'Error in checking verification API call',
+      error: 'Error in creating verification API call',
       data: null,
     };
   }
@@ -28,7 +28,7 @@ export const createVerificationAdaptor = async (): Promise<AdaptorRes<KYC>> => {
 
 export const checkVerificationAdaptor = async (): Promise<AdaptorRes<KYC>> => {
   try {
-    const res = await getKYC();
+    const res = await getCredential('KYC');
     return {
       error: null,
       //FIXME: BE change string to object with type of error
@@ -83,7 +83,7 @@ export const verifyActionAdaptor = async (signal?: AbortSignal): Promise<KYCStat
   return await checkStatus();
 };
 
-export const getConnectionAdaptor = async (verifyId: string): Promise<AdaptorRes<KYC>> => {
+export const getVerificationConnectionAdaptor = async (verifyId: string): Promise<AdaptorRes<KYC>> => {
   try {
     const res = await getConnection(verifyId);
     return {
@@ -92,7 +92,7 @@ export const getConnectionAdaptor = async (verifyId: string): Promise<AdaptorRes
     };
   } catch {
     return {
-      error: 'Error in checking verification API call',
+      error: 'Error in getting verification connection API call',
       data: null,
     };
   }

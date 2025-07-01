@@ -22,6 +22,9 @@ export * from './payments/index.types';
 export * from './refer/index.adaptors';
 export * from './refer/index.types';
 
+export * from './credentials/index.adaptors';
+export * from './credentials/index.types';
+
 export interface CustomError {
   response: { data: { error: string } };
   message?: string;
