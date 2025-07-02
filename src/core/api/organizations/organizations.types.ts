@@ -14,6 +14,7 @@ export interface Organization extends OrganizationReq {
   logo?: MediaRes;
   logo_id?: string;
   verified: boolean;
+  //FIXME: BE change
   status: OrgVerificationStatus | null;
   created_at: Date;
   updated_at: Date;
