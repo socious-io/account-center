@@ -1,13 +1,12 @@
 import { User as UserRes, Organization as OrgRes, Identity } from 'src/core/api';
+import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 
 import { AdaptorRes, getOrgsAdaptor, getUserProfileAdaptor, CurrentIdentity, Org, User } from '..';
 
 export const getIdentitiesAdaptor = async (identityId?: string): Promise<AdaptorRes<CurrentIdentity[]>> => {
   try {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const paramIdentityId = urlParams.get('id') || '';
-    const currentIdentityId = identityId || paramIdentityId;
+    const storageIdentityId = await nonPermanentStorage.get('identity');
+    const currentIdentityId = identityId || storageIdentityId;
 
     let identities: (User | Org)[] = [];
     const { data: userData } = await getUserProfileAdaptor();
