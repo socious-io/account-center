@@ -43,7 +43,7 @@ export const checkVerificationAdaptor = async (): Promise<AdaptorRes<KYC>> => {
 };
 
 export const verifyActionAdaptor = async (signal?: AbortSignal): Promise<KYCStatus> => {
-  let checkedStatus: KYCStatus = '';
+  let checkedStatus: KYCStatus = 'inactive';
   const checkStatus = async (): Promise<KYCStatus> => {
     const { data } = await checkVerificationAdaptor();
     if (data) {

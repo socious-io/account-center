@@ -18,7 +18,7 @@ export const useConnect = () => {
   );
   const verified = currentIdentity?.verified;
   const [data, setData] = useState<KYC>();
-  const [verifyStatus, setVerifyStatus] = useState<KYCStatus>(verified ? 'succeed' : '');
+  const [verifyStatus, setVerifyStatus] = useState<KYCStatus>(verified ? 'succeed' : 'inactive');
   const EXPIRED_QR_CODE = 120_000;
 
   const getConnectData = useCallback(async () => {

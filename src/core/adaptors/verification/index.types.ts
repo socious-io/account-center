@@ -4,7 +4,7 @@ export interface KYB {
   status: OrgVerificationStatus;
 }
 
-export type KYCStatus = '' | 'succeed' | 'failed' | 'exceeded';
+export type KYCStatus = 'inactive' | 'succeed' | 'failed' | 'exceeded';
 
 export interface KYC {
   id: string;
