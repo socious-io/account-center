@@ -15,10 +15,10 @@ const AvatarLabelGroup: React.FC<AvatarLabelGroupProps> = props => {
     >
       <Avatar img={account?.img || ''} type={account.type} size={avatarSize || '40px'} />
       <div className={styles['info']}>
-        <Typography variant="subtitle2" color={variables.color_grey_900}>
+        <Typography variant="subtitle2" color={variables.color_grey_900} className={styles['info__name']}>
           {account.name}
         </Typography>
-        <div className={styles['subtitle']}>{account.username}</div>
+        <div className={styles['info__subtitle']}>{account.username}</div>
       </div>
     </div>
   );
