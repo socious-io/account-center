@@ -3,6 +3,7 @@ import Select, { ClearIndicatorProps, components } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import AsyncCreatableSelect from 'react-select/async-creatable';
 import Icon from 'src/modules/General/components/Icon';
+import variables from 'src/styles/constants/_exports.module.scss';
 
 import styles from './index.module.scss';
 import { SelectProps } from './index.types';
@@ -12,7 +13,7 @@ const CustomControl = (props: any) => {
   const { icon, children } = props;
   return (
     <components.Control {...props} className={styles['input']}>
-      {icon && <Icon className={styles['startIcon']} name={icon} fontSize={20} color="#667085" />}
+      {icon && <Icon className={styles['startIcon']} name={icon} fontSize={20} color={variables.color_grey_500} />}
       {children}
     </components.Control>
   );
@@ -28,7 +29,7 @@ const CustomOption = (props: any) => {
   return (
     <div className="px-1.5">
       <div {...innerProps} className={`${styles['option']}`} id={`${selectId}-option-${index}`}>
-        {selected && <Icon name="check" fontSize={20} color="#667085" />}
+        {selected && <Icon name="check" fontSize={20} color={variables.color_grey_500} />}
         <div className="ml-0 mr-auto flex gap-2 items-center">
           <span style={{ marginRight: '8px' }}>{data.icon}</span>
           {labelValue} {descriptionValue && <div className={styles['description']}>{descriptionValue}</div>}
@@ -57,7 +58,7 @@ const CustomSingleValue = (props: any) => {
 const CustomClearIndicator = (props: ClearIndicatorProps) => {
   return (
     <components.ClearIndicator {...props}>
-      <Icon name="x-close" fontSize={20} color="#667085" className="cursor-pointer" />
+      <Icon name="x-close" fontSize={20} color={variables.color_grey_500} className="cursor-pointer" />
     </components.ClearIndicator>
   );
 };
@@ -122,7 +123,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             DropdownIndicator: () =>
               hasDropdownIcon && (
                 <div className={styles['dropdown']}>
-                  <Icon name="chevron-down" fontSize={20} color="#667085" />
+                  <Icon name="chevron-down" fontSize={20} color={variables.color_grey_500} />
                 </div>
               ),
             SingleValue: props => <CustomSingleValue controlClassName={controlClassName} {...props} />,
@@ -132,7 +133,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             menuPortal: base => ({ ...base, zIndex: 9999 }),
             singleValue: provided => ({
               ...provided,
-              color: '#101828',
+              color: variables.color_grey_900,
               fontSize: '16px',
               fontWeight: 500,
             }),
@@ -140,8 +141,12 @@ const SearchDropdown: React.FC<SelectProps> = ({
             control: (provided: any, state: any) => ({
               ...provided,
               '&:hover': '',
-              border: !border ? 'none' : state.isFocused ? '1px solid #99B7B5' : '1px solid #D0D5DD',
-              boxShadow: !border ? null : state.isFocused ? ' 0px 0px 0px 4px #E6EDED;' : null,
+              border: !border
+                ? 'none'
+                : state.isFocused
+                  ? `1px solid ${variables.color_primary_300}`
+                  : `1px solid ${variables.color_grey_300}`,
+              boxShadow: !border ? null : state.isFocused ? `0px 0px 0px 4px ${variables.color_primary_100}` : null,
               borderRadius: '8px',
             }),
             indicatorSeparator: () => ({ display: 'none' }),
@@ -162,7 +167,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             DropdownIndicator: () =>
               hasDropdownIcon && (
                 <div className={styles['dropdown']}>
-                  <Icon name="chevron-down" fontSize={20} color="#667085" />
+                  <Icon name="chevron-down" fontSize={20} color={variables.color_grey_500} />
                 </div>
               ),
             SingleValue: CustomSingleValue,
@@ -172,15 +177,19 @@ const SearchDropdown: React.FC<SelectProps> = ({
             menuPortal: base => ({ ...base, zIndex: 9999 }),
             singleValue: provided => ({
               ...provided,
-              color: '#101828',
+              color: variables.color_grey_900,
               fontSize: '16px',
               fontWeight: 500,
             }),
             control: (provided: any, state: any) => ({
               ...provided,
               '&:hover': '',
-              border: !border ? 'none' : state.isFocused ? '1px solid #99B7B5' : '1px solid #D0D5DD',
-              boxShadow: !border ? null : state.isFocused ? ' 0px 0px 0px 4px #E6EDED;' : null,
+              border: !border
+                ? 'none'
+                : state.isFocused
+                  ? `1px solid ${variables.color_primary_300}`
+                  : `1px solid ${variables.color_grey_300}`,
+              boxShadow: !border ? null : state.isFocused ? `0px 0px 0px 4px ${variables.color_primary_100}` : null,
               borderRadius: '8px',
               height: '44px',
             }),
@@ -203,7 +212,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             DropdownIndicator: () =>
               hasDropdownIcon && (
                 <div className={styles['dropdown']}>
-                  <Icon name="chevron-down" fontSize={20} color="#667085" />
+                  <Icon name="chevron-down" fontSize={20} color={variables.color_grey_500} />
                 </div>
               ),
             SingleValue: CustomSingleValue,
@@ -213,7 +222,7 @@ const SearchDropdown: React.FC<SelectProps> = ({
             menuPortal: base => ({ ...base, zIndex: 9999 }),
             singleValue: provided => ({
               ...provided,
-              color: '#101828',
+              color: variables.color_grey_900,
               fontSize: '16px',
               fontWeight: 500,
             }),
@@ -221,8 +230,12 @@ const SearchDropdown: React.FC<SelectProps> = ({
             control: (provided: any, state: any) => ({
               ...provided,
               '&:hover': '',
-              border: !border ? 'none' : state.isFocused ? '1px solid #99B7B5' : '1px solid #D0D5DD',
-              boxShadow: !border ? null : state.isFocused ? ' 0px 0px 0px 4px #E6EDED;' : null,
+              border: !border
+                ? 'none'
+                : state.isFocused
+                  ? `1px solid ${variables.color_primary_300}`
+                  : `1px solid ${variables.color_grey_300}`,
+              boxShadow: !border ? null : state.isFocused ? `0px 0px 0px 4px ${variables.color_primary_100}` : null,
               borderRadius: '8px',
             }),
             indicatorSeparator: () => ({ display: 'none' }),
