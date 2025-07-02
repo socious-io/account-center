@@ -16,6 +16,7 @@ import {
   getStripAccountsAdaptor,
 } from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
+import { nonPermanentStorage } from '../storage/non-permanent';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
@@ -87,6 +88,13 @@ export const blueprint: RouteObject[] = [
           },
           {
             path: 'kyb',
+            loader: async ({ request }) => {
+              const url = new URL(request.url);
+              const id = url.searchParams.get('id');
+              if (id) {
+                await nonPermanentStorage.set({ key: 'identity', value: id });
+              }
+            },
             async lazy() {
               const { OrgVerify } = await import('src/pages/verification/organization');
               return { Component: Protect(OrgVerify, 'organizations') };
