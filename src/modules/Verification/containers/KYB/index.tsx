@@ -11,7 +11,7 @@ import { useKYB } from './useKYB';
 
 const KYB: React.FC = () => {
   const {
-    data: { status, files, progressValues, uploadedErrors, error, loading, openSuccessModal },
+    data: { status, verified, files, progressValues, uploadedErrors, error, loading, openSuccessModal },
     operations: { onDropFiles, onDeleteFiles, onSend, handleCloseSuccessModal },
   } = useKYB();
 
@@ -35,7 +35,7 @@ const KYB: React.FC = () => {
     },
   };
 
-  return status !== 'NOT_ACTIVE' ? (
+  return verified ? (
     <div className={styles['container']}>
       <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
     </div>

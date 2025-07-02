@@ -13,6 +13,7 @@ export const useKYB = () => {
   const identities = useSelector<RootState, CurrentIdentity[] | undefined>(state => state.identity.entities) || [];
   const currentIdentity = identities.find(identity => identity.current);
   const currentIdentityStatus = currentIdentity?.verificationStatus || 'NOT_ACTIVE';
+  const currentIdentityVerified = currentIdentity?.verified;
   const organizationId = currentIdentity?.id;
   const [fileStates, setFileStates] = useState<FileState[]>([]);
   const [error, setError] = useState('');
@@ -94,6 +95,7 @@ export const useKYB = () => {
   return {
     data: {
       status: currentIdentityStatus,
+      verified: currentIdentityVerified,
       files,
       progressValues,
       uploadedErrors,
