@@ -18,7 +18,7 @@ export const useAvatarDropDown = () => {
 
   const switchAccount = async (accountId: string) => {
     await nonPermanentStorage.set({ key: 'identity', value: accountId });
-    const { error, data } = await getIdentitiesAdaptor();
+    const { error, data } = await getIdentitiesAdaptor(accountId);
     if (error) return;
     else if (data) {
       dispatch(setIdentityList(data));

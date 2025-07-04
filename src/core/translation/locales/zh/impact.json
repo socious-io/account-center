@@ -32,6 +32,18 @@
     "unlocked-title": "已解锁",
     "unlocked-subtitle": "你已解锁的徽章",
     "progress-title": "进行中",
-    "progress-subtitle": "继续做出影响，解锁新的徽章！"
+    "progress-subtitle": "继续做出影响，解锁新的徽章！",
+    "claim-badge": {
+      "button": "领取徽章",
+      "modal-title": "领取你的徽章",
+      "alert-title": "Socious 使用区块链技术使凭证透明且可追溯。",
+      "alert-subtitle": "我们与 Atala Prism 合作，使你的去中心化身份可以接收可验证的凭证。",
+      "how-get-certificate": "如何获取你的证书",
+      "step-1": "打开你的 Socious 钱包",
+      "step-2": "扫描下面的二维码",
+      "step-3": "接受邀请以接收你的凭证",
+      "download-wallet": "下载 Socious 钱包应用",
+      "open-wallet": "打开 Socious 钱包应用"
+    }
   }
 }

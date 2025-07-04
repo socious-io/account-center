@@ -1,4 +1,4 @@
-import { Media } from '../media/media.types';
+import { MediaRes } from '../media/media.types';
 import { PaginateRes } from '../types';
 import { OrgVerificationStatus } from '../verification/verification.types';
 
@@ -11,7 +11,7 @@ export interface OrganizationReq {
 
 export interface Organization extends OrganizationReq {
   id: string;
-  logo?: Media;
+  logo?: MediaRes;
   logo_id?: string;
   verified: boolean;
   status: OrgVerificationStatus | null;

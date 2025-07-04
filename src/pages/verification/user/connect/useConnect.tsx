@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { CurrentIdentity, getConnectionAdaptor, KYC, KYCStatus, verifyActionAdaptor } from 'src/core/adaptors';
+import {
+  CurrentIdentity,
+  getVerificationConnectionAdaptor,
+  KYC,
+  KYCStatus,
+  verifyActionAdaptor,
+} from 'src/core/adaptors';
 import { RootState } from 'src/store';
 
 export const useConnect = () => {
@@ -12,12 +18,12 @@ export const useConnect = () => {
   );
   const verified = currentIdentity?.verified;
   const [data, setData] = useState<KYC>();
-  const [verifyStatus, setVerifyStatus] = useState<KYCStatus>(verified ? 'succeed' : '');
+  const [verifyStatus, setVerifyStatus] = useState<KYCStatus>(verified ? 'succeed' : 'inactive');
   const EXPIRED_QR_CODE = 120_000;
 
   const getConnectData = useCallback(async () => {
     if (!connectId) return;
-    const { error, data } = await getConnectionAdaptor(connectId);
+    const { error, data } = await getVerificationConnectionAdaptor(connectId);
     if (error) return;
     if (data) setData(data);
   }, [connectId]);

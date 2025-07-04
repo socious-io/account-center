@@ -1,7 +1,7 @@
-import { getUser, updateProfile, UserType } from 'src/core/api';
+import { getUser, updatePassword, updateProfile, UserType } from 'src/core/api';
 
-import { AdaptorRes } from '..';
-import { UserReq, User } from './index.types';
+import { AdaptorRes, CustomError, SuccessRes } from '..';
+import { UserReq, User, PasswordReq } from './index.types';
 
 export const getUserProfileAdaptor = async (): Promise<AdaptorRes<User>> => {
   try {
@@ -53,5 +53,19 @@ export const changeUserProfileAdaptor = async (payload: UserReq): Promise<Adapto
   } catch (error) {
     console.error('Error in changing User Profile', error);
     return { data: null, error: 'Error in changing User Profile' };
+  }
+};
+
+export const changePasswordAdaptor = async (payload: PasswordReq): Promise<AdaptorRes<SuccessRes>> => {
+  try {
+    const newPayload = {
+      current_password: payload.currentPass,
+      password: payload.confirmPass,
+    };
+    await updatePassword(newPayload);
+    return { data: { message: 'succeed' }, error: null };
+  } catch (error: unknown) {
+    console.error('Error in changing Password', error);
+    return { data: null, error: (error as CustomError).response.data.error || 'Error in changing Password' };
   }
 };

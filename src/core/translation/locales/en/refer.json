@@ -1,0 +1,32 @@
+{
+  "refer-header": "✨ Refer and earn",
+  "refer-subheader": "Help us make a bigger impact, and gain a stake in our community",
+  "refer-desc": "By sharing Socious with promising users and impact organizations, you're not just expanding our network, you're also accelerating change.",
+  "refer-learn-more-link": "Learn more about our referral program and how to claim rewards.",
+  "refer-list": "My referrals",
+  "refer-overview": {
+    "see-more-btn": "See more",
+    "see-less-btn": "See less",
+    "referrals": "Referrals",
+    "total-rewards": "Total Rewards",
+    "unclaimed-rewards": "You have {{no}} unclaimed rewards",
+    "track-referral": "You can track your referrals and rewards using the table below.",
+    "claimed-color": "Claimed rewards are displayed in green",
+    "unclaimed-color": "Unclaimed Rewards are displayed in red",
+    "share-code-continue": "Share your referral codes to continue to earn rewards.",
+    "no-active-referral": "You have no active referrals.",
+    "share-code-start": "Share your referral codes to start earning rewards.",
+    "claim-now-btn": "Claim now"
+  },
+  "refer-claim": {
+    "wallet-failed-title": "Failed",
+    "wallet-not-installed-error": "No Cardano wallet detected. Please install a compatible wallet.",
+    "wallet-not-connected-error": "Failed to connect your {{walletName}} wallet. Please try again."
+  },
+  "refer-table": {
+    "name": "Referee",
+    "date": "Referral Date",
+    "claimed": "Yes",
+    "unclaimed": "No"
+  }
+}

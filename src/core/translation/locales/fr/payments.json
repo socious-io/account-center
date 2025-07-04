@@ -1,0 +1,30 @@
+{
+  "payments-title": "Paiements",
+  "payments-subtitle": "Gérez vos paiements et abonnements",
+  "payments-methods-title": "Méthodes de paiement",
+  "payments-methods-desc": "Les méthodes de paiement sont enregistrées dans votre compte Socious ID pour une utilisation dans tout l'écosystème Socious.",
+  "payment-cards": {
+    "add-card": "Ajouter une carte de crédit",
+    "add-btn": "Ajouter",
+    "failed": "Échec"
+  },
+  "payments-method-payout-account": {
+    "title": "Compte de paiement",
+    "add": "Ajouter un compte de paiement",
+    "add-desc": "Socious s'associe à Stripe pour les paiements. En cliquant sur continuer, vous serez redirigé vers le site de Stripe.",
+    "add-country": "Rechercher un pays",
+    "add-failed": "Échec",
+    "add-continue-btn": "Continuer",
+    "add-cancel-btn": "Annuler",
+    "saving": "Enregistrement"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "Portefeuille crypto",
+    "connect": "Connectez votre portefeuille",
+    "connect-btn": "Connecter le portefeuille",
+    "disconnect": "Déconnecter",
+    "copy": "Copier l'adresse",
+    "not-installed-error": "Aucun portefeuille Cardano ou EVM détecté. Veuillez installer un portefeuille compatible.",
+    "not-connected-error": "Échec de la connexion au portefeuille {{walletName}}. Veuillez réessayer."
+  }
+}

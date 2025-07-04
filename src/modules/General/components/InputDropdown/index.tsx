@@ -1,6 +1,7 @@
 import React from 'react';
 import Select, { components, ControlProps, OptionProps, SingleValueProps } from 'react-select';
 import Icon from 'src/modules/General/components/Icon';
+import variables from 'src/styles/constants/_exports.module.scss';
 
 import styles from './index.module.scss';
 import { InputDropdownProps, OptionType } from './index.types';
@@ -8,7 +9,7 @@ import { InputDropdownProps, OptionType } from './index.types';
 const InputDropdown: React.FC<InputDropdownProps> = ({ options, icon, minWidth = '', ...props }) => {
   const CustomControl: React.FC<ControlProps<OptionType, false>> = ({ children, ...props }) => (
     <components.Control {...props}>
-      {icon && <Icon className={styles['startIcon']} name={icon} fontSize={20} color="#667085" />}
+      {icon && <Icon className={styles['startIcon']} name={icon} fontSize={20} color={variables.color_grey_500} />}
       {children}
     </components.Control>
   );
@@ -20,7 +21,7 @@ const InputDropdown: React.FC<InputDropdownProps> = ({ options, icon, minWidth =
         {...innerProps}
         className={`${styles['option']} ${isSelected ? styles['selecetdOption'] : ''}`}
       >
-        {isSelected && <Icon name="check" fontSize={20} color="#667085" />}
+        {isSelected && <Icon name="check" fontSize={20} color={variables.color_grey_500} />}
         {data.icon && <span>{data.icon}</span>}
         {data.label}
       </div>
@@ -47,14 +48,14 @@ const InputDropdown: React.FC<InputDropdownProps> = ({ options, icon, minWidth =
         SingleValue: CustomSingleValue,
         DropdownIndicator: () => (
           <div className={styles['dropdown']}>
-            <Icon name="chevron-down" fontSize={20} color="#667085" />
+            <Icon name="chevron-down" fontSize={20} color={variables.color_grey_500} />
           </div>
         ),
       }}
       styles={{
         singleValue: provided => ({
           ...provided,
-          color: '#101828',
+          color: variables.color_grey_900,
           fontSize: '16px',
           width: 'auto',
           fontWeight: 500,

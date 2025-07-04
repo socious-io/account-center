@@ -1,0 +1,30 @@
+{
+  "payments-title": "المدفوعات",
+  "payments-subtitle": "إدارة مدفوعاتك واشتراكاتك",
+  "payments-methods-title": "طرق الدفع",
+  "payments-methods-desc": "يتم حفظ طرق الدفع في حساب هوية Socious الخاص بك حتى تتمكن من استخدامها عبر نظام Socious.",
+  "payment-cards": {
+    "add-card": "إضافة بطاقة ائتمان",
+    "add-btn": "إضافة",
+    "failed": "فشل"
+  },
+  "payments-method-payout-account": {
+    "title": "حساب الدفع",
+    "add": "إضافة حساب دفع",
+    "add-desc": "تتعاون Socious مع Stripe لمعالجة المدفوعات. بالضغط على متابعة، سيتم توجيهك إلى موقع Stripe.",
+    "add-country": "ابحث عن دولة",
+    "add-failed": "فشل",
+    "add-continue-btn": "متابعة",
+    "add-cancel-btn": "إلغاء",
+    "saving": "جارٍ الحفظ"
+  },
+  "payments-method-crypto-wallet": {
+    "title": "محفظة العملات الرقمية",
+    "connect": "اتصل بمحفظتك",
+    "connect-btn": "اتصال بالمحفظة",
+    "disconnect": "قطع الاتصال",
+    "copy": "نسخ العنوان",
+    "not-installed-error": "لم يتم اكتشاف محفظة Cardano أو EVM. يرجى تثبيت محفظة متوافقة.",
+    "not-connected-error": "فشل في الاتصال بمحفظة {{walletName}}. يرجى المحاولة مرة أخرى."
+  }
+}

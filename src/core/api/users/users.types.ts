@@ -1,4 +1,4 @@
-import { Media } from '../media/media.types';
+import { MediaRes } from '../media/media.types';
 
 export interface UserReq {
   avatar_id: string;
@@ -10,9 +10,14 @@ export interface UserReq {
 
 export interface User extends UserReq {
   id: string;
-  avatar?: Media;
+  avatar?: MediaRes;
   identity_verified_at: Date | null;
   impact_points: number;
   created_at: Date;
   updated_at: Date;
+}
+
+export interface ForgetPasswordReq {
+  current_password?: string;
+  password: string;
 }

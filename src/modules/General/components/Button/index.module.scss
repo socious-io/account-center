@@ -10,7 +10,7 @@
 
     &:global(.MuiButton-root) {
         text-transform: none;
-        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        box-shadow: $shadow-xs;
         border-radius: 8px;
         height: 44px;
         font-weight: 600;
@@ -44,7 +44,7 @@
         &:hover {
             background-color: $color-primary-700;
             color: $color-white;
-            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            box-shadow: $shadow-xs;
         }
 
         &:focus {
@@ -52,14 +52,14 @@
             color: $color-white;
             box-shadow:
                 0px 0px 0px 4px rgba(230, 237, 237, 1),
-                0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                $shadow-xs;
         }
     }
 
     &:global(.MuiButton-outlinedPrimary) {
         background-color: $color-white;
         border: solid 1px $color-grey-300;
-        box-shadow: 0px 1px 2px 0px #1018280d;
+        box-shadow: $shadow-xs;
         color: $color-grey-700;
 
         &:hover {
@@ -70,7 +70,7 @@
         &:focus {
             box-shadow:
                 0px 0px 0px 4px rgba(242, 244, 247, 1),
-                0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                $shadow-xs;
         }
 
         &:disabled {
@@ -84,7 +84,7 @@
         &:hover {
             background-color: $color-primary-700;
             color: $color-white;
-            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+            box-shadow: $shadow-xs;
         }
 
         &:focus {
@@ -92,7 +92,7 @@
             color: $color-white;
             box-shadow:
                 0px 0px 0px 4px rgba(230, 237, 237, 1),
-                0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+                $shadow-xs;
         }
     }
 
@@ -161,14 +161,14 @@
     &:global(.MuiButton-containedError) {
         background-color: $color-error-600;
         color: $color-white;
-        box-shadow: 0px 1px 2px 0px #1018280d;
+        box-shadow: $shadow-xs;
 
         &:hover {
             background-color: $color-error-700;
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #fee4e2;
+            box-shadow: 0px 0px 0px 4px $color-error-100;
         }
 
         &:disabled {
@@ -180,7 +180,7 @@
         background-color: $color-white;
         color: $color-error-700;
         border: solid 1px $color-error-300;
-        box-shadow: 0px 1px 2px 0px #1018280d;
+        box-shadow: $shadow-xs;
 
         &:hover {
             background-color: $color-error-50;
@@ -188,7 +188,7 @@
         }
 
         &:focus {
-            box-shadow: 0px 0px 0px 4px #fee4e2;
+            box-shadow: 0px 0px 0px 4px $color-error-100;
         }
 
         &:disabled {
@@ -201,7 +201,7 @@
 .info {
     &:global(.MuiButton-root) {
         text-transform: none;
-        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        box-shadow: $shadow-xs;
         border-radius: 8px;
         height: 44px;
         font-weight: 600;
