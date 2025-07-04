@@ -22,7 +22,7 @@ const CustomSwitch = styled(Switch)(({ theme, size }) => ({
     padding: 2,
     '&.Mui-checked': {
       transform: `translateX(${size === 'small' ? 16 : 20}px)`,
-      color: '#fff',
+      color: variables.color_white,
       '& + .MuiSwitch-track': {
         opacity: 1,
         backgroundColor: theme.palette.primary,
