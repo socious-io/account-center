@@ -47,6 +47,8 @@ jobs:
           echo "VITE_REFRESH_EXPIRE=${{ vars.REFRESH_EXPIRE }}" >> .env
           echo "VITE_APP_URL=${{ vars.APP_URL }}" >> .env
           echo "VITE_BASE_PATH=${{ vars.BASE_PATH }}" >> .env
+          echo "VITE_STRIPE_PUBLIC_KEY=${{ vars. STRIPE_PUBLIC_KEY }}" >> .env
+          echo "VITE_DAPP_ENV=${{ vars.DAPP_ENV }}" >> .env
 
       - name: Build and push Docker image
         id: build-and-push
