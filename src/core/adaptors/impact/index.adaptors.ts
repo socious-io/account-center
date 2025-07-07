@@ -5,7 +5,7 @@ import { AchievementsRes, AdaptorRes, ContributionsRes, ContributionType, Impact
 
 export const getImpactAdaptor = async (): Promise<AdaptorRes<Impact>> => {
   try {
-    const { overviews } = await getImpactOverview();
+    const { total_per_type: overviews } = await getImpactOverview();
     const getOverviewValue = (type: string) => overviews.find(overview => overview.type === type)?.total_values || 0;
     const hoursWorked = getOverviewValue('WORKSUBMIT');
     const hoursVolunteered = getOverviewValue('VOLUNTEER');
@@ -100,6 +100,7 @@ export const getAchievementsAdaptor = async (): Promise<AdaptorRes<AchievementsR
     const data = badges.map(badge => ({
       name: badge.social_cause_category,
       level: getBadgeLevel(badge.total_points),
+      claimed: badge.is_claimed,
     }));
 
     return {

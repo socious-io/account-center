@@ -32,6 +32,18 @@
     "unlocked-title": "تم الفتح",
     "unlocked-subtitle": "شارتك التي تم فتحها",
     "progress-title": "قيد التقدم",
-    "progress-subtitle": "واصل التأثير لفتح شارات جديدة!"
+    "progress-subtitle": "واصل التأثير لفتح شارات جديدة!",
+    "claim-badge": {
+      "button": "احصل على الشارة",
+      "modal-title": "احصل على شارتك",
+      "alert-title": "تستخدم Socious تقنية البلوكشين لجعل الشهادات شفافة وقابلة للتتبع.",
+      "alert-subtitle": "لقد عقدنا شراكة مع Atala Prism حيث يمكن لهويتك اللامركزية تلقي الشهادات القابلة للتحقق.",
+      "how-get-certificate": "كيفية الحصول على شهادتك",
+      "step-1": "افتح محفظة Socious الخاصة بك",
+      "step-2": "امسح رمز الاستجابة السريعة أدناه",
+      "step-3": "اقبل الدعوة لتلقي الشهادة",
+      "download-wallet": "حمّل تطبيق محفظة Socious",
+      "open-wallet": "افتح تطبيق محفظة Socious"
+    }
   }
 }

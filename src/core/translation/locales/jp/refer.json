@@ -1,0 +1,32 @@
+{
+  "refer-header": "✨ 紹介して報酬を獲得",
+  "refer-subheader": "私たちの影響力を広げ、コミュニティの一員になりましょう",
+  "refer-desc": "有望なユーザーや社会的インパクトのある組織とSociousを共有することで、ネットワークを広げるだけでなく、変化を加速させています。",
+  "refer-learn-more-link": "紹介プログラムと報酬の受け取り方法について詳しくはこちら。",
+  "refer-list": "紹介一覧",
+  "refer-overview": {
+    "see-more-btn": "もっと見る",
+    "see-less-btn": "表示を減らす",
+    "referrals": "紹介",
+    "total-rewards": "合計報酬",
+    "unclaimed-rewards": "{{no}} 件の未請求の報酬があります",
+    "track-referral": "下の表で紹介と報酬を確認できます。",
+    "claimed-color": "請求済みの報酬は緑で表示されます",
+    "unclaimed-color": "未請求の報酬は赤で表示されます",
+    "share-code-continue": "紹介コードを共有して、引き続き報酬を獲得しましょう。",
+    "no-active-referral": "現在アクティブな紹介はありません。",
+    "share-code-start": "紹介コードを共有して、報酬の獲得を始めましょう。",
+    "claim-now-btn": "今すぐ請求"
+  },
+  "refer-claim": {
+    "wallet-failed-title": "失敗",
+    "wallet-not-installed-error": "Cardano ウォレットが検出されません。互換性のあるウォレットをインストールしてください。",
+    "wallet-not-connected-error": "{{walletName}} ウォレットの接続に失敗しました。もう一度お試しください。"
+  },
+  "refer-table": {
+    "name": "被紹介者",
+    "date": "紹介日",
+    "claimed": "はい",
+    "unclaimed": "いいえ"
+  }
+}

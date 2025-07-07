@@ -1,5 +1,6 @@
 import { ColumnDef, flexRender, getCoreRowModel, Getter, useReactTable } from '@tanstack/react-table';
 import { useMemo } from 'react';
+import { Contribution } from 'src/core/adaptors';
 import { toRelativeTime } from 'src/core/helpers/relative-time';
 import { translate } from 'src/core/helpers/utils';
 import AvatarLabelGroup from 'src/modules/General/components/AvatarLabelGroup';
@@ -16,7 +17,7 @@ const ContributionsList = () => {
     operations: { onChangePage },
   } = useContributionsList();
 
-  const columns = useMemo<ColumnDef<Credential>[]>(
+  const columns = useMemo<ColumnDef<Contribution>[]>(
     () => [
       {
         id: 'identity',

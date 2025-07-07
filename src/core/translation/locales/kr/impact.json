@@ -32,6 +32,18 @@
     "unlocked-title": "잠금 해제됨",
     "unlocked-subtitle": "잠금 해제된 배지",
     "progress-title": "진행 중",
-    "progress-subtitle": "더 많은 임팩트를 만들어 새로운 배지를 잠금 해제하세요!"
+    "progress-subtitle": "더 많은 임팩트를 만들어 새로운 배지를 잠금 해제하세요!",
+    "claim-badge": {
+      "button": "배지 받기",
+      "modal-title": "배지를 받으세요",
+      "alert-title": "Socious는 블록체인 기술을 사용하여 자격 증명을 투명하고 추적 가능하게 만듭니다.",
+      "alert-subtitle": "Atala Prism과 제휴하여 분산 ID로 검증 가능한 자격 증명을 받을 수 있습니다.",
+      "how-get-certificate": "인증서를 받는 방법",
+      "step-1": "Socious 지갑을 엽니다",
+      "step-2": "아래 QR 코드를 스캔하세요",
+      "step-3": "초대를 수락하고 자격 증명을 받으세요",
+      "download-wallet": "Socious 지갑 앱 다운로드",
+      "open-wallet": "Socious 지갑 앱 열기"
+    }
   }
 }

@@ -1,0 +1,40 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(space-between, center);
+    padding: 1rem 0;
+
+    .left {
+        @include flex(normal, center);
+        gap: 0.75rem;
+
+        &__icon {
+            padding: 0.375rem 0.75rem;
+            border: 1px solid $color-grey-100;
+            border-radius: 6px;
+        }
+
+        &__info {
+            @include flex(normal, stretch, column);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: $color-grey-900;
+
+            &--light {
+                font-weight: normal;
+                color: $color-grey-600;
+            }
+        }
+    }
+
+    .right {
+        @include flex(normal, center);
+
+        &__icon {
+            padding: 0.625rem;
+            cursor: pointer;
+        }
+    }
+}

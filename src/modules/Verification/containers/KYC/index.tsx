@@ -47,7 +47,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
         </Button>
       ),
     },
-    '': {
+    inactive: {
       theme: 'gray' as AlertMessageProps['theme'],
       iconName: 'alert-circle',
       title: translate('verification-kyc.why-verify-title'),
@@ -63,7 +63,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
   return (
     <div className={styles['container']}>
       <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
-      {!status && (
+      {status === 'inactive' && (
         <>
           <div className={styles['verify']}>
             {translate('verification-kyc.how-verify')}

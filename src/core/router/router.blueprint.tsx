@@ -1,3 +1,4 @@
+import { ComponentType } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useLocation, useRouteError } from 'react-router-dom';
 import { config } from 'src/config';
@@ -6,8 +7,16 @@ import { NotFound } from 'src/pages/error/NotFound';
 import { FallBack } from 'src/pages/fallback';
 import { RootState } from 'src/store';
 
-import { checkVerificationAdaptor, getAchievementsAdaptor } from '../adaptors';
+import {
+  checkVerificationAdaptor,
+  getAchievementsAdaptor,
+  getCardsAdaptor,
+  getMyReferralAdaptor,
+  getReferAdaptor,
+  getStripAccountsAdaptor,
+} from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
+import { nonPermanentStorage } from '../storage/non-permanent';
 
 export const blueprint: RouteObject[] = [
   { path: '/', element: <DefaultRoute /> },
@@ -28,7 +37,7 @@ export const blueprint: RouteObject[] = [
             path: 'password',
             async lazy() {
               const { Password } = await import('src/pages/password');
-              return { Component: Password };
+              return { Component: Protect(Password, 'users') };
             },
           },
           {
@@ -43,7 +52,7 @@ export const blueprint: RouteObject[] = [
                 async lazy() {
                   const { Verification } = await import('src/pages/verification/user');
                   return {
-                    Component: Verification,
+                    Component: Protect(Verification, 'users'),
                   };
                 },
               },
@@ -51,7 +60,7 @@ export const blueprint: RouteObject[] = [
                 path: 'connect/:id',
                 async lazy() {
                   const { Connect } = await import('src/pages/verification/user/connect');
-                  return { Component: Connect };
+                  return { Component: Protect(Connect, 'users') };
                 },
               },
             ],
@@ -74,14 +83,49 @@ export const blueprint: RouteObject[] = [
             },
             async lazy() {
               const { Impact } = await import('src/pages/impact');
-              return { Component: Impact };
+              return { Component: Protect(Impact, 'users') };
             },
           },
           {
             path: 'kyb',
+            loader: async ({ request }) => {
+              const url = new URL(request.url);
+              const id = url.searchParams.get('id');
+              if (id) {
+                await nonPermanentStorage.set({ key: 'identity', value: id });
+              }
+            },
             async lazy() {
               const { OrgVerify } = await import('src/pages/verification/organization');
-              return { Component: OrgVerify };
+              return { Component: Protect(OrgVerify, 'organizations') };
+            },
+          },
+          {
+            path: 'payments',
+            loader: async () => {
+              const [cards, stripeAccounts] = await Promise.all([getCardsAdaptor(100, 1), getStripAccountsAdaptor()]);
+              return {
+                cards: cards.data,
+                stripeAccounts: stripeAccounts.data || [],
+              };
+            },
+            async lazy() {
+              const { Payments } = await import('src/pages/payments');
+              return { Component: Payments };
+            },
+          },
+          {
+            path: 'refer',
+            loader: async () => {
+              const [overviews, referralList] = await Promise.all([getReferAdaptor(), getMyReferralAdaptor()]);
+              return {
+                overviews: overviews.data,
+                referralList: referralList.data,
+              };
+            },
+            async lazy() {
+              const { Refer } = await import('src/pages/refer');
+              return { Component: Refer };
             },
           },
           {
@@ -115,6 +159,19 @@ function GlobalStatusGuard() {
   }
 
   return <Outlet />;
+}
+
+function Protect<T extends object>(Component: ComponentType<T>, allowedIdentity: string): ComponentType<T> {
+  return function ProtectedRoute(props: T) {
+    const { entities } = useSelector((state: RootState) => state.identity);
+    const currentIdentityType = entities.find(identity => identity.current)?.type;
+
+    if (allowedIdentity === currentIdentityType) {
+      return <Component {...props} />;
+    }
+
+    return null;
+  };
 }
 
 function ErrorBoundary() {

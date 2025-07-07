@@ -10,17 +10,24 @@ export * from './users/index.types';
 export * from './organizations/index.adaptors';
 export * from './organizations/index.types';
 
-export * from './password/index.adaptors';
-export * from './password/index.types';
-
 export * from './verification/index.adaptors';
 export * from './verification/index.types';
 
 export * from './impact/index.adaptors';
 export * from './impact/index.types';
 
+export * from './payments/index.adaptors';
+export * from './payments/index.types';
+
+export * from './refer/index.adaptors';
+export * from './refer/index.types';
+
+export * from './credentials/index.adaptors';
+export * from './credentials/index.types';
+
 export interface CustomError {
   response: { data: { error: string } };
+  message?: string;
 }
 
 export interface SuccessRes {

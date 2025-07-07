@@ -15,3 +15,9 @@ export interface User extends UserReq {
   type?: UserType;
   impactPoints: number;
 }
+
+export interface PasswordReq {
+  currentPass: string;
+  newPass: string;
+  confirmPass: string;
+}

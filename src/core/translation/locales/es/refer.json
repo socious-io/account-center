@@ -1,0 +1,32 @@
+{
+  "refer-header": "✨ Recomienda y gana",
+  "refer-subheader": "Ayúdanos a generar un mayor impacto y obtén participación en nuestra comunidad",
+  "refer-desc": "Al compartir Socious con usuarios prometedores y organizaciones de impacto, no solo estás ampliando nuestra red, también estás acelerando el cambio.",
+  "refer-learn-more-link": "Obtén más información sobre nuestro programa de referidos y cómo reclamar recompensas.",
+  "refer-list": "Mis referidos",
+  "refer-overview": {
+    "see-more-btn": "Ver más",
+    "see-less-btn": "Ver menos",
+    "referrals": "Referencias",
+    "total-rewards": "Recompensas Totales",
+    "unclaimed-rewards": "Tienes {{no}} recompensas no reclamadas",
+    "track-referral": "Puedes seguir tus referidos y recompensas usando la tabla a continuación.",
+    "claimed-color": "Las recompensas reclamadas se muestran en verde",
+    "unclaimed-color": "Las recompensas no reclamadas se muestran en rojo",
+    "share-code-continue": "Comparte tus códigos de referido para seguir ganando recompensas.",
+    "no-active-referral": "No tienes referidos activos.",
+    "share-code-start": "Comparte tus códigos de referido para empezar a ganar recompensas.",
+    "claim-now-btn": "Reclamar ahora"
+  },
+  "refer-claim": {
+    "wallet-failed-title": "Fallido",
+    "wallet-not-installed-error": "No se detectó una billetera Cardano. Por favor instala una billetera compatible.",
+    "wallet-not-connected-error": "No se pudo conectar tu billetera {{walletName}}. Inténtalo de nuevo."
+  },
+  "refer-table": {
+    "name": "Referido",
+    "date": "Fecha de Referido",
+    "claimed": "Sí",
+    "unclaimed": "No"
+  }
+}

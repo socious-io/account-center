@@ -1,0 +1,32 @@
+{
+  "refer-header": "✨ 推荐并赚取奖励",
+  "refer-subheader": "帮助我们扩大影响力，并在社区中获得一席之地",
+  "refer-desc": "通过与有潜力的用户和有影响力的组织分享 Socious，您不仅在扩展我们的网络，也在加速变革。",
+  "refer-learn-more-link": "了解更多关于我们的推荐计划和如何领取奖励。",
+  "refer-list": "我的推荐",
+  "refer-overview": {
+    "see-more-btn": "查看更多",
+    "see-less-btn": "收起",
+    "referrals": "推荐",
+    "total-rewards": "总奖励",
+    "unclaimed-rewards": "您有 {{no}} 个未领取的奖励",
+    "track-referral": "您可以使用下方的表格跟踪您的推荐和奖励。",
+    "claimed-color": "已领取的奖励以绿色显示",
+    "unclaimed-color": "未领取的奖励以红色显示",
+    "share-code-continue": "继续分享您的推荐码以赚取更多奖励。",
+    "no-active-referral": "您没有活跃的推荐。",
+    "share-code-start": "分享您的推荐码以开始赚取奖励。",
+    "claim-now-btn": "立即领取"
+  },
+  "refer-claim": {
+    "wallet-failed-title": "失败",
+    "wallet-not-installed-error": "未检测到 Cardano 钱包。请安装兼容的钱包。",
+    "wallet-not-connected-error": "连接您的 {{walletName}} 钱包失败。请再试一次。"
+  },
+  "refer-table": {
+    "name": "被推荐人",
+    "date": "推荐日期",
+    "claimed": "是",
+    "unclaimed": "否"
+  }
+}
