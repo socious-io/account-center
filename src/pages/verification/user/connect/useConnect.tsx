@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
   CurrentIdentity,
@@ -11,7 +11,6 @@ import {
 import { RootState } from 'src/store';
 
 export const useConnect = () => {
-  const dispatch = useDispatch();
   const { id: connectId } = useParams();
   const currentIdentity = useSelector<RootState, CurrentIdentity | undefined>(state =>
     state.identity.entities.find(identity => identity.current),
@@ -52,5 +51,10 @@ export const useConnect = () => {
     };
   }, [verified, data]);
 
-  return { data: { verifyStatus, connectURL: data?.connectURL || '' }, operations: { dispatch } };
+  return {
+    data: {
+      verifyStatus,
+      connectURL: data?.connectURL || '',
+    },
+  };
 };
