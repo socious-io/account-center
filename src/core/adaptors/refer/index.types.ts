@@ -1,7 +1,6 @@
 import { PaginateRes } from '..';
 
 export type ReferAchievement = {
-  //FIXME: add some fixed types according to BE
   type: string;
   total: number;
 };
