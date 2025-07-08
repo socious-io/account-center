@@ -30,7 +30,7 @@ export const useProgressFileUploader = (
     CSV: { doc: 'text/csv', extension: ['.csv'], icon: '/icons/file-csv.svg' },
   };
   const joinedFileTypes = fileTypes.slice(0, fileTypes.length - 1).join(', ');
-  const subtitle = `${joinedFileTypes} ${translate('file-uploader-or')} ${fileTypes[fileTypes.length - 1]} (${translate('file-uploader-max')}. ${maxSize}MB)`;
+  const subtitle = `${joinedFileTypes} ${fileTypes.length > 1 ? translate('file-uploader-or') : ''} ${fileTypes[fileTypes.length - 1]} (${translate('file-uploader-max')}. ${maxSize}MB)`;
   const acceptedFileTypes = fileTypes.reduce((acc, value) => {
     if (types[value]) {
       const { doc, extension } = types[value];
