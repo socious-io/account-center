@@ -28,7 +28,7 @@ export const getReferAdaptor = async (): Promise<AdaptorRes<ReferOverviews>> => 
 
 export const getMyReferralAdaptor = async (page = 1, limit = 10): Promise<AdaptorRes<MyReferralRes>> => {
   try {
-    const { results: referrals, total_count: total } = await getReferrals();
+    const { results: referrals, total_count: total } = await getReferrals({ page, limit });
     const allAchievementTypes = Array.from(new Set(referrals.flatMap(r => r.achievements.map(a => a.type))));
     const results = referrals.map(referral => {
       const achievements = referral.achievements.reduce(
