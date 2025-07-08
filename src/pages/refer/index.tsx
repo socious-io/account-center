@@ -20,7 +20,6 @@ export const Refer = () => {
         <h2 className={styles['header__subtitle']}>{translate('refer-subheader')}</h2>
       </div>
       <Divider />
-      {/* FIXME: update with design */}
       <div className="flex flex-col">
         <span className="text-base font-normal leading-6 text-Gray-light-mode-600">{translate('refer-desc')}</span>
         <Link
