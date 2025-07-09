@@ -4,6 +4,7 @@ import AlertMessage from 'src/modules/General/components/AlertMessage';
 import { AlertMessageProps } from 'src/modules/General/components/AlertMessage/index.types';
 import Button from 'src/modules/General/components/Button';
 import ProgressFileUploader from 'src/modules/General/components/ProgressFileUploader';
+import Stepper from 'src/modules/Verification/components/Stepper';
 
 import styles from './index.module.scss';
 import { SuccessModal } from './SuccessModal';
@@ -35,6 +36,27 @@ const KYB: React.FC = () => {
     },
   };
 
+  const steps = [
+    {
+      title: translate('verification-kyb.instructions-step1-title'),
+      subtitle: translate('verification-kyb.instructions-step1-subtitle'),
+      iconName: 'mail-01',
+      displayDivider: true,
+    },
+    {
+      title: translate('verification-kyb.instructions-step2-title'),
+      subtitle: translate('verification-kyb.instructions-step2-subtitle'),
+      iconName: 'hourglass-03',
+      displayDivider: true,
+    },
+    {
+      title: translate('verification-kyb.instructions-step3-title'),
+      subtitle: translate('verification-kyb.instructions-step3-subtitle'),
+      iconName: 'stars-02',
+      displayDivider: false,
+    },
+  ];
+
   return status !== 'NOT_ACTIVE' ? (
     <div className={styles['container']}>
       <AlertMessage {...alertMessageProps[status]} containerClassName="!items-start" />
@@ -50,11 +72,16 @@ const KYB: React.FC = () => {
           subtitle={translate('verification-kyb.verify-subtitle')}
           containerClassName="!items-start"
         />
+        <div className={styles['instruction']}>
+          {steps.map(item => (
+            <Stepper key={item.title} {...item} />
+          ))}
+        </div>
         <ProgressFileUploader
           files={files}
           onDropFiles={onDropFiles}
           onDeleteFiles={onDeleteFiles}
-          fileTypes={['PDF', 'PNG', 'JPG']}
+          fileTypes={['PDF']}
           progressValues={progressValues}
           uploadedErrors={uploadedErrors}
           maxSize={2}
@@ -72,14 +99,6 @@ const KYB: React.FC = () => {
         >
           {translate('verification-kyb.send-btn')}
         </Button>
-        <div className={styles['next']}>
-          <span className={styles['next__title']}>{translate('verification-kyb.what-next')}</span>
-          <ul className={styles['next__list']}>
-            <li>{translate('verification-kyb.what-next-step1')}</li>
-            <li>{translate('verification-kyb.what-next-step2')}</li>
-            <li>{translate('verification-kyb.what-next-step3')}</li>
-          </ul>
-        </div>
       </div>
       <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} />
     </>
