@@ -1,17 +1,14 @@
-import { useDispatch } from 'react-redux';
 import { translate } from 'src/core/helpers/utils';
-import BackLink from 'src/modules/General/components/BackLink';
 import HorizontalTabs from 'src/modules/General/components/HorizontalTabs';
 import AchievementsList from 'src/modules/Impact/containers/AchievementsList';
 import ContributionsList from 'src/modules/Impact/containers/ContributionsList';
 import Details from 'src/modules/Impact/containers/Details';
 import VotesList from 'src/modules/Impact/containers/VotesList';
-import { showMenu } from 'src/store/reducers/menu.reducer';
+import Header from 'src/modules/Layout/containers/Header';
 
 import styles from './index.module.scss';
 
 export const Impact = () => {
-  const dispatch = useDispatch();
   const tabs = [
     {
       label: translate('impact-contributions.tab'),
@@ -29,11 +26,7 @@ export const Impact = () => {
 
   return (
     <div className={styles['container']}>
-      <BackLink customStyle={styles['back']} onBack={() => dispatch(showMenu())} />
-      <div className={styles['header']}>
-        <h1 className={styles['header__title']}>{translate('impact-title')}</h1>
-        <h2 className={styles['header__subtitle']}>{translate('impact-subtitle')}</h2>
-      </div>
+      <Header title={translate('impact-title')} subtitle={translate('impact-subtitle')} className="px-4 md:px-8" />
       <div>
         <Details />
         <div className={styles['table']}>
