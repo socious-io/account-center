@@ -12,27 +12,10 @@
         max-width: 100%;
     }
 
-    .next {
+    .instruction {
         @include flex(normal, stretch, column);
-        gap: 1rem;
         padding: 1.25rem;
         background-color: $color-grey-50;
         border-radius: 16px;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 20px;
-        color: $color-grey-600;
-
-        &__title {
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-            color: $color-grey-900;
-        }
-
-        &__list {
-            margin-left: 1rem;
-            list-style: disc;
-        }
     }
 }

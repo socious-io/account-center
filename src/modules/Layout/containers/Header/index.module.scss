@@ -1,0 +1,46 @@
+@import 'src/styles/utilities/_mixins.scss';
+@import 'src/styles/constants/_primitives.scss';
+
+.container {
+    @include flex(space-between, center);
+    gap: 2rem;
+
+    .left {
+        @include flex(normal, stretch, column);
+        gap: 1.5rem;
+
+        .back {
+            display: none;
+
+            @media (max-width: $md) {
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+
+        .header {
+            @include flex(space-between, normal, column);
+            gap: 0.25rem;
+
+            &__title {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 32px;
+                color: $color-grey-900;
+            }
+
+            &__subtitle {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                color: $color-grey-600;
+            }
+        }
+    }
+
+    .right {
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+}

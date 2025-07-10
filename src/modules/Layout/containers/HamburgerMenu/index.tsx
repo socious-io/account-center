@@ -2,6 +2,7 @@ import Button from 'src/modules/General/components/Button';
 import Icon from 'src/modules/General/components/Icon';
 import { AvatarDropDown } from 'src/modules/General/containers/AvatarDropdown';
 import LinkItem from 'src/modules/Layout/components/LinkItem';
+import NavPortal from 'src/modules/Layout/components/NavPortal';
 import variables from 'src/styles/constants/_exports.module.scss';
 
 import styles from './index.module.scss';
@@ -43,7 +44,12 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
       className={`${styles['container']} ${animatable && !menuIsOpened && styles['container--closed']} ${isRTL && styles['container--rlt']}`}
     >
       <div className={styles['container__top']}>
-        <div className={styles['header']}>{translate('layout.brand')}</div>
+        <div className={styles['header']}>
+          {translate('layout.brand')}
+          <div className={styles['header__portal']}>
+            <NavPortal />
+          </div>
+        </div>
         <span className={styles['subheader']}>{translate('layout.bio')}</span>
         <AvatarDropDown displayOtherAccounts onCreateAccount={onCreateAccount} />
         <div className={styles['menu']}>

@@ -16,7 +16,7 @@
     --color-gray-04: rgba(228, 230, 237, 1);
     --color-pink: #f00073;
     --color-gray-dark-01: #808289;
-    --color-bloom-01: #FCF7F5;
+    --color-bloom-01: #fcf7f5;
 
     --font-size-s: 0.75rem; // 12px
     --font-size-s2: 0.875rem; // 14px
@@ -85,7 +85,6 @@ $color-grey-500: #667085;
 $color-grey-600: #475467;
 $color-grey-700: #344054;
 $color-grey-800: #1d2939;
-//FIXME: ASK Marjan - conflict with tailwind config
 $color-grey-850: #182230;
 $color-grey-900: #101828;
 $color-grey-950: #0c111d;
@@ -196,8 +195,7 @@ $color-purple-600: #6938ef;
 $color-purple-700: #5925dc;
 
 //Bloom
-$color-bloom-50: #FCF7F5;
-
+$color-bloom-50: #fcf7f5;
 
 // Fonts
 $font-size-xs: 0.75rem;
