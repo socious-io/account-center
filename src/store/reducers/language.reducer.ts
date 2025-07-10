@@ -1,11 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface LangState {
-  language: 'en' | 'jp' | 'es' | 'kr' | 'ar' | 'fr' | 'zh';
+  language: 'en' | 'ja' | 'es' | 'ko' | 'ar' | 'fr' | 'zh-CN';
 }
 
 const initialState = {
-  language: new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('i18nextLng') || 'en',
+  language:
+    new URLSearchParams(window.location.search).get('lang') ||
+    localStorage.getItem('i18nextLng') ||
+    navigator.language ||
+    'en',
 } as LangState;
 
 export const languageSlice = createSlice({
