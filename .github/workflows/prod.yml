@@ -49,6 +49,9 @@ jobs:
           echo "VITE_BASE_PATH=${{ vars.BASE_PATH }}" >> .env
           echo "VITE_STRIPE_PUBLIC_KEY=${{ vars.STRIPE_PUBLIC_KEY }}" >> .env
           echo "VITE_DAPP_ENV=${{ vars.DAPP_ENV }}" >> .env
+          echo "VITE_WORK_URL=${{ vars.WORK_URL }}" >> .env
+          echo "VITE_FUND_URL=${{ vars.FUND_URL }}" >> .env
+          echo "VITE_VERIFY_URL=${{ vars.VERIFY_URL }}" >> .env
 
       - name: Build and push Docker image
         id: build-and-push
