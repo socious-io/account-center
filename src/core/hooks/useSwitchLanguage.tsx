@@ -1,17 +1,19 @@
-import i18next from 'i18next';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { LANGUAGES } from 'src/constants/LANGUAGES';
 
 const useSwitchLanguage = (defaultLanguage = 'en') => {
-  const [selectedLanguage, setSelectedLanguage] = useState(localStorage.getItem('i18nextLng') || defaultLanguage);
+  const { i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language || defaultLanguage);
   const [searchParams, setSearchParams] = useSearchParams();
   const lang = searchParams.get('lang');
 
   const switchLanguage = language => {
     if (LANGUAGES.map(lang => lang.value).includes(language)) {
       setSelectedLanguage(language);
-      i18next.changeLanguage(language);
+      i18n.changeLanguage(language);
+      localStorage.setItem('lang', language);
       if (lang) {
         searchParams.set('lang', language);
         setSearchParams(searchParams);
