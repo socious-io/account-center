@@ -19,9 +19,23 @@ import * as yup from 'yup';
 
 import { Form, OrganizationSchema, UserSchema } from './index.types';
 
+export const checkUsernameValidation = (username: string) => {
+  if (!username) return;
+  if (!/^[a-z0-9._-]+$/.test(username)) return translate('profile-fields.username-error-letters');
+  if (username.startsWith('.') || username.startsWith('_')) return translate('profile-fields.username-error-start');
+  if (/[._]{2,}/.test(username)) return translate('profile-fields.username-error-consecutive');
+  if (username.length < 6 || username.length > 24) return translate('profile-fields.username-error-length');
+};
+
 const getSchema = (type: UserType) => {
   const commonFields = {
-    username: yup.string().required(translate('profile-fields.required-error')),
+    username: yup
+      .string()
+      .required(translate('profile-fields.required-error'))
+      .test('username-regex-validation', translate('profile-fields-valid-username-error'), function (value) {
+        const errorMessage = checkUsernameValidation(value ?? '');
+        return errorMessage ? this.createError({ message: errorMessage }) : true;
+      }),
     email: yup
       .string()
       .email(translate('profile-fields.valid-email-error'))

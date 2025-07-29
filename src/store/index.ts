@@ -1,14 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { identitySlice } from './reducers/identity.reducer';
-import { languageSlice } from './reducers/language.reducer';
 import { loadingSlice } from './reducers/loading.reducer';
 import { menuSlice } from './reducers/menu.reducer';
 
 const store = configureStore({
   reducer: {
     loading: loadingSlice.reducer,
-    language: languageSlice.reducer,
     identity: identitySlice.reducer,
     menu: menuSlice.reducer,
   },
