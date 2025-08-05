@@ -1,3 +1,4 @@
+import { translate } from 'src/core/helpers/utils';
 import Button from 'src/modules/General/components/Button';
 import Icon from 'src/modules/General/components/Icon';
 import { AvatarDropDown } from 'src/modules/General/containers/AvatarDropdown';
@@ -16,7 +17,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   onCloseMenu,
 }) => {
   const {
-    data: { translate, currentIdentityType, selectedItem },
+    data: { currentIdentityType, selectedItem },
     operations: { handleNavigate, onCreateAccount, onLogout },
   } = useHamburgerMenu();
 
