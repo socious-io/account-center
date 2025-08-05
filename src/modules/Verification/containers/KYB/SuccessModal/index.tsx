@@ -4,7 +4,7 @@ import Modal from 'src/modules/General/components/Modal';
 
 import { SuccessModalProps } from './index.types';
 
-export const SuccessModal: React.FC<SuccessModalProps> = ({ open, handleClose }) => {
+const SuccessModal: React.FC<SuccessModalProps> = ({ open, handleClose }) => {
   return (
     <Modal
       open={open}
@@ -19,3 +19,5 @@ export const SuccessModal: React.FC<SuccessModalProps> = ({ open, handleClose })
     />
   );
 };
+
+export default SuccessModal;
