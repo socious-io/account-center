@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { Navigate, Outlet, RouteObject, createBrowserRouter, useLocation, useRouteError } from 'react-router-dom';
 import { config } from 'src/config';
 import Layout from 'src/modules/Layout';
-import { NotFound } from 'src/pages/error/NotFound';
-import { FallBack } from 'src/pages/fallback';
+import { FallBack } from 'src/pages/error/fallback';
+import { NotFound } from 'src/pages/error/notFound';
 import { RootState } from 'src/store';
 
 import {

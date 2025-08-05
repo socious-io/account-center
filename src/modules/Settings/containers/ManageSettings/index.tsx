@@ -2,7 +2,7 @@ import { Divider } from '@mui/material';
 import { LANGUAGES } from 'src/constants/LANGUAGES';
 import { translate } from 'src/core/helpers/utils';
 import Button from 'src/modules/General/components/Button';
-import { LanguageSwitcher } from 'src/modules/General/components/LanguageSwitcher';
+import LanguageSwitcher from 'src/modules/General/components/LanguageSwitcher';
 
 import styles from './index.module.scss';
 import { useManageSettings } from './useManageSettings';

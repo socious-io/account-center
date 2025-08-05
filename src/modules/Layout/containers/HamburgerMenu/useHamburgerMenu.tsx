@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { config } from 'src/config';
@@ -8,7 +7,6 @@ import { nonPermanentStorage } from 'src/core/storage/non-permanent';
 import { RootState } from 'src/store';
 
 export const useHamburgerMenu = () => {
-  const { t: translate } = useTranslation();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const path = pathname.replace('/', '');
@@ -44,7 +42,6 @@ export const useHamburgerMenu = () => {
 
   return {
     data: {
-      translate,
       currentIdentityType,
       selectedItem,
     },

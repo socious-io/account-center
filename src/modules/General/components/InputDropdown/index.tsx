@@ -1,4 +1,3 @@
-import React from 'react';
 import Select, { components, ControlProps, OptionProps, SingleValueProps } from 'react-select';
 import Icon from 'src/modules/General/components/Icon';
 import variables from 'src/styles/constants/_exports.module.scss';

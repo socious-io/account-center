@@ -4,6 +4,7 @@ import variables from 'src/styles/constants/_exports.module.scss';
 import styles from './index.module.scss';
 import { AlertModalProps } from './index.types';
 import Button from '../Button';
+import FeaturedIcon from '../FeaturedIcon';
 import Icon from '../Icon';
 import Image from '../Image';
 
@@ -19,7 +20,7 @@ const AlertModal: React.FC<AlertModalProps> = ({
   submitButton = false,
   submitButtonTheme = 'primary',
   submitButtonLabel,
-  customIcon,
+  customIcon = <FeaturedIcon iconName="check-circle" size="lg" theme="success" type="light-circle-outlined" />,
   children,
   disableSubmitButton = false,
   customClassName,
@@ -30,9 +31,7 @@ const AlertModal: React.FC<AlertModalProps> = ({
     <Modal open={open} onClose={onClose} className={styles['modal']} data-ignore-outside-click="true">
       <div className={`${styles['container']} ${customClassName}`}>
         <div className="flex justify-between">
-          {customIcon || (
-            <Image className={styles['image']} src={customImage || '/icons/success-tick.svg'} alt="success" />
-          )}
+          {customImage ? <Image className={styles['image']} src={customImage} alt="image-header" /> : customIcon}
           <Icon
             name="x-close"
             fontSize={24}
