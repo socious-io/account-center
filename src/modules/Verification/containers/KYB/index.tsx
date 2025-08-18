@@ -7,7 +7,7 @@ import ProgressFileUploader from 'src/modules/General/components/ProgressFileUpl
 import Stepper from 'src/modules/Verification/components/Stepper';
 
 import styles from './index.module.scss';
-import { SuccessModal } from './SuccessModal';
+import SuccessModal from './SuccessModal';
 import { useKYB } from './useKYB';
 
 const KYB: React.FC = () => {

@@ -3,7 +3,7 @@ import { LANGUAGES } from 'src/constants/LANGUAGES';
 import SearchDropdown from '../SearchDropdown';
 import { SelectProps } from '../SearchDropdown/index.types';
 
-export const LanguageSwitcher: React.FC<SelectProps> = ({ placeholder = 'English (US)', ...props }) => {
+const LanguageSwitcher: React.FC<SelectProps> = ({ placeholder = 'English (US)', ...props }) => {
   return (
     <SearchDropdown
       id="language-switcher"
@@ -14,3 +14,5 @@ export const LanguageSwitcher: React.FC<SelectProps> = ({ placeholder = 'English
     />
   );
 };
+
+export default LanguageSwitcher;

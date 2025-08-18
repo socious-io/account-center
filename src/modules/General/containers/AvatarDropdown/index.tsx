@@ -7,7 +7,7 @@ import variables from 'src/styles/constants/_exports.module.scss';
 import { AvatarDropDownProps } from './index.types';
 import { useAvatarDropDown } from './useAvatarDropdown';
 
-export const AvatarDropDown: React.FC<AvatarDropDownProps> = ({
+const AvatarDropDown: React.FC<AvatarDropDownProps> = ({
   buttonHeight,
   displayOtherAccounts = false,
   onCreateAccount,
@@ -57,3 +57,5 @@ export const AvatarDropDown: React.FC<AvatarDropDownProps> = ({
     </div>
   );
 };
+
+export default AvatarDropDown;

@@ -10,6 +10,7 @@
     "payments": "支払い",
     "staking": "ステーキング",
     "kyb": "KYB",
+    "refer": "紹介して稼ぐ",
     "settings": "設定",
     "log-out-btn": "ログアウト",
     "back": "戻る"
@@ -31,5 +32,10 @@
     "header": "404 - ページが見つかりません",
     "subheader": "お探しのページは存在しません",
     "go-to-home-btn": "ホームに戻る"
+  },
+  "error-internal": {
+    "header": "内部サーバーエラー",
+    "subheader": "ご不便をおかけして申し訳ありません。後でもう一度お試しください",
+    "home-btn": "ホームページ"
   }
 }

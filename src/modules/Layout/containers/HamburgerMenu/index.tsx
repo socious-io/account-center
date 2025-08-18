@@ -1,6 +1,7 @@
+import { translate } from 'src/core/helpers/utils';
 import Button from 'src/modules/General/components/Button';
 import Icon from 'src/modules/General/components/Icon';
-import { AvatarDropDown } from 'src/modules/General/containers/AvatarDropdown';
+import AvatarDropDown from 'src/modules/General/containers/AvatarDropdown';
 import LinkItem from 'src/modules/Layout/components/LinkItem';
 import NavPortal from 'src/modules/Layout/components/NavPortal';
 import variables from 'src/styles/constants/_exports.module.scss';
@@ -16,7 +17,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   onCloseMenu,
 }) => {
   const {
-    data: { translate, currentIdentityType, selectedItem },
+    data: { currentIdentityType, selectedItem },
     operations: { handleNavigate, onCreateAccount, onLogout },
   } = useHamburgerMenu();
 
@@ -35,7 +36,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         ]
       : [{ id: 'kyb', iconName: 'shield-tick', title: translate('layout.kyb'), path: '/kyb' }]),
     { id: 'payments', iconName: 'credit-card-02', title: translate('layout.payments'), path: '/payments' },
-    { id: 'refer', iconName: 'star-06', title: 'Refer and earn', path: '/refer' },
+    { id: 'refer', iconName: 'star-06', title: translate('layout.refer'), path: '/refer' },
     // { id: 'staking', iconName: 'line-chart-up-03', title: translate('layout.staking'), path: '/staking' },
   ];
 

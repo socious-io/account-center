@@ -1,4 +1,5 @@
 import { isMobile } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { RTL_LANGUAGES } from 'src/constants/LANGUAGES';
@@ -13,8 +14,8 @@ import styles from './index.module.scss';
 const Layout = () => {
   const menuIsOpened = useSelector((state: RootState) => state.menu);
   const dispatch = useDispatch();
-  const language = localStorage.getItem('i18nextLng') || 'en';
-  const isRTL = RTL_LANGUAGES.includes(language);
+  const { i18n } = useTranslation();
+  const isRTL = RTL_LANGUAGES.includes(i18n.language);
 
   const handleCloseMenu = () => {
     if (isMobile) {

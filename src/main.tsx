@@ -6,8 +6,8 @@ import { Helmet } from 'react-helmet';
 import App from './App';
 import './styles/main.scss';
 import { translate } from './core/helpers/utils';
-import { FallBack } from './pages/fallback';
-import { logError } from './pages/fallback/index.services';
+import { FallBack } from './pages/error/fallback';
+import { logError } from './pages/error/fallback/index.services';
 
 const VERSION = '1.0.0';
 
