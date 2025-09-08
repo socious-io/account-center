@@ -5,7 +5,7 @@ import Modal from 'src/modules/General/components/Modal';
 import styles from './index.module.scss';
 import { QRModalProps } from './index.types';
 
-const QRModal: React.FC<QRModalProps> = ({ open, handleClose, connectUrl }) => {
+const QRModal: React.FC<QRModalProps> = ({ open, handleClose, connectUrl, qrCodeSize = 200 }) => {
   return (
     <Modal
       open={open}
@@ -19,7 +19,8 @@ const QRModal: React.FC<QRModalProps> = ({ open, handleClose, connectUrl }) => {
       contentClassName={styles['content']}
     >
       <div className={styles['qrcode']}>
-        <QRCodeSVG value={connectUrl} size={200} />
+        <QRCodeSVG value={connectUrl} size={qrCodeSize} />
+        {!connectUrl && <div className={styles['qrcode__blur']} />}
       </div>
     </Modal>
   );
