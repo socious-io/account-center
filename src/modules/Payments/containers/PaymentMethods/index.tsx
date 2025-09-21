@@ -16,7 +16,7 @@ import { usePaymentMethods } from './usePaymentMethods';
 const PaymentMethods = () => {
   const {
     data: { currentList, currentIdentityName, currentIdentityType, openModal, stripeAccounts },
-    operations: { setCurrentList, setOpenModal, handleCloseModal, onRemoveCard, onSetWallet },
+    operations: { setCurrentList, setOpenModal, handleCloseModal, onRemoveCard },
   } = usePaymentMethods();
 
   const creditCards = currentList.map(card => {
@@ -71,7 +71,7 @@ const PaymentMethods = () => {
         )}
         <div className={styles['section']}>
           {translate('payments-method-crypto-wallet.title')}
-          <ConnectButton onSetWallet={onSetWallet} />
+          <ConnectButton />
         </div>
       </div>
       <AddCardModal
