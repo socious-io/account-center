@@ -8,15 +8,14 @@ import Button from 'src/modules/General/components/Button';
 import Image from 'src/modules/General/components/Image';
 
 import styles from './index.module.scss';
-import { KYCProps } from './index.types';
 import QRModal from './QRModal';
 import { useKYC } from './useKYC';
 
-const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
+const KYC: React.FC = () => {
   const {
-    data: { openQRModal },
+    data: { openQRModal, connectUrl, status },
     operations: { setOpenQRModal, onVerify, onCreateVerification },
-  } = useKYC(connectUrl);
+  } = useKYC();
 
   const alertMessageProps: Record<KYCStatus, AlertMessageProps> = {
     succeed: {
@@ -98,7 +97,7 @@ const KYC: React.FC<KYCProps> = ({ connectUrl, status }) => {
             <p>{translate('verification-kyc.how-verify-step1')}</p>
             <p>{translate('verification-kyc.how-verify-step2')}</p>
           </div>
-          <Button variant="contained" color="primary" customStyle="self-end" disabled={!connectUrl} onClick={onVerify}>
+          <Button variant="contained" color="primary" customStyle="self-end" onClick={onVerify}>
             {translate('verification-kyc.verify-now')}
           </Button>
           <QRModal open={openQRModal} handleClose={() => setOpenQRModal(false)} connectUrl={connectUrl} />
