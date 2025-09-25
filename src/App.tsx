@@ -11,7 +11,7 @@ import { WagmiProvider } from 'wagmi';
 
 import { RTL_LANGUAGES } from './constants/LANGUAGES';
 import { setupInterceptors } from './core/api';
-import { wagmiConfig } from './core/wallet/config';
+import { wagmiConfig } from './core/dapp/config';
 import RequestLoading from './modules/General/components/RequestLoading';
 import store from './store';
 import { WalletProvider } from './store/contexts';

@@ -25,3 +25,8 @@ export type WalletReq = {
   chain_id: string;
   address: string;
 };
+
+export interface Wallet extends WalletReq {
+  id: string;
+  identity_id: string;
+}

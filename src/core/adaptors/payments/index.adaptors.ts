@@ -1,6 +1,6 @@
-import { addCard, cards, getStripeAccount, getStripeLink, removeCard, setWallet } from 'src/core/api';
+import { addCard, cards, getStripeAccount, getStripeLink, getWallets, removeCard, setWallet } from 'src/core/api';
 
-import { AdaptorRes, Cards, Card, SuccessRes, WalletReq, CustomError, StripeAccount } from '..';
+import { AdaptorRes, Cards, Card, SuccessRes, WalletReq, CustomError, StripeAccount, Wallet } from '..';
 
 export const getCardsAdaptor = async (limit = 10, page = 1): Promise<AdaptorRes<Cards>> => {
   try {
@@ -86,6 +86,16 @@ export const getStripeLinkAdaptor = async (country: string, redirect_url: string
       error:
         (error as CustomError).response.data.error || (error as CustomError)?.message || 'Error in getting stripe link',
     };
+  }
+};
+
+export const getWalletsAdaptor = async (): Promise<AdaptorRes<Wallet[]>> => {
+  try {
+    const data = await getWallets();
+    return { data, error: null };
+  } catch (error) {
+    console.error('Error in getting user wallets', error);
+    return { data: null, error: 'Error in getting user wallets' };
   }
 };
 

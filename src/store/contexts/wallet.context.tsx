@@ -1,22 +1,36 @@
-import React, { createContext, useContext, useReducer } from 'react';
-
-export type WalletType = 'cardano' | 'evm';
+import { BrowserWallet } from '@meshsdk/core';
+import { BrowserProvider, Eip1193Provider, JsonRpcSigner } from 'ethers';
+import { createContext, useContext, useReducer } from 'react';
 
 export type WalletState = {
-  address: string;
-  wallet: any;
+  wallet: any | null;
+  walletProvider: Eip1193Provider | BrowserWallet | null;
+  provider: BrowserProvider | null;
+  signer: JsonRpcSigner | null;
+  account: string;
+  chainId: number | null;
   connected: boolean;
-  balance: { symbol: string; value: number };
+  network: any;
+  networkName: string;
+  testnet: boolean;
+  balance: { symbol: string; value: number } | null;
+};
+
+const initialState: WalletState = {
+  wallet: null,
+  walletProvider: null,
+  provider: null,
+  signer: null,
+  account: '',
+  chainId: null,
+  connected: false,
+  network: null,
+  networkName: '',
+  testnet: false,
+  balance: null,
 };
 
 export type WalletAction = { type: 'CONNECT'; payload: WalletState } | { type: 'DISCONNECT' };
-
-const initialState: WalletState = {
-  address: '',
-  wallet: null,
-  connected: false,
-  balance: { symbol: '', value: 0 },
-};
 
 const WalletContext = createContext<{
   state: WalletState;

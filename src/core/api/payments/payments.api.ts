@@ -32,6 +32,10 @@ export async function getStripeAccount(): Promise<StripeAccountsRes> {
   return (await get<StripeAccountsRes>('/payments/fiat/payout')).data;
 }
 
+export async function getWallets(): Promise<WalletRes[]> {
+  return (await get<WalletRes[]>('payments/crypto/wallets')).data;
+}
+
 export async function setWallet(payload: WalletReq): Promise<WalletRes> {
   return (await post<WalletRes>('payments/crypto/wallets', payload)).data;
 }

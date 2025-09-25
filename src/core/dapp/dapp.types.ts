@@ -10,6 +10,7 @@ export interface Token {
 
 export interface Network {
   chain: Chain;
+  name: string;
   escrow: string;
   old?: boolean;
   logic?: string;

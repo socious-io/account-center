@@ -1,12 +1,13 @@
-import { bscTestnet, bsc, sepolia } from 'wagmi/chains';
+import { bscTestnet, bsc, sepolia, adf } from 'wagmi/chains';
 
-import { DappConfig } from './index.types';
+import { DappConfig } from './dapp.types';
 
 export const dappConfig: DappConfig = {
   walletConnetProjectId: '40ce0f320baccb067909071c983ca357',
   testnet: [
     {
       chain: bscTestnet,
+      name: 'bsc',
       escrow: '0xE6b7fdf37b4D297d7E4BcB055Df06AF5DDbf82Ce',
       logic: '0xE6b7fdf37b4D297d7E4BcB055Df06AF5DDbf82Ce',
       tokens: [
@@ -26,6 +27,7 @@ export const dappConfig: DappConfig = {
     },
     {
       chain: sepolia,
+      name: 'sepolia',
       escrow: '0x383fdB2917B1bB02841116811f94159D9263D53d',
       logic: '0x383fdB2917B1bB02841116811f94159D9263D53d',
       tokens: [
@@ -37,10 +39,32 @@ export const dappConfig: DappConfig = {
         },
       ],
     },
+    {
+      chain: {
+        ...adf,
+        name: 'Cardano',
+        nativeCurrency: {
+          decimals: 6,
+          name: 'ADA',
+          symbol: 'ADA',
+        },
+      },
+      escrow: '',
+      name: 'cardano',
+      tokens: [
+        {
+          name: 'ADA',
+          symbol: 'ADA',
+          address: 'lovelace',
+          decimals: 6,
+        },
+      ],
+    },
   ],
   mainet: [
     {
       chain: bsc,
+      name: 'bsc',
       escrow: '0x2Bdf475Bf5353cF52Aa4339A0FA308B4e1e22C3A',
       logic: '0x2Bdf475Bf5353cF52Aa4339A0FA308B4e1e22C3A',
       tokens: [

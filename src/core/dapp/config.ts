@@ -4,7 +4,7 @@ import { Chain } from 'wagmi/chains';
 import { metaMask, walletConnect } from 'wagmi/connectors';
 
 import { dappConfig } from './dapp.config';
-import { Network } from './index.types';
+import { Network } from './dapp.types';
 
 export const NETWORKS: Network[] = config.dappENV === 'mainet' ? dappConfig.mainet : dappConfig.testnet;
 
