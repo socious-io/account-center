@@ -14,6 +14,7 @@ import {
   getMyReferralAdaptor,
   getReferAdaptor,
   getStripAccountsAdaptor,
+  getWalletsAdaptor,
 } from '../adaptors';
 import { getContributionsAdaptor, getImpactAdaptor, getVotesAdaptor } from '../adaptors';
 import { nonPermanentStorage } from '../storage/non-permanent';
@@ -103,10 +104,15 @@ export const blueprint: RouteObject[] = [
           {
             path: 'payments',
             loader: async () => {
-              const [cards, stripeAccounts] = await Promise.all([getCardsAdaptor(100, 1), getStripAccountsAdaptor()]);
+              const [cards, stripeAccounts, wallets] = await Promise.all([
+                getCardsAdaptor(100, 1),
+                getStripAccountsAdaptor(),
+                getWalletsAdaptor(),
+              ]);
               return {
                 cards: cards.data,
                 stripeAccounts: stripeAccounts.data || [],
+                wallets: wallets.data || [],
               };
             },
             async lazy() {
